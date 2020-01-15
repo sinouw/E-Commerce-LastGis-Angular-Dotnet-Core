@@ -1,0 +1,26 @@
+<div [dir]="layout" id="main-app" class="app">
+	<mat-sidenav-container class="embryo-container-wrap">
+	   <mat-sidenav #sidenav [(mode)]="coreService.sidenavMode" [(opened)]="coreService.sidenavOpen" class="sidebar-area">
+	   	<app-side-bar></app-side-bar>
+	   </mat-sidenav>
+	   <app-header-component></app-header-component>
+	   <div class="embryo-base-container">
+	      <div class="embryo-container">
+	   		<router-outlet (activate)="onActivate($event)"></router-outlet>
+	   	</div>
+         <!-- embryo-container -->
+	   </div>
+	</mat-sidenav-container>
+   
+   <!-- user-switch-btn
+   <ng-container *ngIf="rtlStatus; else layoutStatus">
+      <div class="rtl-layout">
+         <a class="text-xl" href="javascript:void(0);" (click)="changeLTR()">LTR</a>
+      </div>
+   </ng-container>
+   <ng-template #layoutStatus>
+      <div class="rtl-layout" ><a class="text-xl" href="javascript:void(0);" (click)="changeRTL()">RTL</a></div>
+   </ng-template> -->
+   <!-- main-app -->
+   <ngx-toasta></ngx-toasta>
+</div>

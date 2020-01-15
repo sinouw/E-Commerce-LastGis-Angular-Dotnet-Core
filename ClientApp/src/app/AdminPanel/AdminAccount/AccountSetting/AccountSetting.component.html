@@ -1,0 +1,54 @@
+<mat-card>
+   <div>
+      <div fxLayoutAlign="flex-start">
+         <div class="product-image-gallery-item edit-icon mb-4">
+            <a>
+               <img src="assets/images/user-edit.png" alt="" width="70" alt="Active User">
+            </a>
+            <button class="edit-btn" md-mini-fab type="button">
+               <label for="fileToUpload">
+                  <mat-icon>edit</mat-icon>
+               </label>
+            </button>
+            <input mat id="fileToUpload" type="file" accept="image/*" style="display:none;">
+         </div>
+         <!-- product-image-gallery-item -->
+      </div>
+   </div>
+   <div class="notifications-wrap">
+      <h5>Notifications</h5>
+      <section class="checkbox-wrap mb-4">
+         <mat-checkbox class="mb-2 d-block">Enable Notifications</mat-checkbox>
+         <mat-checkbox class="mb-2 d-block">Show Desktop Notifications</mat-checkbox>
+         <mat-checkbox class="mb-2 d-block">Get e-mail notification for my own activity</mat-checkbox>
+         <mat-checkbox class="mb-2 d-block">Get e-mail notification for request and reviews</mat-checkbox>
+      </section>
+   </div>
+   <!-- notifications-wrap -->
+   <div class="deactivate-wrap">
+      <div class="reason-sec">
+         <div class="sec-title">
+            <h5>Deactivate your account</h5>
+         </div>
+         <div>
+            <p>Reason for leaving :</p>
+            <mat-radio-group class="d-block">
+               <mat-radio-button class="d-block mb-2" *ngFor="let reason of reasons" [value]="reason">
+                  {{reason}}
+               </mat-radio-button>
+            </mat-radio-group>
+         </div>              
+         <div class="reason-wrap">
+            <label>If other then please explain further : </label>
+            <mat-form-field>
+               <textarea matInput></textarea>
+            </mat-form-field>
+         </div>
+      </div>
+      <!-- reason-sec-->
+   </div> 
+   <!-- deactivate-wrap-->
+   <button color="warn" mat-raised-button (click)="onDelete()">
+      Deactivate Account
+   </button>
+</mat-card>

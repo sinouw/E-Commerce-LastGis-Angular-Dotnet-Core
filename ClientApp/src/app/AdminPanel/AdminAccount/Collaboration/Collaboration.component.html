@@ -1,0 +1,49 @@
+<mat-card>
+    <button color="primary" mat-raised-button (click)="addNewUserDialog()">
+      Add Admin
+   </button>
+
+    <ng-container *ngIf="collaborationData && collaborationData.length>0; else elseBlock">
+        <div class="table-responsive-x">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 w-100 table-scroll-wrap">
+                <!-- <ng-container matColumnDef="image">
+                    <th class="px-3" mat-header-cell *matHeaderCellDef>Image</th>
+                    <td class="px-3" mat-cell *matCellDef="let element"> <img src={ {element.image}} width="40" height="40"></td>
+                </ng-container> -->
+                <ng-container matColumnDef="FullName">
+                    <th class="px-3" mat-header-cell *matHeaderCellDef> Full Name </th>
+                    <td class="px-3" mat-cell *matCellDef="let element"> {{element.FullName}} </td>
+                </ng-container>
+                <ng-container matColumnDef="Email">
+                    <th class="px-3" mat-header-cell *matHeaderCellDef> Email </th>
+                    <td class="px-3" mat-cell *matCellDef="let element"> {{element.Email}} </td>
+                </ng-container>
+                <ng-container matColumnDef="PhoneNumber">
+                    <th class="px-3" mat-header-cell *matHeaderCellDef> Phone Number </th>
+                    <td class="px-3" mat-cell *matCellDef="let element"> {{element.PhoneNumber}} </td>
+                </ng-container>
+                <ng-container matColumnDef="Role">
+                    <th class="px-3" mat-header-cell *matHeaderCellDef> Role </th>
+                    <td class="px-3" mat-cell *matCellDef="let element"> {{element.Role}} </td>
+                </ng-container>
+                <ng-container matColumnDef="action">
+                    <th class="px-3" mat-header-cell *matHeaderCellDef> Action </th>
+                    <td class="px-3" mat-cell *matCellDef="let element;let i=index">
+                        <!-- <button color="info" mat-icon-button (click)="ChangeToSuper(element.UserName,i)">
+                                <i class="fas fa-retweet"></i>
+                        </button> -->
+                        <button color="warn" mat-icon-button (click)="onDelete(element.UserName,i)">
+                     <mat-icon class="">delete</mat-icon>
+                  </button>
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+        <!-- table-responsive-x -->
+    </ng-container>
+    <ng-template #elseBlock>
+        <h5 class="ml-5">No user found</h5>
+    </ng-template>
+</mat-card>

@@ -1,0 +1,30 @@
+<mat-card>
+    <h4>Profile Information</h4>
+    <div class="pt-3">
+        <div class="proflie-field mb-3">
+            <label>User Name:</label>
+            <span>{{userDetails?.UserName}}</span>
+        </div>
+        <div class="proflie-field mb-3">
+            <label>Full Name:</label>
+            <span>{{userDetails?.FullName}}</span>
+        </div>
+        <div class="proflie-field mb-3">
+            <label>Gender:</label>
+            <span>{{userDetails?.Gender}}</span>
+        </div>
+        <div class="proflie-field mb-3">
+            <label>Mobile Number:</label>
+            <span>{{userDetails?.PhoneNumber}}</span>
+        </div>
+        <div class="proflie-field mb-3">
+            <label>Role:</label>
+            <span *ngFor="let Role of roles">{{Role}}</span>
+        </div>
+        <div class="proflie-field mb-3">
+            <label>E-mail id:</label>
+            <span class="text-ellipse">{{userDetails?.Email}}</span>
+        </div>
+        <button mat-raised-button color="accent" [routerLink]="['edit']" [queryParams]="{type:'info'}">Edit</button>
+    </div>
+</mat-card>

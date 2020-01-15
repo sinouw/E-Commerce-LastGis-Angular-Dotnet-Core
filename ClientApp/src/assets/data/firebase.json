@@ -1,0 +1,1581 @@
+{
+   "about_info": {
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dolore neque consequatur harum suscipit hic nisi voluptate nulla deserunt! Ducimus odit nisi aliquam non quae exercitationem? Impedit dolores aliquam suscipit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eaque illo, dolore voluptates ipsum ratione. At eius earum voluptatibus aperiam porro a quo, obcaecati dolor distinctio provident iusto libero ducimus?",
+      "heading": "Providing the optimize E-commerce servicing to millions of customers form last 10 year",
+      "id": 1,
+      "image": "assets/images/about-us.jpg",
+      "sub_heading": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate nihil non quo corrupti, laborum hic,"
+   },
+   "blogs": [{
+         "author": {
+            "author_bio": "There's lot of hate out there for a text that amounts to little more than garbled words in an old language. The villagers are out there with a vengeance to get that Frankenstein, wielding torches and pitchforks, wanting to tar and feather it at the least, running it out of town in shame",
+            "author_img": "assets/images/user-1.jpg",
+            "author_name": "Billy Wade",
+            "post_date": "Sept 12, 2019"
+         },
+         "banner_img": "assets/images/blog-detail-1.jpg",
+         "content": "<p> <span class='dropcap accent-color'>L</span>orem ipsum dolor sit amet consectetur adipisicing elit. Animi ea libero nobis hic impedit similique, iste possimus. Libero delectus hic tempore suscipit blanditiis? Odit consequuntur facilis debitis quam accusamus ducimus? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </p> <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). sometimes on purpose (injected humour and the like). </p> <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ea libero nobis hic impedit similique, iste possimus. Libero delectus hic tempore suscipit blanditiis? Odit consequuntur facilis debitis quam accusamus ducimus? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </p> <p> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </p>",
+         "id": 1,
+         "image": "assets/images/post-1.jpg",
+         "name": "Here are some of best online shopping sites for you in europe.",
+         "post_type": "Featured post.",
+         "short_content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+         "tags": [
+            "Shopping",
+            "Online"
+         ],
+         "user_comments": [{
+               "comment": "Do you like Cheese Whiz? Spray tan? Fake eyelashes? That's what is Lorem Ipsum to many—it rubs them the wrong way, all the way. It's unreal, uncanny, makes you wonder if something is wrong, it seems to seek your attention for all the wrong reasons. ",
+               "date": "Sept 13, 2019",
+               "img": "assets/images/user-2.jpg",
+               "name": "Jimmy Beck",
+               "sub_comments": [{
+                     "comment": "You begin with a text, you sculpt information, you chisel away what's not needed, you come to the point, make things clear, add value, you're a content person, you like words. Design is no afterthought, far from it, but it comes in a deserved second. ",
+                     "date": "Sept 13, 2019",
+                     "img": "assets/images/user-3.jpg",
+                     "name": "Jessica Reed"
+                  },
+                  {
+                     "comment": "But. A big but: Lorem Ipsum is not t the root of the problem, it just shows what's going wrong. Chances are there wasn't collaboration, communication, and checkpoints, there wasn't a process agreed upon or specified with the granularity required",
+                     "date": "Sept 15, 2019",
+                     "img": "assets/images/user-4.jpg",
+                     "name": "Jeff Mackoay"
+                  }
+               ]
+            },
+            {
+               "comment": "You begin with a text, you sculpt information, you chisel away what's not needed, you come to the point, make things clear, add value, you're a content person, you like words. Design is no afterthought, far from it, but it comes in a deserved second. ",
+               "date": "Sept 13, 2019",
+               "img": "assets/images/user-3.jpg",
+               "name": "Jessica Reed"
+            },
+            {
+               "comment": "But. A big but: Lorem Ipsum is not t the root of the problem, it just shows what's going wrong. Chances are there wasn't collaboration, communication, and checkpoints, there wasn't a process agreed upon or specified with the granularity required",
+               "date": "Sept 15, 2019",
+               "img": "assets/images/user-4.jpg",
+               "name": "Jeff Mackoay"
+            }
+         ]
+      },
+      {
+         "author": {
+            "author_bio": "Websites in professional use templating systems. Commercial publishing platforms and content management systems ensure that you can show different text, different data using the same template. When it's about controlling hundreds of articles, product pages",
+            "author_img": "assets/images/user-3.jpg",
+            "author_name": "Demeon Phil",
+            "post_date": "Sept 14, 2019"
+         },
+         "banner_img": "assets/images/blog-detail-2.jpg",
+         "content": "<p> <span class='dropcap accent-color'>C</span>onsectetur adipisicing elit. Animi ea libero nobis hic impedit similique, iste possimus. Libero delectus hic tempore suscipit blanditiis? Odit consequuntur facilis debitis quam accusamus ducimus? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </p> <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). sometimes on purpose (injected humour and the like). </p> <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ea libero nobis hic impedit similique, iste possimus. Libero delectus hic tempore suscipit blanditiis? Odit consequuntur facilis debitis quam accusamus ducimus? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </p> <p> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </p>",
+         "id": 2,
+         "image": "assets/images/post-2.jpg",
+         "name": "Get awesome offers on new collection that is available at all stores.",
+         "post_type": "Featured post.",
+         "short_content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+         "tags": [
+            "Shopping",
+            "New Arrival"
+         ],
+         "user_comments": [{
+               "comment": "Do you like Cheese Whiz? Spray tan? Fake eyelashes? That's what is Lorem Ipsum to many—it rubs them the wrong way, all the way. It's unreal, uncanny, makes you wonder if something is wrong, it seems to seek your attention for all the wrong reasons. ",
+               "date": "Sept 13, 2019",
+               "img": "assets/images/user-1.jpg",
+               "name": "Emily Barn"
+            },
+            {
+               "comment": "You begin with a text, you sculpt information, you chisel away what's not needed, you come to the point, make things clear, add value, you're a content person, you like words. Design is no afterthought, far from it, but it comes in a deserved second. ",
+               "date": "Sept 13, 2019",
+               "img": "assets/images/user-4.jpg",
+               "name": "Lara Wilson"
+            },
+            {
+               "comment": "But. A big but: Lorem Ipsum is not t the root of the problem, it just shows what's going wrong. Chances are there wasn't collaboration, communication, and checkpoints, there wasn't a process agreed upon or specified with the granularity required",
+               "date": "Sept 15, 2019",
+               "img": "assets/images/user-2.jpg",
+               "name": "Jaby Gibbs"
+            }
+         ]
+      },
+      {
+         "author": {
+            "author_bio": "If the copy becomes distracting in the design then you are doing something wrong or they are discussing copy changes. It might be a bit annoying but you could tell them that that discussion would be best suited for another time.",
+            "author_img": "assets/images/user-2.jpg",
+            "author_name": "Luke Hobbs",
+            "post_date": "Sept 16, 2019"
+         },
+         "banner_img": "assets/images/blog-detail-3.jpg",
+         "content": "<p> <span class='dropcap accent-color'>T</span>onsectetur adipisicing elit. Animi ea libero nobis hic impedit similique, iste possimus. Libero delectus hic tempore suscipit blanditiis? Odit consequuntur facilis debitis quam accusamus ducimus? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </p> <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). sometimes on purpose (injected humour and the like). </p> <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ea libero nobis hic impedit similique, iste possimus. Libero delectus hic tempore suscipit blanditiis? Odit consequuntur facilis debitis quam accusamus ducimus? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </p> <p> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </p>",
+         "id": 3,
+         "image": "assets/images/post-3.jpg",
+         "name": "Festival Sale has lots of amazing offer for men and woman",
+         "post_type": "Featured post.",
+         "short_content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+         "tags": [
+            "Shopping",
+            "New Arrival"
+         ],
+         "user_comments": [{
+               "comment": "Do you like Cheese Whiz? Spray tan? Fake eyelashes? That's what is Lorem Ipsum to many—it rubs them the wrong way, all the way. It's unreal, uncanny, makes you wonder if something is wrong, it seems to seek your attention for all the wrong reasons. ",
+               "date": "Sept 13, 2019",
+               "img": "assets/images/user-4.jpg",
+               "name": "Emily Barn"
+            },
+            {
+               "comment": "You begin with a text, you sculpt information, you chisel away what's not needed, you come to the point, make things clear, add value, you're a content person, you like words. Design is no afterthought, far from it, but it comes in a deserved second. ",
+               "date": "Sept 13, 2019",
+               "img": "assets/images/user-1.jpg",
+               "name": "Lara Wilson"
+            },
+            {
+               "comment": "But. A big but: Lorem Ipsum is not t the root of the problem, it just shows what's going wrong. Chances are there wasn't collaboration, communication, and checkpoints, there wasn't a process agreed upon or specified with the granularity required",
+               "date": "Sept 15, 2019",
+               "img": "assets/images/user-3.jpg",
+               "name": "Jaby Gibbs"
+            }
+         ]
+      }
+   ],
+   "contact": {
+      "address": "1899 Cemetery Street,MEDFORD - 1452451 New York",
+      "call": "+123 90394903",
+      "info": "If you have any problems,suggestions and feedback then please feel free to contact with us. Choose our communication soruces. We will love to hear from you.",
+      "mail": "support@theironnetwork.org"
+   },
+   "faq": {
+      "can_get_answer": {
+         "content": "If your are unable to get the answers then feel free to contact us by submit a support request. We will very happy to listen from you.",
+         "heading": "Did not get your answer here?"
+      },
+      "content": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni, aspernatur minus voluptatibus quaerat officiis, incidunt maiores, tempora nam eaque ab consequatur tenetur explicabo voluptatem vel voluptatum perspiciatis accusantium. Illum, nemo?",
+      "faqs": [{
+            "ans": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur fugit asperiores voluptas. Ipsum expedita nostrum architecto eum adipisci ipsa quod illo error aliquid impedit facilis sunt nobis qui, voluptatem deserunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur fugit asperiores voluptas. Ipsum expedita nostrum architecto eum adipisci ipsa quod illo error aliquid impedit facilis sunt nobis qui, voluptatem deserunt.",
+            "ques": "When I will receive my package i did not got any call"
+         },
+         {
+            "ans": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur fugit asperiores voluptas. Ipsum expedita nostrum architecto eum adipisci ipsa quod illo error aliquid impedit facilis sunt nobis qui, voluptatem deserunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur fugit asperiores voluptas. Ipsum expedita nostrum architecto eum adipisci ipsa quod illo error aliquid impedit facilis sunt nobis qui, voluptatem deserunt.",
+            "ques": "I did not get email and text messege afer payment"
+         },
+         {
+            "ans": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur fugit asperiores voluptas. Ipsum expedita nostrum architecto eum adipisci ipsa quod illo error aliquid impedit facilis sunt nobis qui, voluptatem deserunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur fugit asperiores voluptas. Ipsum expedita nostrum architecto eum adipisci ipsa quod illo error aliquid impedit facilis sunt nobis qui, voluptatem deserunt.",
+            "ques": "How to track the shipping order?"
+         },
+         {
+            "ans": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur fugit asperiores voluptas. Ipsum expedita nostrum architecto eum adipisci ipsa quod illo error aliquid impedit facilis sunt nobis qui, voluptatem deserunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur fugit asperiores voluptas. Ipsum expedita nostrum architecto eum adipisci ipsa quod illo error aliquid impedit facilis sunt nobis qui, voluptatem deserunt.",
+            "ques": "I got promocodes , how to reedeem?"
+         },
+         {
+            "ans": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur fugit asperiores voluptas. Ipsum expedita nostrum architecto eum adipisci ipsa quod illo error aliquid impedit facilis sunt nobis qui, voluptatem deserunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur fugit asperiores voluptas. Ipsum expedita nostrum architecto eum adipisci ipsa quod illo error aliquid impedit facilis sunt nobis qui, voluptatem deserunt.",
+            "ques": "How can i cancel the order"
+         },
+         {
+            "ans": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur fugit asperiores voluptas. Ipsum expedita nostrum architecto eum adipisci ipsa quod illo error aliquid impedit facilis sunt nobis qui, voluptatem deserunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur fugit asperiores voluptas. Ipsum expedita nostrum architecto eum adipisci ipsa quod illo error aliquid impedit facilis sunt nobis qui, voluptatem deserunt.",
+            "ques": "BOA credit card has problem with shopping"
+         },
+         {
+            "ans": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur fugit asperiores voluptas. Ipsum expedita nostrum architecto eum adipisci ipsa quod illo error aliquid impedit facilis sunt nobis qui, voluptatem deserunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur fugit asperiores voluptas. Ipsum expedita nostrum architecto eum adipisci ipsa quod illo error aliquid impedit facilis sunt nobis qui, voluptatem deserunt.",
+            "ques": "How to change the password of my account"
+         },
+         {
+            "ans": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur fugit asperiores voluptas. Ipsum expedita nostrum architecto eum adipisci ipsa quod illo error aliquid impedit facilis sunt nobis qui, voluptatem deserunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur fugit asperiores voluptas. Ipsum expedita nostrum architecto eum adipisci ipsa quod illo error aliquid impedit facilis sunt nobis qui, voluptatem deserunt.",
+            "ques": "How to delete the saved card Infomation"
+         },
+         {
+            "ans": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur fugit asperiores voluptas. Ipsum expedita nostrum architecto eum adipisci ipsa quod illo error aliquid impedit facilis sunt nobis qui, voluptatem deserunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur fugit asperiores voluptas. Ipsum expedita nostrum architecto eum adipisci ipsa quod illo error aliquid impedit facilis sunt nobis qui, voluptatem deserunt.",
+            "ques": "How to pay bill throgh netbanking"
+         },
+         {
+            "ans": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur fugit asperiores voluptas. Ipsum expedita nostrum architecto eum adipisci ipsa quod illo error aliquid impedit facilis sunt nobis qui, voluptatem deserunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur fugit asperiores voluptas. Ipsum expedita nostrum architecto eum adipisci ipsa quod illo error aliquid impedit facilis sunt nobis qui, voluptatem deserunt.",
+            "ques": "Do you have any stores in USA?"
+         },
+         {
+            "ans": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur fugit asperiores voluptas. Ipsum expedita nostrum architecto eum adipisci ipsa quod illo error aliquid impedit facilis sunt nobis qui, voluptatem deserunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur fugit asperiores voluptas. Ipsum expedita nostrum architecto eum adipisci ipsa quod illo error aliquid impedit facilis sunt nobis qui, voluptatem deserunt.",
+            "ques": "How to deactivate account?"
+         }
+      ],
+      "heading": "Get Instant answers for most common questions"
+   },
+   "mission_vision": [{
+         "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat quibusdam cum blanditiis voluptas, voluptates hic eius maxime dolorum saepe quae animi eveniet nulla dolor dicta laborum unde molestias ab magni.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat quibusdam cum blanditiis voluptas, voluptates hic eius maxime dolorum saepe quae animi eveniet nulla dolor dicta laborum unde molestias ab magni.",
+         "heading": "Our Mission",
+         "id": "1",
+         "image": "assets/images/our-mission.jpg",
+         "sub_heading": "nulla dolor dicta laborum unde molestias ab magni.Lorem ipsum dolor sit amet,consectetur adipisicing elit"
+      },
+      {
+         "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat quibusdam cum blanditiis voluptas, voluptates hic eius maxime dolorum saepe quae animi eveniet nulla dolor dicta laborum unde molestias ab magni.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat quibusdam cum blanditiis voluptas, voluptates hic eius maxime dolorum saepe quae animi eveniet nulla dolor dicta laborum unde molestias ab magni.",
+         "heading": "Our Vision",
+         "id": "2",
+         "image": "assets/images/our-vision.jpg",
+         "sub_heading": "nulla dolor dicta laborum unde molestias ab magni.Lorem ipsum dolor sit amet,consectetur adipisicing elit"
+      }
+   ],
+   "privacy_policy": [{
+         "content": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque labore, fugit, temporibus ab unde necessitatibus, quasi consectetur rerum dolorum incidunt pariatur. Distinctio a unde cum! Possimus sint expedita cupiditate labore.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque labore, fugit, temporibus ab unde necessitatibus, quasi consectetur rerum dolorum incidunt pariatur. Distinctio a unde cum! Possimus sint expedita cupiditate labore.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque labore, fugit, temporibus ab unde necessitatibus, quasi consectetur rerum dolorum incidunt pariatur. Distinctio a unde cum! Possimus sint expedita cupiditate labore.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque labore, fugit, temporibus ab unde necessitatibus, quasi consectetur rerum dolorum incidunt pariatur. Distinctio a unde cum! Possimus sint expedita cupiditate labore.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque labore, fugit, temporibus ab unde necessitatibus, quasi consectetur rerum dolorum incidunt pariatur. Distinctio a unde cum! Possimus sint expedita cupiditate labore.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque labore, fugit, temporibus ab unde necessitatibus, quasi consectetur rerum dolorum incidunt pariatur. Distinctio a unde cum! Possimus sint expedita cupiditate labore. ",
+         "name": "What type of information we gathered on our site "
+      },
+      {
+         "content": "Sit amet consectetur, adipisicing elit. Itaque labore, fugit, temporibus ab unde necessitatibus, quasi consectetur rerum dolorum incidunt pariatur. Distinctio a unde cum! Possimus sint expedita cupiditate labore.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque labore, fugit, temporibus ab unde necessitatibus, quasi consectetur rerum dolorum incidunt pariatur. Distinctio a unde cum! Possimus sint expedita cupiditate labore.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque labore, fugit, temporibus ab unde necessitatibus, quasi consectetur rerum dolorum incidunt pariatur. Distinctio a unde cum! Possimus sint expedita cupiditate labore.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque labore, fugit, temporibus ab unde necessitatibus, quasi consectetur rerum dolorum incidunt pariatur. Distinctio a unde cum! Possimus sint expedita cupiditate labore.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque labore, fugit, temporibus ab unde necessitatibus, quasi consectetur rerum dolorum incidunt pariatur. Distinctio a unde cum! Possimus sint expedita cupiditate labore.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque labore, fugit, temporibus ab unde necessitatibus, quasi consectetur rerum dolorum incidunt pariatur. Distinctio a unde cum! Possimus sint expedita cupiditate labore. dolor sit amet consectetur, adipisicing elit. Itaque labore, fugit, temporibus ab unde necessitatibus, quasi consectetur rerum dolorum incidunt pariatur. Distinctio a unde cum! Possimus sint expedita cupiditate labore.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque labore, fugit, temporibus ab unde necessitatibus, quasi consectetur rerum dolorum incidunt pariatur. Distinctio a unde cum! Possimus sint expedita cupiditate labore.",
+         "name": "Are our payments and cards information secured? "
+      },
+      {
+         "content": "Rerum dolorum incidunt pariatur. Distinctio a unde cum! Possimus sint expedita cupiditate labore.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque labore, fugit, temporibus ab unde necessitatibus, quasi consectetur rerum dolorum incidunt pariatur. Distinctio a unde cum! Possimus sint expedita cupiditate labore.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque labore, fugit, temporibus ab unde necessitatibus, quasi consectetur rerum dolorum incidunt pariatur. Distinctio a unde cum! Possimus sint expedita cupiditate labore. dolor sit amet consectetur, adipisicing elit. Itaque labore, fugit, temporibus ab unde necessitatibus, quasi consectetur rerum dolorum incidunt pariatur. Distinctio a unde cum! Possimus sint expedita cupiditate labore.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque labore, fugit, temporibus ab unde necessitatibus, quasi consectetur rerum dolorum incidunt pariatur. Distinctio a unde cum! Possimus sint expedita cupiditate labore.  ",
+         "name": "Are we give information of user to ad agenices?  "
+      },
+      {
+         "content": "<h5> Address: </h5> <p> 103,Grand Ways Road <br> Necholim City <br> New York </p> <h5> Email: </h5> <p> email@emaillorem.com </p> <h5> Contact No. </h5> <p> 123789-839 00 </p> <p> 123789-839 00 </p> ",
+         "name": "If you have any Legal issue or dispute then contact the following:"
+      }
+   ],
+   "product_reviews": [{
+      "category": "Jeans",
+      "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      "id": 1,
+      "name": "Blue Jean",
+      "rating": 4,
+      "type": "men",
+      "user_rating": [{
+            "comment": "I love the way it has delivered to me and after using ,i just wanna say one word that is awesome",
+            "date": "a month ago",
+            "designation": "CEO , Dellec Info",
+            "img": "assets/images/user-1.jpg",
+            "name": "James Hamm"
+         },
+         {
+            "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium cupiditate, sed delectus",
+            "date": "2 month ago",
+            "designation": "CEO , Dellec Info",
+            "img": "assets/images/user-1.jpg",
+            "name": "Tim Pharell"
+         },
+         {
+            "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium cupiditate, sed delectus",
+            "date": "3 month ago",
+            "designation": "CEO , Dellec Info",
+            "img": "assets/images/user-1.jpg",
+            "name": "Joe Baden"
+         }
+      ]
+   }],
+   "products": {
+      "accessories": [{
+            "availablity": true,
+            "brand": "Liod Marcos",
+            "category": "Laptop",
+            "category_type": "accessories",
+            "color": "Black",
+            "description": "Adipisicing elit. Distinctio aperiam debitis ipsa veniam eos quas excepturi quae? Recusandae distinctio nihil quia quis, eaque aspernatur perferendis repudiandae adipisci labore, impedit beatae! Lorem ipsum dolor sit amet consectetur",
+            "discount_price": 88.0,
+            "features": [
+               "Dell/Mac/Acer Laptop Bag",
+               "Pure Leather",
+               "20 Kg Capacity"
+            ],
+            "id": 16,
+            "image": "assets/images/accessroies/a-1-a.jpg",
+            "image_gallery": [
+               "assets/images/accessroies/a-1-a.jpg",
+               "assets/images/accessroies/a-1-b.jpg",
+               "assets/images/accessroies/a-1-c.jpg",
+               "assets/images/accessroies/a-1-d.jpg"
+            ],
+            "name": "Laptop Backpack",
+            "popular": true,
+            "price": 92.75,
+            "product_code": "#EM1215",
+            "quantity": 1,
+            "rating": 4,
+            "status": 0,
+            "tags": [
+               "Black",
+               "Laptop",
+               "Bags"
+            ],
+            "type": "accessories"
+         },
+         {
+            "availablity": true,
+            "brand": "Liod Marcos",
+            "category": "Belts",
+            "category_type": "accessories",
+            "color": "Black",
+            "description": "Uorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio aperiam debitis ipsa veniam eos quas excepturi quae? Recusandae distinctio nihil quia quis, eaque aspernatur perferendis repudiandae adipisci labore, impedit beatae!",
+            "discount_price": 44.0,
+            "features": [
+               "Pure Leather",
+               "Water Proof",
+               "Steel Buckle"
+            ],
+            "id": 17,
+            "image": "assets/images/accessroies/a-2-a.jpg",
+            "image_gallery": [
+               "assets/images/accessroies/a-2-a.jpg",
+               "assets/images/accessroies/a-2-b.jpg",
+               "assets/images/accessroies/a-2-c.jpg",
+               "assets/images/accessroies/a-2-d.jpg"
+            ],
+            "name": "Men Belts",
+            "popular": false,
+            "price": 38.31,
+            "product_code": "#EM1216",
+            "quantity": 1,
+            "rating": 4,
+            "status": 0,
+            "tags": [
+               "Tan",
+               "Belts",
+               "Leather"
+            ],
+            "type": "accessories"
+         },
+         {
+            "availablity": true,
+            "brand": "Liod Marcos",
+            "category": "Jewellery",
+            "category_type": "accessories",
+            "color": "Black",
+            "description": "Ipsum dolor sit amet consectetur, adipisicing elit. Distinctio aperiam debitis ipsa veniam eos quas excepturi quae? Recusandae distinctio nihil quia quis, eaque aspernatur perferendis repudiandae adipisci labore, impedit beatae!",
+            "discount_price": 78.0,
+            "features": [
+               "Slim Fit",
+               "Pure Steel",
+               "Free Shipping and delivery in 7 Days"
+            ],
+            "id": 18,
+            "image": "assets/images/accessroies/a-3-a.jpg",
+            "image_gallery": [
+               "assets/images/accessroies/a-3-a.jpg",
+               "assets/images/accessroies/a-3-b.jpg",
+               "assets/images/accessroies/a-3-c.jpg",
+               "assets/images/accessroies/a-3-d.jpg"
+            ],
+            "name": "Steel Chain",
+            "popular": false,
+            "price": 56.75,
+            "product_code": "#EM1217",
+            "quantity": 1,
+            "rating": 5,
+            "status": 0,
+            "tags": [
+               "Chain",
+               "Long Chain",
+               "Accessories"
+            ],
+            "type": "accessories"
+         },
+         {
+            "availablity": true,
+            "brand": "Liod Marcos",
+            "category": "Purse",
+            "category_type": "accessories",
+            "color": "Brown",
+            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio aperiam debitis ipsa veniam eos quas excepturi quae? Recusandae distinctio nihil quia quis, eaque aspernatur perferendis repudiandae adipisci labore, impedit beatae!",
+            "discount_price": 14.0,
+            "features": [
+               "Slim Designed",
+               "Pure Leather",
+               "Credit/Debit Cards Pockets"
+            ],
+            "id": 19,
+            "image": "assets/images/accessroies/a-4-a.jpg",
+            "image_gallery": [
+               "assets/images/accessroies/a-4-a.jpg",
+               "assets/images/accessroies/a-4-b.jpg",
+               "assets/images/accessroies/a-4-c.jpg",
+               "assets/images/accessroies/a-4-d.jpg"
+            ],
+            "name": "Men Purse",
+            "popular": false,
+            "price": 15.75,
+            "product_code": "#EM1218",
+            "quantity": 1,
+            "rating": 5,
+            "status": 0,
+            "tags": [
+               "Tan",
+               "Men",
+               "Money"
+            ],
+            "type": "accessories"
+         },
+         {
+            "availablity": true,
+            "brand": "Liod Marcos",
+            "category": "Goggles",
+            "category_type": "Accessories",
+            "color": "Black",
+            "description": "Iit amet consectetur, adipisicing elit. Distinctio aperiam debitis ipsa veniam eos quas excepturi quae? Recusandae distinctio nihil quia quis, eaque aspernatur perferendis repudiandae adipisci labore, impedit beatae!",
+            "discount_price": 14.0,
+            "features": [
+               "Smooth Finishing",
+               "Soft",
+               "Free Shipping and delivery in 4 Days"
+            ],
+            "id": 20,
+            "image": "assets/images/accessroies/a-5-a.jpg",
+            "image_gallery": [
+               "assets/images/accessroies/a-5-a.jpg",
+               "assets/images/accessroies/a-5-b.jpg",
+               "assets/images/accessroies/a-5-c.jpg",
+               "assets/images/accessroies/a-5-d.jpg"
+            ],
+            "name": "Summer Goggles",
+            "popular": true,
+            "price": 15.75,
+            "product_code": "#EM1219",
+            "quantity": 1,
+            "rating": 5,
+            "status": 0,
+            "tags": [
+               "Black",
+               "Men",
+               "Shape"
+            ],
+            "type": "accessories"
+         }
+      ],
+      "gadgets": [{
+            "availablity": true,
+            "brand": "Liod Marcos",
+            "category": "Headphone",
+            "category_type": "gadgets",
+            "color": "Black",
+            "description": "Ipsum dolor sit amet consectetur, adipisicing elit. Distinctio aperiam debitis ipsa veniam eos quas excepturi quae? Recusandae distinctio nihil quia quis, eaque aspernatur perferendis repudiandae adipisci labore, impedit beatae!",
+            "discount_price": 90.0,
+            "features": [
+               "Bass Boosted ",
+               "Start/Pause Button ",
+               "Skype/Video Call Compatible"
+            ],
+            "id": 11,
+            "image": "assets/images/gadgets/g-1-a.jpg",
+            "image_gallery": [
+               "assets/images/gadgets/g-1-a.jpg",
+               "assets/images/gadgets/g-1-b.jpg",
+               "assets/images/gadgets/g-1-c.jpg",
+               "assets/images/gadgets/g-1-d.jpg"
+            ],
+            "name": "Wired Headphone",
+            "popular": false,
+            "price": 125.75,
+            "product_code": "#EM1209",
+            "quantity": 1,
+            "rating": 5,
+            "status": 0,
+            "tags": [
+               "Headphone",
+               "Gadgets",
+               "Electronic"
+            ],
+            "type": "gadgets"
+         },
+         {
+            "availablity": true,
+            "brand": "Liod Marcos",
+            "category": "Smartphone",
+            "category_type": "gadgets",
+            "color": "Black",
+            "description": "Dolor sit amet consectetur, adipisicing elit. Distinctio aperiam debitis ipsa veniam eos quas excepturi quae? Recusandae distinctio nihil quia quis, eaque aspernatur perferendis repudiandae adipisci labore, impedit beatae!",
+            "discount_price": 655.0,
+            "features": [
+               "Full Screen Touch",
+               "6GB Ram and 128 Gb Memory",
+               "Wireless Headphone"
+            ],
+            "id": 12,
+            "image": "assets/images/gadgets/g-2-a.jpg",
+            "image_gallery": [
+               "assets/images/gadgets/g-2-a.jpg",
+               "assets/images/gadgets/g-2-b.jpg",
+               "assets/images/gadgets/g-2-c.jpg",
+               "assets/images/gadgets/g-2-d.jpg"
+            ],
+            "name": "Black Smartphone",
+            "popular": false,
+            "price": 847.63,
+            "product_code": "#EM1210",
+            "quantity": 1,
+            "rating": 4,
+            "status": 0,
+            "tags": [
+               "Phone ",
+               "Smartphone ",
+               "New"
+            ],
+            "type": "gadgets"
+         },
+         {
+            "availablity": true,
+            "brand": "Liod Marcos",
+            "category": "Watch",
+            "category_type": "gadgets",
+            "color": "Black",
+            "description": "Dolor sit amet consectetur, adipisicing elit. Distinctio aperiam debitis ipsa veniam eos quas excepturi quae? Recusandae distinctio nihil quia quis, eaque aspernatur perferendis repudiandae adipisci labore, impedit beatae!",
+            "discount_price": 225.56,
+            "features": [
+               "Soft Leather",
+               "Chargable",
+               "Delivery in 4 Days"
+            ],
+            "id": 13,
+            "image": "assets/images/gadgets/g-3-a.jpg",
+            "image_gallery": [
+               "assets/images/gadgets/g-3-a.jpg",
+               "assets/images/gadgets/g-3-b.jpg",
+               "assets/images/gadgets/g-3-c.jpg",
+               "assets/images/gadgets/g-3-d.jpg"
+            ],
+            "name": "Digial Watch",
+            "popular": true,
+            "price": 357.75,
+            "product_code": "#EM12012",
+            "quantity": 1,
+            "rating": 4,
+            "status": 0,
+            "tags": [
+               "Analog/Digital ",
+               "Men/Women ",
+               "Black"
+            ],
+            "type": "gadgets"
+         },
+         {
+            "availablity": true,
+            "brand": "Liod Marcos",
+            "category": "Watch",
+            "category_type": "gadgets",
+            "color": "Black",
+            "description": "Opsum dolor sit amet consectetur, adipisicing elit. Distinctio aperiam debitis ipsa veniam eos quas excepturi quae? Recusandae distinctio nihil quia quis, eaque aspernatur perferendis repudiandae adipisci labore, impedit beatae!",
+            "discount_price": 458.0,
+            "features": [
+               "Touch Screen",
+               "Bluetooth",
+               "Free Shipping and delivery in 4 Days"
+            ],
+            "id": 14,
+            "image": "assets/images/gadgets/g-4-a.jpg",
+            "image_gallery": [
+               "assets/images/gadgets/g-4-a.jpg",
+               "assets/images/gadgets/g-4-b.jpg",
+               "assets/images/gadgets/g-4-c.jpg",
+               "assets/images/gadgets/g-4-d.jpg",
+               "assets/images/gadgets/g-4-e.jpg"
+            ],
+            "name": "Digital Watch",
+            "popular": false,
+            "price": 568.75,
+            "product_code": "#EM1213",
+            "quantity": 1,
+            "rating": 5,
+            "status": 0,
+            "tags": [
+               "Analog/Digital ",
+               "Men/Women ",
+               "Black"
+            ],
+            "type": "gadgets"
+         },
+         {
+            "availablity": true,
+            "brand": "Liod Marcos",
+            "category": "Speaker",
+            "category_type": "gadgets",
+            "color": "Black",
+            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio aperiam debitis ipsa veniam eos quas excepturi quae? Recusandae distinctio nihil quia quis, eaque aspernatur perferendis repudiandae adipisci labore, impedit beatae!",
+            "discount_price": 698.45,
+            "features": [
+               "Woofer",
+               "Wireless",
+               "Free Shipping and delivery in 4 Days"
+            ],
+            "id": 15,
+            "image": "assets/images/gadgets/g-5-a.jpg",
+            "image_gallery": [
+               "assets/images/gadgets/g-5-a.jpg",
+               "assets/images/gadgets/g-5-b.jpg",
+               "assets/images/gadgets/g-5-c.jpg",
+               "assets/images/gadgets/g-5-d.jpg"
+            ],
+            "name": "Circular Speaker",
+            "popular": false,
+            "price": 989,
+            "product_code": "#EM1214",
+            "quantity": 1,
+            "rating": 5,
+            "status": 0,
+            "tags": [
+               "Speaker",
+               "Smart",
+               "Circular"
+            ],
+            "type": "gadgets"
+         }
+      ],
+      "men": [{
+            "availablity": true,
+            "brand": "Liod Marcos",
+            "category": "Jeans",
+            "category_type": "clothing",
+            "color": "Blue",
+            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio aperiam debitis ipsa veniam eos quas excepturi quae? Recusandae distinctio nihil quia quis, eaque aspernatur perferendis repudiandae adipisci labore, impedit beatae!",
+            "discount_price": 13.3,
+            "features": [
+               "Slim Fit",
+               "Stretchable",
+               "Free Shipping and delivery in 4 Days"
+            ],
+            "id": 1,
+            "image": "assets/images/men/3-item-a.jpg",
+            "image_gallery": [
+               "assets/images/men/3-item-a.jpg",
+               "assets/images/men/3-item-b.jpg",
+               "assets/images/men/3-item-c.jpg",
+               "assets/images/men/3-item-d.jpg",
+               "assets/images/men/3-item-e.jpg"
+            ],
+            "name": "Vintage Jean",
+            "popular": false,
+            "price": 18.75,
+            "product_code": "#EM1201",
+            "quantity": 1,
+            "rating": 4,
+            "status": 0,
+            "tags": [
+               "Jean ",
+               "Men ",
+               "Outwear"
+            ],
+            "type": "men"
+         },
+         {
+            "availablity": true,
+            "brand": "Bull Riders",
+            "category": "Jackets",
+            "category_type": "clothing",
+            "color": "Black",
+            "description": "Sit amet consectetur, adipisicing elit. Distinctio aperiam debitis ipsa veniam eos quas excepturi quae? Recusandae distinctio nihil quia quis, eaque aspernatur perferendis repudiandae adipisci labore, impedit beatae! Lorem ipsum dolor",
+            "discount_price": 67.0,
+            "features": [
+               "Loose Fit",
+               "Pure Leather",
+               "Free Shipping and delivery in 2 Days"
+            ],
+            "id": 2,
+            "image": "assets/images/men/2-item-a.jpg",
+            "image_gallery": [
+               "assets/images/men/2-item-a.jpg",
+               "assets/images/men/2-item-b.jpg",
+               "assets/images/men/2-item-c.jpg",
+               "assets/images/men/2-item-d.jpg",
+               "assets/images/men/2-item-e.jpg"
+            ],
+            "name": "Super Jacket",
+            "popular": false,
+            "price": 82.75,
+            "product_code": "#EM1202",
+            "quantity": 1,
+            "rating": 5,
+            "status": 0,
+            "tags": [
+               "Winter ",
+               "Men ",
+               "Jacket"
+            ],
+            "type": "men"
+         },
+         {
+            "availablity": true,
+            "brand": "Jeno Karla",
+            "category": "Shirt",
+            "category_type": "clothing",
+            "color": "Blue",
+            "description": "Suspendisse porttitor ornare ligula. Nam massa erat, fermentum dolor quis, maximus ultrices diam. Aenean pellentesque auctor elementum. Nunc vitae tortor iaculis, mollis odio at, lacinia sapien. Mauris et leo sem. Curabitur sit amet enim nisi. Nunc placerat commodo sem, sed maximus purus",
+            "discount_price": 36.0,
+            "features": [
+               "Slim Fit",
+               "Denim Made",
+               "Free Shipping in some areas and delivery in 4 Days"
+            ],
+            "id": 3,
+            "image": "assets/images/men/1-item-a.jpg",
+            "image_gallery": [
+               "assets/images/men/1-item-a.jpg",
+               "assets/images/men/1-item-b.jpg",
+               "assets/images/men/1-item-c.jpg",
+               "assets/images/men/1-item-d.jpg",
+               "assets/images/men/1-item-e.jpg"
+            ],
+            "name": "Denim Pullover",
+            "popular": false,
+            "price": 42.75,
+            "product_code": "#EM1203",
+            "quantity": 1,
+            "rating": 4,
+            "status": 0,
+            "tags": [
+               "Men ",
+               "Pullover",
+               "Denim"
+            ],
+            "type": "men"
+         },
+         {
+            "availablity": true,
+            "brand": "The Capressi",
+            "category": "Jeans",
+            "category_type": "clothing",
+            "color": "Blue",
+            "description": "Dolor sit amet consectetur, adipisicing elit. Distinctio aperiam debitis ipsa veniam eos quas excepturi quae? Recusandae distinctio nihil quia quis, eaque aspernatur perferendis repudiandae adipisci labore, impedit beatae!",
+            "discount_price": 32.0,
+            "features": [
+               "Slim Fit",
+               "Relaxed",
+               "Free Shipping and delivery in 1 Days"
+            ],
+            "id": 4,
+            "image": "assets/images/men/4-item-a.jpg",
+            "image_gallery": [
+               "assets/images/men/4-item-a.jpg",
+               "assets/images/men/4-item-b.jpg",
+               "assets/images/men/4-item-c.jpg",
+               "assets/images/men/4-item-d.jpg",
+               "assets/images/men/4-item-e.jpg"
+            ],
+            "name": "Blue Jean",
+            "popular": false,
+            "price": 40.82,
+            "product_code": "#EM1204",
+            "quantity": 1,
+            "rating": 5,
+            "status": 0,
+            "tags": [
+               "Blue",
+               "Men",
+               "Jean"
+            ],
+            "type": "men"
+         },
+         {
+            "availablity": true,
+            "brand": "JK CK",
+            "category": "T-Shirt",
+            "category_type": "clothing",
+            "color": "Black",
+            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio aperiam debitis ipsa veniam eos quas excepturi quae? Recusandae distinctio nihil quia quis, eaque aspernatur perferendis repudiandae adipisci labore, impedit beatae!",
+            "discount_price": 17.0,
+            "features": [
+               "Slim Fit",
+               "Pure Cotton",
+               "Free Shipping and delivery in 4 Days"
+            ],
+            "id": 5,
+            "image": "assets/images/men/5-item-a.jpg",
+            "image_gallery": [
+               "assets/images/men/5-item-a.jpg",
+               "assets/images/men/5-item-b.jpg",
+               "assets/images/men/5-item-c.jpg",
+               "assets/images/men/5-item-d.jpg",
+               "assets/images/men/5-item-e.jpg"
+            ],
+            "name": "Black T-Shirt",
+            "popular": false,
+            "price": 22.75,
+            "product_code": "#EM1205",
+            "quantity": 1,
+            "rating": 5,
+            "status": 0,
+            "tags": [
+               "Black ",
+               "Men ",
+               "Summer"
+            ],
+            "type": "men"
+         },
+         {
+            "availablity": true,
+            "brand": "Nike",
+            "category": "Shoes",
+            "category_type": "shoes",
+            "color": "Black",
+            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio aperiam debitis ipsa veniam eos quas excepturi quae? Recusandae distinctio nihil quia quis, eaque aspernatur perferendis repudiandae adipisci labore, impedit beatae!",
+            "discount_price": 55.0,
+            "features": [
+               "Leather",
+               "Wipe with a clean, dry cloth to remove dust"
+            ],
+            "id": 6,
+            "image": "assets/images/men/cat-shoes.jpg",
+            "image_gallery": [
+               "assets/images/men/cat-shoes.jpg"
+            ],
+            "name": "Men White AIR",
+            "popular": true,
+            "price": 65.75,
+            "product_code": "#4330899",
+            "quantity": 1,
+            "rating": 5,
+            "status": 0,
+            "tags": [
+               "Black ",
+               "White"
+            ],
+            "type": "men"
+         }
+      ],
+      "women": [{
+            "availablity": true,
+            "brand": "Liod Marcos",
+            "category": "Dresses",
+            "category_type": "clothing",
+            "color": "Red",
+            "description": "Amet consectetur, adipisicing elit. Distinctio aperiam debitis ipsa veniam eos quas excepturi quae? Recusandae distinctio nihil quia quis, eaque aspernatur perferendis repudiandae adipisci labore, impedit beatae!",
+            "discount_price": 75.0,
+            "features": [
+               "Regular Fit ",
+               "Pure Cotton ",
+               "Delivery in 3 Days"
+            ],
+            "id": 7,
+            "image": "assets/images/women/6-item-a.jpg",
+            "image_gallery": [
+               "assets/images/women/6-item-a.jpg",
+               "assets/images/women/6-item-b.jpg",
+               "assets/images/women/6-item-c.jpg",
+               "assets/images/women/6-item-d.jpg",
+               "assets/images/women/6-item-e.jpg"
+            ],
+            "name": "Red Strip Dress",
+            "popular": false,
+            "price": 97.75,
+            "product_code": "#EM1205",
+            "quantity": 1,
+            "rating": 5,
+            "status": 0,
+            "tags": [
+               "Red ",
+               "Women ",
+               "Outwear"
+            ],
+            "type": "women"
+         },
+         {
+            "availablity": true,
+            "brand": "Liod Marcos",
+            "category": "Shirt",
+            "category_type": "clothing",
+            "color": "Blue",
+            "description": "Dolor sit amet consectetur, adipisicing elit. Distinctio aperiam debitis ipsa veniam eos quas excepturi quae? Recusandae distinctio nihil quia quis, eaque aspernatur perferendis repudiandae adipisci labore, impedit beatae!",
+            "discount_price": 45.0,
+            "features": [
+               "Loose Fit",
+               "Pure Denim",
+               "Free Shipping and delivery in 2 Days"
+            ],
+            "id": 8,
+            "image": "assets/images/women/7-item-a.jpg",
+            "image_gallery": [
+               "assets/images/women/7-item-a.jpg",
+               "assets/images/women/7-item-b.jpg",
+               "assets/images/women/7-item-c.jpg",
+               "assets/images/women/7-item-d.jpg",
+               "assets/images/women/7-item-e.jpg"
+            ],
+            "name": "Blue Denim",
+            "popular": false,
+            "price": 49.75,
+            "product_code": "#EM1206",
+            "quantity": 1,
+            "rating": 4,
+            "status": 0,
+            "tags": [
+               "Blue ",
+               "Outwear ",
+               "Denim"
+            ],
+            "type": "women"
+         },
+         {
+            "availablity": true,
+            "brand": "Liod Marcos",
+            "category": "Dresses",
+            "category_type": "clothing",
+            "color": "Black",
+            "description": "Consectetur, adipisicing elit. Distinctio aperiam debitis ipsa veniam eos quas excepturi quae? Recusandae distinctio nihil quia quis, eaque aspernatur perferendis repudiandae adipisci labore, impedit beatae!",
+            "discount_price": 12.0,
+            "features": [
+               "Slim Fit",
+               "Pure Cotton",
+               "Free Shipping and delivery in 4 Days"
+            ],
+            "id": 9,
+            "image": "assets/images/women/8-item-a.jpg",
+            "image_gallery": [
+               "assets/images/women/8-item-a.jpg",
+               "assets/images/women/8-item-b.jpg",
+               "assets/images/women/8-item-c.jpg",
+               "assets/images/women/8-item-d.jpg",
+               "assets/images/women/8-item-e.jpg"
+            ],
+            "name": "Black Dress",
+            "popular": false,
+            "price": 15.75,
+            "product_code": "#EM1207",
+            "quantity": 1,
+            "rating": 5,
+            "status": 0,
+            "tags": [
+               "Red ",
+               "Women ",
+               "Outwear"
+            ],
+            "type": "women"
+         },
+         {
+            "availablity": true,
+            "brand": "Liod Marcos",
+            "category": "T-Shirt",
+            "category_type": "clothing",
+            "color": "White",
+            "description": "Sit amet consectetur, adipisicing elit. Distinctio aperiam debitis ipsa veniam eos quas excepturi quae? Recusandae distinctio nihil quia quis, eaque aspernatur perferendis repudiandae adipisci labore, impedit beatae!",
+            "discount_price": 15.0,
+            "features": [
+               "Slim Fit ",
+               "100% Cotton ",
+               "Free Shipping and delivery in 4 Days"
+            ],
+            "id": 10,
+            "image": "assets/images/women/9-item-a.jpg",
+            "image_gallery": [
+               "assets/images/women/9-item-b.jpg",
+               "assets/images/women/9-item-c.jpg",
+               "assets/images/women/9-item-d.jpg",
+               "assets/images/women/9-item-e.jpg"
+            ],
+            "name": "White T-Shirt",
+            "popular": false,
+            "price": 19.45,
+            "product_code": "#EM1208",
+            "quantity": 1,
+            "rating": 5,
+            "status": 0,
+            "tags": [
+               "White ",
+               "Graphic ",
+               "Women"
+            ],
+            "type": "women"
+         }
+      ]
+   },
+   "team": [{
+         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque esse iure aliquid enim, corrupti distinctio sit praesentium ducimus incidunt rem facilis expedita illo at tempore natus nihil veritatis accusamus vel.",
+         "designation": "CEO",
+         "id": 1,
+         "image": "assets/images/user-1.jpg",
+         "name": "Anthony Gilbert"
+      },
+      {
+         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque esse iure aliquid enim, corrupti distinctio sit praesentium ducimus incidunt rem facilis expedita illo at tempore natus nihil veritatis accusamus vel.",
+         "designation": "CEO",
+         "id": 2,
+         "image": "assets/images/user-2.jpg",
+         "name": "Anthony Gilbert"
+      },
+      {
+         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque esse iure aliquid enim, corrupti distinctio sit praesentium ducimus incidunt rem facilis expedita illo at tempore natus nihil veritatis accusamus vel.",
+         "designation": "CEO",
+         "id": 3,
+         "image": "assets/images/user-3.jpg",
+         "name": "Anthony Gilbert"
+      }
+   ],
+   "term_condition": [{
+         "content": "<p> Upon joining or viewing Embryo services or any of the services Embryo is a part of or provides, you are agreeing to be bound by the following terms and conditions ('Terms of Service') The services that are offered by Embryo and it’s affiliates under the Terms of Service include but are not limited to numerous services and or products to help you scale your service type business also not limited to online services ('Online Services') and or in person ('POS Services') or the possibility of both. Any services offered by Embryo and its affiliates are referred to in these Terms of Services as the “Services”. Any and all new features or tools that are added to the current Services shall also be subject to the Terms of Service. You can view the most current version of the Terms of Service at any time at https: theironnetwork.org. Embryo will reserve the right to update and change the Terms of Service by posting updates and changes to the Embryo website. </p> <p> We advise to check our Terms of Service occasionally to see if any changes or updates were made that may impact you or your business. You must read, agree and accept all of the terms of conditions contained in this Terms of Service agreement, including Embryo Privacy Policy before you can become a Embryo user. For best comprehension of Embryo and its services please read the “Terms of Service” completely to understand all legal ramifications. By using the Embryo site or any of it’s services, you are in agreement to these terms. Please read over these terms at various times for updates. </p>",
+         "name": ""
+      },
+      {
+         "content": " <ol> <li> You should be 18 years or more seasoned or if nothing else the time of dominant part in the locale where you live or from which you utilize this Service. </li> <li> To access and utilize the Services, you should enroll for a Embryo (“Account”) by giving your full legitimate name, current address, telephone number, a substantial email address, and some other data demonstratingd as required. Embryo may dismiss your application for an Account, or remove a current Account, for any reason, in our sole caution. </li> <li> You recognize that Embryo will utilize the email address you give as the essential technique to correspondence. </li> <li> You are in charge of keeping your password secure. Embryo can’t and won’t be at risk for any misfortune or harm from your inability to keep up the security of your Account and password. </li> <li> You are in charge of all movement and substance, for example, photographs, pictures, recordings, illustrations, composed substance, sound documents, code, data, or information transferred, gathered, created, put away, showed, appropriated, transmitted or displayed on or regarding your Account (“Materials”). </li> <li> A rupture or infringement of any term in the Terms of Service, including the AUP, as decided in the sole prudence of Embryo will bring about a quick end of your administrations. </li> </ol> <p> </p>",
+         "name": "1. Account Terms "
+      },
+      {
+         "content": " <h6>2.1 Embryo Account</h6> <ol> <li> Subject to area 2.1.2, the individual agreeing to accept the Service will be the contracting party (“Account Owner”) for the reasons for our Terms of Service and will be the individual who is approved to utilize any comparing account we may give to the Account Owner regarding the Service. </li> <li> If you are agreeing to accept the Service for the benefit of your boss, your boss should be the Account Owner. On the off chance that you are agreeing to accept the Service for your manager, at that point you speak to and warrant that you have the specialist to tie your boss to our Terms of Service. </li> </ol> <h6>2.2 PayPal Express Checkout and Embryo Payments Accounts</h6> <ol> <li> Endless supply of agree to accept the Service, Embryo will make a PayPal Express Checkout account for your benefit, utilizing your email address. Contingent upon your area, Embryo may likewise make a Embryo Payments account for your sake. </li> <li> You recognize that PayPal Express Checkout as well as Embryo Payments will be your default installments gateway(s) and that it is your sole obligation as the Account Owner to actuate and keep up these records. In the event that you don’t wish to keep both of the installment accounts dynamic, it is your obligation to deactivate them. For the shirking of uncertainty, PayPal Express Checkout is a Third Party Service, as characterized in Section 16 of these Terms of Service. </li> </ol>",
+         "name": "2. Account Activation"
+      },
+      {
+         "content": " <h6>You must read, agree with and accept all of the terms and conditions contained in these Terms of Service, including the AUP and the Privacy Policy before you may become a member of Embryo.</h6> <ol> <li> Technical support is provided to all Account holders and is only available via email and live chat. </li> <li> The Terms of Service should be represented by and translated as per the laws of the State of Illinois and the laws of United States relevant in that, without respect to standards of contentions of laws. The gatherings unalterably and genuinely submit to the elite ward of the courts of the State of Illinois as for any debate or case emerging out of or regarding the Terms of Service. The United Nations Convention on Contracts for the International Sale of Goods won’t matter to these Terms of Service and is thusly explicitly avoided. </li> <li> You recognize and concur that Embryo may revise these Terms of Service whenever by posting the pertinent corrected and repeated Terms of Service on Embryo’s site, accessible at officail site and such alterations to the Terms of Service are successful as of the date of posting. Your proceeded with utilization of the Services after the corrected Terms of Service are presented on Embryo’s site constitutes your consent to, and acknowledgment of, the changed Terms of Service. In the event that you don’t consent to any progressions to the Terms of Service, don’t keep on using the Service. </li> <li> You may not utilize the Embryo benefit for any unlawful or unapproved reason nor may you, in the utilization of the Service, abuse any laws in your locale (counting yet not restricted to copyright laws), the laws appropriate to you in your client’s ward, or the laws of Canada and the Province of Ontario. You will conform to every single pertinent law, guidelines and directions in your utilization of the Service. </li> <li> You concur not to recreate, copy, duplicate, offer, exchange or adventure any bit of the Service, utilization of the Service, or access to the Service without the express composed consent by Embryo. </li> <li> You should not buy web crawler or other pay per click catchphrases, (for example, Google AdWords), or area names that utilization Embryo or Embryo trademarks as well as varieties and incorrect spellings thereof. </li> <li> Questions about the Terms of Service ought to be sent to support@theironnetwork.org </li> <li> You comprehend that your Materials (excluding Visa data), might be exchanged decoded and include (a) transmissions over different systems; and (b) changes to adjust and adjust to specialized necessities of interfacing systems or gadgets. MasterCard data is constantly encoded amid exchange over systems. </li> <li> You recognize and concur that your utilization of the Service, including data transmitted to or put away by Embryo, is administered by its protection approach. </li> <li> The Terms of Service might be accessible in dialects other than English. To the degree of any irregularities or clashes between these English Terms of Service and Embryo’s Terms of Service accessible in another dialect. </li> </ol>",
+         "name": "3. General Conditions"
+      }
+   ],
+   "testimonial": {
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut expedita quasi voluptatibus tenetur nisi ad earum atque laboriosam accusamus. Doloremque sapiente aliquid quae. Animi ratione dolorum repellat amet nihil? Magnam?",
+      "designation": "Head, ABS Infos",
+      "id": 1,
+      "image": "assets/images/user-1.jpg",
+      "name": "Albert Gomes"
+   },
+   "transcationTable": {
+      "expenseCategory": [{
+            "itmNo": "#itm001",
+            "date": "19 Aug 2019",
+            "type": "Hotel",
+            "typeColor": "primary",
+            "companyName": "Witting-Goodwin",
+            "amount": 2000,
+            "statusColor": "primary",
+            "status": "paid"
+         },
+         {
+            "itmNo": "#itm002",
+            "date": "22 Mar 2019",
+            "type": "Meal",
+            "typeColor": "accent",
+            "companyName": "Stehr Ltd.",
+            "amount": 500,
+            "statusColor": "primary",
+            "status": "paid"
+         },
+         {
+            "itmNo": "#itm003",
+            "date": "30 Sep 2019",
+            "type": "car rental",
+            "typeColor": "primary",
+            "companyName": "Boehm Solutions",
+            "amount": 1500,
+            "statusColor": "warn",
+            "status": "not paid"
+         },
+         {
+            "itmNo": "#itm004",
+            "date": "20 Aug 2019",
+            "type": "Health",
+            "typeColor": "accent",
+            "companyName": "Hyatt infotech",
+            "amount": 1700,
+            "statusColor": "primary",
+            "status": "paid"
+         },
+         {
+            "itmNo": "#itm005",
+            "date": "13 Jan 2019",
+            "type": "accommodation",
+            "typeColor": "primary",
+            "companyName": "Goldnet infotech",
+            "amount": 1290,
+            "statusColor": "warn",
+            "status": "Not paid"
+         },
+         {
+            "itmNo": "#itm006",
+            "date": "24 Mar 2019",
+            "type": "Meal",
+            "typeColor": "accent",
+            "companyName": "Ngrpunu Ltd.",
+            "amount": 500,
+            "statusColor": "primary",
+            "status": "paid"
+         },
+         {
+            "itmNo": "#itm007",
+            "date": "30 Jan 2019",
+            "type": "accommodation",
+            "typeColor": "primary",
+            "companyName": "Russel infotech",
+            "amount": 1290,
+            "statusColor": "warn",
+            "status": "Not paid"
+         }
+      ],
+      "transactionList": [{
+            "transid": "#trn001",
+            "date": "19 Aug 2019",
+            "account": "Citibank",
+            "type": "Saving",
+            "typeColor": "primary",
+            "amount": 2000,
+            "debit": 1807.00,
+            "balance": 430.00
+         },
+         {
+            "transid": "#trn002",
+            "date": "22 Mar 2019",
+            "account": "Standard Chartered Bank",
+            "type": "Income",
+            "typeColor": "accent",
+            "amount": 500,
+            "debit": 1307.00,
+            "balance": 330.00
+         },
+         {
+            "transid": "#trn003",
+            "date": "30 Sep 2019",
+            "account": "HSBC Bank",
+            "type": "Expense",
+            "typeColor": "warn",
+            "amount": 1500,
+            "debit": 2307.00,
+            "balance": 230.00
+         },
+         {
+            "transid": "#trn004",
+            "date": "20 Aug 2019",
+            "account": "Deutsche Bank",
+            "type": "Income",
+            "typeColor": "accent",
+            "amount": 1700,
+            "debit": 3307.00,
+            "balance": 200.00
+         },
+         {
+            "transid": "#trn005",
+            "date": "13 Jan 2019",
+            "account": "Bank of Scotland",
+            "type": "Saving",
+            "typeColor": "primary",
+            "amount": 1290,
+            "debit": 1000.00,
+            "balance": 330.00
+         },
+         {
+            "transid": "#trn006",
+            "date": "13 Jan 2019",
+            "account": "Barclays Bank",
+            "type": "Income",
+            "typeColor": "accent",
+            "amount": 1290,
+            "debit": 1500.00,
+            "balance": 330.00
+         },
+         {
+            "transid": "#trn007",
+            "date": "13 Jan 2019",
+            "account": "The Bank of America",
+            "type": "Expense",
+            "typeColor": "warn",
+            "amount": 1290,
+            "debit": 1709.00,
+            "balance": 430.00
+         }
+      ],
+      "transferreport": [{
+            "transid": "#trn001",
+            "date": "19 Aug 2019",
+            "account": "Citibank",
+            "type": "Saving",
+            "typeColor": "primary",
+            "amount": 2000,
+            "balance": 1807.00,
+            "statusColor": "primary",
+            "status": "Send"
+         },
+         {
+            "transid": "#trn002",
+            "date": "22 Mar 2019",
+            "account": "Standard Chartered Bank",
+            "type": "Income",
+            "typeColor": "accent",
+            "amount": 500,
+            "balance": 1807.00,
+            "statusColor": "warn",
+            "status": "Not Send"
+         },
+         {
+            "transid": "#trn003",
+            "date": "30 Sep 2019",
+            "account": "HSBC Bank",
+            "type": "Expense",
+            "typeColor": "warn",
+            "amount": 1500,
+            "balance": 1807.00,
+            "statusColor": "primary",
+            "status": "Send"
+         },
+         {
+            "transid": "#trn004",
+            "date": "20 Aug 2019",
+            "account": "Deutsche Bank",
+            "type": "Income",
+            "typeColor": "accent",
+            "amount": 1700,
+            "balance": 1807.00,
+            "statusColor": "primary",
+            "status": "Send"
+         },
+         {
+            "transid": "#trn005",
+            "date": "13 Jan 2019",
+            "account": "Bank of Scotland",
+            "type": "Saving",
+            "typeColor": "primary",
+            "amount": 1290,
+            "balance": 1807.00,
+            "statusColor": "warn",
+            "status": "Not Send"
+         },
+         {
+            "transid": "#trn006",
+            "date": "13 Jan 2019",
+            "account": "Barclays Bank",
+            "type": "Income",
+            "typeColor": "accent",
+            "amount": 1290,
+            "balance": 1807.00,
+            "statusColor": "primary",
+            "status": "Send"
+         },
+         {
+            "transid": "#trn007",
+            "date": "13 Jan 2019",
+            "account": "The Bank of America",
+            "type": "Expense",
+            "typeColor": "warn",
+            "amount": 1290,
+            "balance": 1807.00,
+            "balance": 1807.00,
+            "statusColor": "warn",
+            "status": "Not Send"
+         }
+      ]
+   },
+   "buySellChartData": [{
+      "tag": "year",
+      "buySellChartLabel": ["2013", "2014", "2015", "2016", "2017", "2018", "2019"],
+      "buySellChartData": [{
+            "data": [0, 5, 65, 7, 120, 40, 10],
+            "label": "Buy"
+         },
+         {
+            "data": [0, 15, 75, 50, 30, 80, 10],
+            "label": "Sell"
+         },
+         {
+            "data": [0, 30, 20, 40, 10, 25, 10],
+            "label": "Transfer"
+         }
+      ],
+      "buySellChartColors": [{
+            "lineTension": 0.4,
+            "borderColor": "#283593",
+            "pointBorderColor": "#283593",
+            "pointBorderWidth": 2,
+            "pointRadius": 2,
+            "fill": false,
+            "pointBackgroundColor": "#FFFFFF",
+            "borderWidth": 3
+
+         },
+         {
+            "lineTension": 0.4,
+            "borderColor": "#0097a7",
+            "pointBorderColor": "#0097a7",
+            "pointBorderWidth": 2,
+            "pointRadius": 2,
+            "fill": false,
+            "pointBackgroundColor": "#FFFFFF",
+            "borderWidth": 3
+         },
+         {
+            "lineTension": 0.4,
+            "borderColor": "",
+            "pointBorderColor": "",
+            "pointBorderWidth": 2,
+            "pointRadius": 2,
+            "fill": false,
+            "pointBackgroundColor": "#FFFFFF",
+            "borderWidth": 3
+
+         }
+      ]
+   }, {
+      "tag": "month",
+      "buySellChartLabel": ["January", "February", "March", "April", "May", "June", "July"],
+      "buySellChartData": [{
+            "data": [5, 35, 25, 85, 15, 30, 15],
+            "label": "Buy"
+         },
+         {
+            "data": [5, 20, 50, 55, 35, 85, 15],
+            "label": "Sell"
+         },
+         {
+            "data": [5, 10, 70, 12, 125, 45, 15],
+            "label": "Transfer"
+         }
+      ],
+      "buySellChartColors": [{
+            "lineTension": 0.4,
+            "borderColor": "#283593",
+            "pointBorderColor": "#283593",
+            "pointBorderWidth": 2,
+            "pointRadius": 2,
+            "fill": false,
+            "pointBackgroundColor": "#FFFFFF",
+            "borderWidth": 3
+
+         },
+         {
+            "lineTension": 0.4,
+            "borderColor": "#0097a7",
+            "pointBorderColor": "#0097a7",
+            "pointBorderWidth": 2,
+            "pointRadius": 2,
+            "fill": false,
+            "pointBackgroundColor": "#FFFFFF",
+            "borderWidth": 3
+         },
+         {
+            "lineTension": 0.4,
+            "borderColor": "",
+            "pointBorderColor": "",
+            "pointBorderWidth": 2,
+            "pointRadius": 2,
+            "fill": false,
+            "pointBackgroundColor": "#FFFFFF",
+            "borderWidth": 3
+
+         }
+      ]
+   }, {
+      "tag": "week",
+      "buySellChartLabel": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "buySellChartData": [{
+            "data": [5, 20, 50, 55, 35, 85, 15],
+            "label": "Buy"
+         },
+         {
+            "data": [5, 35, 25, 75, 15, 30, 15],
+            "label": "Sell"
+         },
+         {
+            "data": [5, 10, 70, 12, 125, 45, 15],
+            "label": "Transfer"
+         }
+      ],
+      "buySellChartColors": [{
+            "lineTension": 0.4,
+            "borderColor": "#283593",
+            "pointBorderColor": "#283593",
+            "pointBorderWidth": 2,
+            "pointRadius": 2,
+            "fill": false,
+            "pointBackgroundColor": "#FFFFFF",
+            "borderWidth": 3
+
+         },
+         {
+            "lineTension": 0.4,
+            "borderColor": "#0097a7",
+            "pointBorderColor": "#0097a7",
+            "pointBorderWidth": 2,
+            "pointRadius": 2,
+            "fill": false,
+            "pointBackgroundColor": "#FFFFFF",
+            "borderWidth": 3
+         },
+         {
+            "lineTension": 0.4,
+            "borderColor": "",
+            "pointBorderColor": "",
+            "pointBorderWidth": 2,
+            "pointRadius": 2,
+            "fill": false,
+            "pointBackgroundColor": "#FFFFFF",
+            "borderWidth": 3
+
+         }
+      ]
+   }],
+   "invoiceData": [{
+         "position": 1,
+         "invoiceId": 1801,
+         "name": "Daniel",
+         "date": "2019/02/1",
+         "price": 1.0079,
+         "payment": "Credit Card",
+         "status": "Sent"
+      },
+      {
+         "position": 2,
+         "invoiceId": 1802,
+         "name": "Nicole",
+         "date": "2019/03/10",
+         "price": 4.0026,
+         "payment": "Check",
+         "status": "In processing"
+      },
+      {
+         "position": 3,
+         "invoiceId": 1803,
+         "name": "Charles",
+         "date": "2019/01/2",
+         "price": 6.941,
+         "payment": "Paypal",
+         "status": "Sent"
+      },
+      {
+         "position": 4,
+         "invoiceId": 1804,
+         "name": "Michelle",
+         "date": "2019/02/20",
+         "price": 9.0122,
+         "payment": "Bank Wire",
+         "status": "Return"
+      },
+      {
+         "position": 5,
+         "invoiceId": 1805,
+         "name": "Nicholas Smedley",
+         "date": "2019/02/25",
+         "price": 10.811,
+         "payment": "Credit Card",
+         "status": "Sent"
+      },
+      {
+         "position": 6,
+         "invoiceId": 1806,
+         "name": "Mathew",
+         "date": "2019/03/5",
+         "price": 1.0079,
+         "payment": "Credit Card",
+         "status": "Sent"
+      },
+      {
+         "position": 7,
+         "invoiceId": 1807,
+         "name": "Jack",
+         "date": "2019/03/8",
+         "price": 4.0026,
+         "payment": "Check",
+         "status": "In processing"
+      },
+      {
+         "position": 8,
+         "invoiceId": 1808,
+         "name": "Malcom",
+         "date": "2019/04/1",
+         "price": 6.941,
+         "payment": "Paypal",
+         "status": "Sent"
+      },
+      {
+         "position": 9,
+         "invoiceId": 1809,
+         "name": "Fred",
+         "date": "2019/03/7",
+         "price": 9.0122,
+         "payment": "Bank Wire",
+         "status": "Return"
+      },
+      {
+         "position": 10,
+         "invoiceId": 1810,
+         "name": "Melissa",
+         "date": "2019/02/9",
+         "price": 10.811,
+         "payment": "Credit Card",
+         "status": "Sent"
+      }, {
+         "position": 11,
+         "invoiceId": 1811,
+         "name": "Dean",
+         "date": "2019/03/22",
+         "price": 6.941,
+         "payment": "Paypal",
+         "status": "Sent"
+      },
+      {
+         "position": 12,
+         "invoiceId": 1812,
+         "name": "Willis",
+         "date": "2019/04/4",
+         "price": 9.0122,
+         "payment": "Bank Wire",
+         "status": "Return"
+      },
+      {
+         "position": 13,
+         "invoiceId": 1813,
+         "name": "Angela",
+         "date": "2019/02/12",
+         "price": 10.811,
+         "payment": "Credit Card",
+         "status": "Sent"
+      },
+      {
+         "position": 14,
+         "invoiceId": 1814,
+         "name": "Samuel",
+         "date": "2019/02/28",
+         "price": 1.0079,
+         "payment": "Credit Card",
+         "status": "Sent"
+      },
+      {
+         "position": 15,
+         "invoiceId": 1815,
+         "name": "Franklin",
+         "date": "2019/03/17",
+         "price": 4.0026,
+         "payment": "Check",
+         "status": "In processing"
+      },
+      {
+         "position": 16,
+         "invoiceId": 1816,
+         "name": "Desiree",
+         "date": "2019/03/4",
+         "price": 6.941,
+         "payment": "Paypal",
+         "status": "Sent"
+      },
+      {
+         "position": 17,
+         "invoiceId": 1817,
+         "name": "Joshua",
+         "date": "2019/01/9",
+         "price": 10.811,
+         "payment": "Credit Card",
+         "status": "Sent"
+      }
+   ],
+   "collaborationData": [{
+         "image": "assets/images/user-2.jpg",
+         "name": "Lissa Roy",
+         "email": "lissa@example.com",
+         "access": "Read",
+         "accessclass": "warn"
+      },
+      {
+         "image": "assets/images/user-3.jpg",
+         "name": "Jaswinder Kaur",
+         "email": "jass@example.com",
+         "access": "Admin",
+         "accessclass": "primary"
+      },
+      {
+         "image": "assets/images/user-2.jpg",
+         "name": "John Doe",
+         "email": "John@example.com",
+         "access": "Read",
+         "accessclass": "warn"
+      },
+      {
+         "image": "assets/images/user-1.jpg",
+         "name": "Ritesh Bajaj",
+         "email": "ritesh@example.com",
+         "access": "Write",
+         "accessclass": "primary"
+      },
+      {
+         "image": "assets/images/user-5.jpg",
+         "name": "Dimple Bhagtani",
+         "email": "dimple@example.com",
+         "access": "Admin",
+         "accessclass": "primary"
+      },
+      {
+         "image": "assets/images/user-3.jpg",
+         "name": "Sam Akhtar",
+         "email": "akhtar@example.com",
+         "access": "Admin",
+         "accessclass": "primary"
+      }
+   ]
+}

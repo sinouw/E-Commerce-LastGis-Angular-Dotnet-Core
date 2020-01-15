@@ -1,0 +1,113 @@
+<mat-card class="py-4 pb-3" style="margin: 10px">
+    <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+        <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="30" fxFlex.lg="30" fxFlex.xl="30">
+            <div class="pr-3">
+                <div class="dash-title">Chercher</div>
+            </div>
+        </div>
+        <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="70" fxFlex.lg="70" fxFlex.xl="70">
+            <div fxLayout="row wrap">
+                <div class="form-group pr-3" fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="calc(100% - 300px)" fxFlex.lg="calc(100% - 300px)" fxFlex.xl="calc(100% - 300px)">
+                    <mat-form-field class="w-100" floatLabel="never">
+                        <!-- <input matInput placeholder="Search Products" (keyup)="applyFilter($event.target.value,$event.code)"> -->
+                        <input matInput placeholder="Search Products" [(ngModel)]="filterValue">
+                    </mat-form-field>
+                </div>
+                <!-- form-group -->
+                <div class="contact-btn" fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="300px" fxFlex.lg="300px" fxFlex.xl="300px">
+                    <!-- <button class="mr-2 mb-2" mat-raised-button color="primary">Search</button> -->
+                    <button mat-raised-button color="primary" (click)="applyFilter()">Search</button>
+                </div>
+                <!-- contact-btn -->
+            </div>
+        </div>
+    </div>
+</mat-card>
+
+<div fxLayout="row wrap">
+    <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="35" fxFlex.lg="25" fxFlex.xl="25">
+        <!-- Brand Filter Card -->
+        <mat-card class="product-card" style="margin: 10px">
+            <h5>Marque :</h5>
+            <mat-divider></mat-divider>
+            <mat-selection-list #list [(ngModel)]="selectedBrands" (ngModelChange)="onselectBrand()">
+                <mat-list-option *ngFor="let brand of brandsOfProducts" [value]="brand">
+                    {{brand}}
+                </mat-list-option>
+            </mat-selection-list>
+
+            <!-- <p>
+                        Options selected: {{brands.selectedOptions.selected.length}}
+                    </p> -->
+        </mat-card>
+
+
+        <!-- Categorie Filter Card -->
+        <mat-card class="product-card" style="margin: 10px">
+            <h5>Afficher les résultats pour:</h5>
+            <mat-divider></mat-divider>
+            <mat-accordion *ngFor="let categorie of categoriesdtopsimple">
+                <mat-expansion-panel style="margin-bottom: 5px" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{categorie?.CategName}}
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            <!-- description -->
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <ul *ngFor="let souscat of categorie.SousCategs" (click)="onselectCategorie(souscat)">
+                        <li href="" style="cursor: pointer;"> {{souscat}}</li>
+                    </ul>
+
+                </mat-expansion-panel>
+            </mat-accordion>
+        </mat-card>
+
+
+        <!-- slide********************* -->
+        <!-- <mat-card class="" style="margin: 10px;height: 70px;padding-top: 30px"> -->
+        <mat-card class="" style="margin: 10px;">
+            <h5>Prix :</h5>
+            <mat-divider></mat-divider>
+
+        </mat-card>
+
+
+    </div>
+    <ng-container>
+        <ng-container *ngIf="productsGrid && productsGrid.length >= 0 && length!=0; else elseBlock">
+            <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.gt-md="25" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="70" *ngFor="let product of cardsObs | async; let i=index;">
+                <mat-card class="product-card" style="margin: 10px">
+                    <a class="p-link">
+                        <img (click)="productPage(product.IdProd,product.Marque)" width="626px" height="300px" mat-card-image [src]="product?.FrontImg" alt="Photo of a Shiba Inu">
+                    </a>
+
+                    <!-- wishlist-icon-->
+                    <mat-card-content class="product-content relative">
+                        <h5><a class="title-link">{{product.NomProduit || null}}</a> </h5>
+                        <!-- <p class="category-wrap mb-2">{{product?.NsousCategorie || null}}</p> -->
+                        <p class="category-wrap mb-2">{{product?.Marque || null}}</p>
+                        <div class="product-price">
+                            <div fxFlex fxLayoutAlign="space-between">
+                                <h6 class="accent-color">{{product?.Prix | currency}}</h6>
+                            </div>
+                        </div>
+                        <!--product-price-->
+                        <div class="m-icon">
+                            <button mat-fab (click)="productPage(product.IdProd,product.Marque)"><i class="material-icons">remove_red_eye</i></button>
+                        </div>
+                        <!-- m-icon -->
+                    </mat-card-content>
+                    <!-- product-content -->
+
+                </mat-card>
+            </div>
+        </ng-container>
+    </ng-container>
+</div>
+
+<mat-paginator [pageSize]="pageSize" [length]="length" [pageSizeOptions]="pageSizeOptions" (page)="onPage($event)"></mat-paginator>
+<ng-template #elseBlock>
+    <h5 class="ml-5">No product found</h5>
+</ng-template>

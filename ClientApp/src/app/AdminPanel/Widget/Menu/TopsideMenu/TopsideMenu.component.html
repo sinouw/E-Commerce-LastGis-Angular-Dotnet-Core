@@ -1,0 +1,22 @@
+<button mat-icon-button [matMenuTriggerFor]="menu">
+   <mat-icon>more_vert</mat-icon>
+      <mat-menu #menu="matMenu">
+         <div class="top-side-menu-wrapper">
+            <div>
+               <a class="a-list" mat-menu-item (click)="showSpinner()">
+                  <mat-icon class="refresh-icon accent-color mr-2 fs-14 icon">refresh</mat-icon>
+                  <span>Reload</span>
+               </a>
+            </div>
+            <div>   
+               <a class="a-list" mat-menu-item (click)="onClose()">
+                  <mat-icon class="close-icon accent-color mr-2 fs-14 icon">close</mat-icon>
+                  <span>Close</span>
+               </a>
+               <!-- a-list -->
+            </div>
+         </div>  
+         <!-- top-side-menu-wrapper   -->
+      </mat-menu>
+</button>   
+

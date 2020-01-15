@@ -1,0 +1,70 @@
+<div class="dash-title mb-4 ml-3">
+   Invoice List
+</div>
+<!-- dash-title -->
+<mat-card class="m-3">
+   <div fxLayout="row wrap">
+      <div fxFlex.gt-md="600px" fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+         <mat-form-field class="w-100">
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+         </mat-form-field>
+      </div>
+   </div>
+   <!-- wrap -->
+</mat-card>
+<ng-container *ngIf="invoiceList && invoiceList.length>0; else elseBlock">
+   <div fxLayout="column">
+      <mat-card>
+         <div class="table-responsive-x">
+            <table mat-table [dataSource]="dataSource" class="w-100 table-scroll-wrap">
+               <ng-container matColumnDef="position">
+                  <th class="px-3 text-nowrap" mat-header-cell *matHeaderCellDef> No. </th>
+                  <td class="px-3 text-nowrap" mat-cell *matCellDef="let element"> {{element.position}} </td>
+               </ng-container>
+               <ng-container matColumnDef="invoiceId">
+                  <th class="px-3 text-nowrap" mat-header-cell *matHeaderCellDef> Invoice Id </th>
+                  <td class="px-3 text-nowrap" mat-cell *matCellDef="let element"> <a href="javascript:void(0)" (click) ="onSeeDialog()"> {{element.invoiceId}}</a> </td>
+               </ng-container>
+               <ng-container matColumnDef="name">
+                  <th class="px-3 text-nowrap" mat-header-cell *matHeaderCellDef> Buyer </th>
+                  <td class="px-3 text-nowrap" mat-cell *matCellDef="let element"> {{element.name}} </td>
+               </ng-container>
+               <ng-container matColumnDef="date">
+                  <th class="px-3 text-nowrap" mat-header-cell *matHeaderCellDef>Date </th>
+                  <td class="px-3 text-nowrap" mat-cell *matCellDef="let element"> {{element.date}} </td>
+               </ng-container>
+               <ng-container matColumnDef="price">
+                  <th class="px-3 text-nowrap" mat-header-cell *matHeaderCellDef> Price </th>
+                  <td class="px-3 text-nowrap" mat-cell *matCellDef="let element"> ${{element.price}} </td>
+               </ng-container>
+               <ng-container matColumnDef="payment">
+                  <th class="px-3 text-nowrap" mat-header-cell *matHeaderCellDef mat-sort-header> Payment </th>
+                  <td class="px-3 text-nowrap" mat-cell *matCellDef="let element"> {{element.payment}} </td>
+               </ng-container>
+               <ng-container matColumnDef="status">
+                  <th class="px-3 text-nowrap" mat-header-cell *matHeaderCellDef> Status </th>
+                  <td class="px-3 text-nowrap" mat-cell *matCellDef="let element"> {{element.status}} </td>
+               </ng-container> 
+               <ng-container matColumnDef="action">
+                  <th class="px-3 text-nowrap" mat-header-cell *matHeaderCellDef> Action </th>
+                  <td class="px-3 text-nowrap" mat-cell *matCellDef="let element;let i = index;">
+                  <button mat-icon-button (click) ="onSeeDialog()" color="primary">
+                     <i class="material-icons">remove_red_eye</i>
+                  </button> 
+                  <button color="warn" mat-icon-button (click)="onDelete(i)">
+                     <mat-icon class="">delete</mat-icon>
+                  </button>
+                  </td>
+               </ng-container>
+               <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+               <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+         </div>  
+         <mat-paginator [pageSizeOptions]="[15, 30, 45, 60]"></mat-paginator>
+         <!-- table-responsive -->
+      </mat-card>
+   </div>
+</ng-container>
+<ng-template #elseBlock>
+   <h5 class="ml-5">No data found</h5>
+</ng-template>

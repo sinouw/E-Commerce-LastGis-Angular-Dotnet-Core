@@ -1,0 +1,54 @@
+<div class="inner-container">
+    <div class="final-receipt-page section-gap">
+        <div class="account-info">
+            <div class="container">
+                <div class="mb-4 user-info">
+                    <div fxLayoutAlign="flex-start">
+                        <div class="login-user-img">
+                            <img src="assets/images/user-4.jpg" width="70" alt="Active User">
+                        </div>
+                        <!-- login-user-img -->
+                        <div class="px-3">
+                            <h4>Hi, {{User?.FullName}}</h4>
+                            <div class="text-muted text-xl">{{User?.Email}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div fxLayout="row wrap" class="col-gap">
+                    <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="30" fxFlex.lg="20" fxFlex.xl="20" class="user-nav-list bg-white">
+                        <mat-list class="py-2" role="list">
+                            <mat-list-item role="listitem">
+                                <a [routerLink]="['/admin-panel/account/profile']" routerLinkActive="tab-active">
+                                    <span>
+                              <i class="material-icons">account_circle</i> Profile
+                           </span>
+                                </a>
+                            </mat-list-item>
+                            <mat-list-item role="listitem" *ngIf="role=='SuperAdmin'">
+                                <a [routerLink]="['/admin-panel/account/collaboration']" routerLinkActive="tab-active">
+                                    <i class="material-icons">location_on</i>
+                                    <span>Users</span>
+                                </a>
+                            </mat-list-item>
+                            <!-- <mat-list-item role="listitem"> 
+                        <a [routerLink]="['/admin-panel/account/settings']" routerLinkActive="tab-active">
+                           <i class="material-icons">credit_card</i> 
+                           <span>Account Settings</span> 
+                        </a>
+                     </mat-list-item> -->
+                        </mat-list>
+                    </div>
+                    <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="70" fxFlex.lg="80" fxFlex.xl="80" class="user-content-wrapper my-0">
+                        <div class="tab-container">
+                            <router-outlet></router-outlet>
+                        </div>
+                        <!-- tab-container -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- account-info -->
+    </div>
+    <!-- final-receipt-page -->
+</div>
+<!-- inner-container -->

@@ -1,0 +1,11 @@
+<div class="section-gap pt-0 pb-0">
+    <ngx-slick-carousel class="carousel home-2-slider" [config]="slideConfig">
+        <div ngxSlickItem *ngFor="let slide of ImagesPath">
+            <div class="relative">
+                <img [src]="slide" alt="" width="100%">
+                <div class="home-2-slider-content">
+                </div>
+            </div>
+        </div>
+    </ngx-slick-carousel>
+</div>

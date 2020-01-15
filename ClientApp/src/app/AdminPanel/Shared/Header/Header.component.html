@@ -1,0 +1,17 @@
+<mat-toolbar class="embryo-header-toolbar admin-panel-header" fxLayoutAlign="space-between center">
+   <div class="embryo-ham-icon" tourAnchor="start.tour" >
+      <button class="" mat-mini-fab color="primary" mat-card-icon (click)="toggleSidebar()">
+         <mat-icon>menu</mat-icon>
+      </button>
+   </div>
+   <div fxFlex.xs="60" fxFlex.sm="60" fxFlex.md="50" fxFlex.lg="33%" fxFlex.xl="33%">
+		<span fxFlex></span>
+		<div class="list-flex user-tool">
+         <div class="list-flex">
+            <embryo-LanguageDropDown class="mr-3" [selectedValue]="embryoService?.language" (selectedLanguage)="selectedLanguage($event)"></embryo-LanguageDropDown>
+         </div>
+   		<embryo-header-user-profile></embryo-header-user-profile>
+   	</div>
+   </div>
+</mat-toolbar>
+<!-- embryo-header-toolbar -->

@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>Are You Sure You Want To Delete?</h2>
+
+<mat-dialog-content>
+	<p>{{data}}</p>
+</mat-dialog-content>
+
+<mat-dialog-actions class="mb-0" align="right">
+	<button mat-raised-button (click)="dialogRef.close()" color="primary">CANCEL</button>
+	<button mat-raised-button (click)="yes()"  color="accent">YES</button>
+</mat-dialog-actions>

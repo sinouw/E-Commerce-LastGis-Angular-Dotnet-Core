@@ -1,0 +1,145 @@
+// Reports
+.trade-chart-wrap canvas{
+   height: 450px !important;
+}
+.table-tab-list{
+   min-height: 350px;
+}
+// Products
+.product-icon{
+   .active{
+      opacity: 0.4;
+   }
+}
+//invoice
+.invoice-popup{
+   height: 85vh;
+   max-width: 680px;
+   max-width: 680px;
+   overflow: auto;
+}
+//profile
+.final-receipt-page{
+   .account-info{
+      .mat-list-item{
+         .mat-list-item-content{
+            padding-left:0px;
+            padding-right:0px;
+         }
+      }
+   }
+}
+//order
+.orderlist-popup{
+   width: 320px;
+   max-width: 100%;
+}
+//edit product
+.edit-icon,.add-icon{ 
+   position: relative;
+   &::after{
+      z-index: 1;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background:rgba(0,0,0,0.75);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s ease;
+      content: "";
+   }
+   &:hover::after{
+      opacity: 1;
+      visibility: visible;
+   }
+}
+.edit-icon .edit-btn,.add-icon .add-btn{
+   position: absolute;
+   top: calc(50% - .6rem);
+   left:0;
+   right: 0;
+   margin: 0 auto;
+   border:0;
+   border-radius: 100%;
+   width: 18px;
+   height: 18px;
+   padding: 0;
+   z-index: 3;
+   .mat-icon{
+      color: rgb(40, 53, 147);
+      width:16px;
+      height:16px;
+      font-size:16px;
+   }
+   label{
+      vertical-align: middle;
+      display: inline-block;         
+      cursor: pointer;
+   }
+}
+.edit-text,.add-text{
+   position: relative;
+   &::after {
+      font-feature-settings: 'liga';
+      font-family: 'Material Icons';
+      content: "edit";
+      -webkit-font-feature-settings: 'liga';
+      position: absolute;
+      top: 2px;      
+      left: -25px;      
+      font-size: 0.8em;      
+      color: rgb(40, 53, 147);
+   }
+   .mat-form-field-underline{
+      bottom:-8px;
+   }
+}
+.add-text::after{
+   content: "add";
+}
+.edit-check,.add-check{
+   .mat-form-field-wrapper,.mat-form-field-infix{
+      padding:0;
+      border:0;
+   }
+}
+@media(max-width:959px){
+   .edit-text{
+      padding-left: 0.8rem;       
+      &::after{
+         left: -12px;
+         font-size: 0.8em;
+      } 
+   }
+   .add-text{
+      &::after{
+         left:-20px;
+      }
+   }
+   .final-receipt-page{
+      .user-content-wrapper{
+         padding:0px;
+         .mat-card{
+            margin:0px;
+         }
+      }
+   }
+}
+@media (max-width:991px){
+   .edit-icon .edit-btn{   
+      // width: 18px;
+      // height: 18px;      
+      // top: calc(50% - 0.8rem);
+      // left: calc(50% - 0.8rem);
+      .mat-icon{
+         width: 18px;
+         height: 18px;
+         font-size: 12px;
+      }
+   }
+   .trade-chart-wrap canvas{
+      height: 250px !important;
+   }
+}

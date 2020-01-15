@@ -1,0 +1,14 @@
+<div class="inner-container bg-white section-gap-lg not-found-page">
+    <div class="container">
+        <div fxLayout="row wrap" fxLayoutAlign="center center">
+            <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="80" fxFlex.lg="40" fxFlex.xl="40">
+                <mat-card class="text-center pb-5">
+                    <h1>401</h1>
+                    <h5 class="mb-3">the page you’re looking for is unauthorized for you.</h5>
+                    <button *ngIf="!connected" mat-raised-button class="button-lg w-100" color="accent" [routerLink]="['/session/signin']">Go To Sign In Page</button>
+                    <button *ngIf="connected" mat-raised-button class="button-lg w-100" color="accent" (click)="logout()">Go To Sign In Page</button>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

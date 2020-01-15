@@ -1,0 +1,19 @@
+<form #form='ngForm' autocomplete="off" (submit)="onSubmit(form)">
+    <div class="mb-4">
+        <mat-form-field class="w-100">
+            <input matInput type="text" placeholder="Username" class="form-control" #UserName="ngModel" name="UserName" [(ngModel)]="formModel.UserName" required>
+        </mat-form-field>
+    </div>
+    <div class="mb-4">
+        <mat-form-field class="w-100">
+            <input matInput type="password" placeholder="Password" class="form-control" #Password="ngModel" name="Password" [(ngModel)]="formModel.Password" required>
+        </mat-form-field>
+    </div>
+    <!-- <div class="mb-3">
+        <mat-checkbox>Remember Me</mat-checkbox>
+        <span fxFlex></span> <a [routerLink]="['/session/forgot-password']">Forgot Password?</a>
+    </div> -->
+    <!-- <button color="accent" class="button-lg mb-3" mat-raised-button [routerLink]="['/account/profile']">Sign In</button> -->
+    <button color="accent" class="button-lg mb-3" mat-raised-button [disabled]="form.invalid">Sign In</button>
+    <!-- <p>Don't have an account? <a [routerLink]="['/session/signup']">Click here to create one</a></p> -->
+</form>

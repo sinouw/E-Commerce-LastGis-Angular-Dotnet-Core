@@ -1,0 +1,81 @@
+<perfect-scrollbar class="m-0 p-0 invoice-popup">
+   <div class="bg-white final-receipt-page">
+      <div class="final-receipt">
+         <mat-card class="pt-0 w-100 m-0">
+            <div id="payment-receipt">
+               <div class="text-center bg-grey p-4 mat-card-pad-none">
+                  <h4>Payment Status</h4>
+                  <h5 class="mb-4">Payment is successfully processsed and your order is on the way </h5>
+                  <h6 class="mb-4">Transaction ID:267676GHERT105467</h6>
+                  <img src="assets/images/checked.png" width="64" height="64" alt="Success">
+               </div>
+               <div class="py-5">
+                  <div fxLayout="row wrap" fxLayoutAlign="none" class="col-gap">
+                     <div fxFlex.xs="100" fxFlex.sm="50" fxFlex.md="50" fxFlex.lg="50" fxFlex.xl="50">
+                        <h6>Summery</h6>
+                        <p class="mb-1">Order ID: 2563883628932</p>
+                        <p class="mb-1">Order Date: {{todayDate | date:'MMMM d, y'}} </p>
+                        <p class="mb-1">Order Total: {{'888'|currency}}</p>
+                     </div>
+                     <div class="pb-4" fxFlex.xs="100" fxFlex.sm="50" fxFlex.md="50" fxFlex.lg="50" fxFlex.xl="50">
+                        <h6>Ship To</h6>
+                        <p class="mb-1 text-capitalize">Nitin Goyal</p>
+                        <p class="mb-1 text-capitalize">Hyderabad</p>
+                        <p class="mb-1 text-capitalize">India-500 002</p>
+                        <p class="mb-1 text-capitalize"></p>
+                        <p class="mb-1">Contact No. 202-555-0185</p>
+                     </div>
+                  </div>
+                  <div class="py-4 text-center bg-grey">
+                     <h4>Expected Date of Delivery</h4>
+                     <h3>December 31, 2019</h3>
+                  </div>
+                  <h4 class="pt-5">Your Ordered Details</h4>
+                  <div fxLayout="row wrap" fxLayoutAlign="start center" class="col-gap">
+                     <div fxFlex.xs="50" fxFlex.sm="25" fxFlex.md="25" fxFlex.lg="25" fxFlex.xl="25">
+                        <img width="100" src="assets/images//gadgets/g-2-a.jpg" alt="cart Image">
+                     </div>
+                     <div fxFlex.xs="50" fxFlex.sm="25" fxFlex.md="25" fxFlex.lg="25" fxFlex.xl="25">
+                        <h6>Product Name</h6>
+                        <p class="font-bold">Black Smartphone</p>
+                     </div>
+                     <div fxFlex.xs="50" fxFlex.sm="25" fxFlex.md="25" fxFlex.lg="25" fxFlex.xl="25">
+                        <h6>Quantity</h6>
+                        <p>1</p>
+                     </div>
+                     <div fxFlex.xs="50" fxFlex.sm="25" fxFlex.md="25" fxFlex.lg="25" fxFlex.xl="25">
+                        <h6>Price</h6>
+                        <p>{{888|currency}}</p>
+                     </div>
+                  </div>
+                  <hr class="dark-border spacer">
+                  <div class="text-right">
+                     <div>
+                        <p>Subtotal</p><span fxFlex></span> {{847.63|currency}}
+                     </div>
+                     <div>
+                        <p>Shipping</p><span fxFlex></span> {{12.95|currency}}
+                     </div>
+                     <div>
+                        <p>Tax(GST)</p><span fxFlex></span> {{27.95|currency}}
+                     </div>
+                     <hr class="spacer">
+                     <div class="mb-4">
+                        <h4>Total</h4><span fxFlex></span>
+                        <h4>{{888.53|currency}}</h4>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- payment-receipt -->
+            <div class="btn-group">
+               <button mat-raised-button color="accent" class="button-lg" type="button">Download PDF</button>
+               <button mat-raised-button color="accent" class="button-lg" [routerLink]="['/admin-panel/reports']" (click)="dialogRef.close()">Go to Home</button>
+            </div>
+         </mat-card>
+      </div>
+      <!-- final-receipt -->
+   </div>
+   <!-- final-receipt-page -->
+</perfect-scrollbar>
+<!-- invoice-popup -->

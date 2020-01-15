@@ -1,0 +1,14 @@
+<button mat-mini-fab class="log-in-user" [matMenuTriggerFor]="loginuser">
+  <img src="assets/images/log-in-user.jpg" width="250" height="250" alt="log-in-user">
+</button>
+<mat-menu #loginuser="matMenu">
+    <button mat-menu-item fxLayoutAlign="start center" [routerLink]="['/admin-panel/reports']"><i class="material-icons mr-1" >poll</i><span>Home</span>
+    </button>
+    <button mat-menu-item fxLayoutAlign="start center" [routerLink]="['/admin-panel/products']"><i class="material-icons mr-1" >shopping_cart</i><span>Produits</span>
+    </button>
+    <button mat-menu-item fxLayoutAlign="start center" [routerLink]="['/admin-panel/account/profile']"><i class="material-icons mr-1">account_circle</i> <span>Profile</span>
+  </button>
+    <!-- <button mat-menu-item [routerLink]="['/account/profile']"><i class="material-icons mr-1">settings</i><span>Account</span></button> -->
+    <!-- <button mat-menu-item [routerLink]="['/account/profile']"> <i class="material-icons mr-1">local_post_office</i> <span>Messages</span></button> -->
+    <button mat-menu-item (click)="logOut()"><i class="material-icons mr-1">power_settings_new</i><span>Logout</span></button>
+</mat-menu>

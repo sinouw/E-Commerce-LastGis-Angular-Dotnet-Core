@@ -1,0 +1,65 @@
+<div class="dash-title mb-4 ml-3">
+    Categorie List
+</div>
+<!-- dash-title -->
+<mat-card class="m-3">
+    <div fxLayout="row wrap">
+        <div fxFlex.gt-md="600px" fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+            <mat-form-field class="w-100">
+                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+            </mat-form-field>
+        </div>
+    </div>
+    <!-- wrap -->
+</mat-card>
+<ng-container *ngIf="invoiceList && invoiceList.length>0; else elseBlock">
+    <div fxLayout="column">
+        <mat-card>
+            <button color="primary" mat-raised-button (click)="addNewCategorieDialog()">
+                        Add Categorie
+                     </button>
+            <div class="table-responsive-x">
+                <table mat-table [dataSource]="dataSource" class="w-100 table-scroll-wrap">
+                    <ng-container matColumnDef="Ncategorie">
+                        <th class="px-3 text-nowrap" mat-header-cell *matHeaderCellDef> Nom Categorie </th>
+                        <td class="px-3 text-nowrap" mat-cell *matCellDef="let element"> {{element.Ncategorie}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="CreationDate">
+                        <th class="px-3 text-nowrap" mat-header-cell *matHeaderCellDef> Date Creation </th>
+                        <td class="px-3 text-nowrap" mat-cell *matCellDef="let element"> {{element.CreationDate | date: 'dd/MM/yyyy'}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="action">
+                        <th class="px-3 text-nowrap" mat-header-cell *matHeaderCellDef> Action </th>
+                        <td class="px-3 text-nowrap" mat-cell *matCellDef="let element;let i = index;">
+                            <!-- <button mat-icon-button (click)="onSeeDialog()" color="primary">
+                                <i class="material-icons">remove_red_eye</i>
+                            </button> -->
+
+                            <button mat-icon-button (click)="listSousCategories(element.IdCat)" color="primary">
+                                <i class="material-icons">list</i>
+                            </button>
+
+                            <button mat-icon-button (click)="EditCategorieDialog(element,i)" color="primary">
+                            <i class="material-icons">edit</i>
+                            </button>
+
+                            <button color="warn" mat-icon-button (click)="onDelete(element.IdCat,i)">
+                            <mat-icon class="">delete</mat-icon>
+                            </button>
+                        </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
+            <mat-paginator [pageSizeOptions]="[15, 30, 45, 60]"></mat-paginator>
+            <!-- table-responsive -->
+        </mat-card>
+    </div>
+</ng-container>
+<ng-template #elseBlock>
+    <button color="primary" mat-raised-button (click)="addNewCategorieDialog()">
+                Add Categorie
+             </button>
+    <h5 class="ml-5">No data found</h5>
+</ng-template>

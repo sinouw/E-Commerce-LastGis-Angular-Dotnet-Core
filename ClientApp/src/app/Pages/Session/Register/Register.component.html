@@ -1,0 +1,42 @@
+<div class="inner-container bg-white section-gap-lg">
+  <div class="container">
+    <div fxLayout='row wrap' fxLayoutAlign="center center">
+      <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="80" fxFlex.lg="70" fxFlex.xl="70">
+        <div fxLayout='row wrap' fxLayoutAlign="center center">
+          <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="50" fxFlex.lg="50" fxFlex.xl="50">
+            <div class="form-img register-image">
+            </div>
+          </div>
+          <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="50" fxFlex.lg="50" fxFlex.xl="50">
+            <mat-card class="register-form form-margin">
+              <h4>Enter your details</h4>
+              <form>
+                <div class="mb-4">
+                  <mat-form-field class="w-100">
+                    <input matInput type="text" placeholder="First Name" required>
+                  </mat-form-field>
+                  <mat-form-field class="w-100">
+                    <input matInput type="text" placeholder="Last Name" required>
+                  </mat-form-field>
+                  <mat-form-field class="w-100">
+                    <input matInput type="email" placeholder="Email" required>
+                  </mat-form-field>
+                  <mat-form-field class="w-100">
+                    <input matInput type="password" placeholder="Enter Password" required>
+                  </mat-form-field>
+                </div>
+                <div class="mb-4">
+                  <mat-form-field class="w-100">
+                    <input matInput type="password" placeholder="Retype Password" required>
+                  </mat-form-field>
+                </div>
+                <button color="accent" class="button-lg mb-3" mat-raised-button>Submit</button>
+              <div> Already have account? then <a class="accent-color" [routerLink]="['/session/signin']">Sign In</a></div>
+              </form>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,122 @@
+$chat-header-bg: #fff;
+$chat-header-shadow:0 4px 15px 0 rgba(0,0,0,.09);
+$chat-body-radius:20px 20px 0 20px;
+$chat-block-bg:#dfeaff;
+$chat-block-box-shadow:0 1px 15px 1px rgba(69,65,78,.08);
+
+.chat-wrapper{
+   margin:-31px 0 1rem;
+   .primary-bg{
+      h1,h2,h3,h4,h5,h6,p,a,span {
+         color: #fff;
+      }
+   }
+	.chatsidebar-wrapper{
+		width:15.5rem;
+		.a-list{
+         transition: all 0.3s ease;
+         cursor:pointer;
+			&:hover{
+            background-color:rgba($primary,0.7);
+            h1,h2,h3,h4,h5,h6,p,a,span{
+            color: #fff;
+            }
+			}
+		}
+		.a-toolbar{
+			height:64px !important;
+		}
+		.a-list-img{
+			min-width:56px;
+		}
+		.scroll-bar{
+			height: calc(100vh - 129px) !important;
+		}
+		.chatsidebar-content {
+			.chat-active-text {
+            background-color:rgba($primary,0.7);
+				.list-title {
+               h1,h2,h3,h4,h5,h6,p,a,span {
+	    				color: #fff;
+					}
+				}
+			}
+		}	
+   }
+   .chat-footer{
+		box-shadow: 0px 0px 20px rgba(0,0,0,0.07);
+		padding: 0 1rem;
+      height: 90px;
+      background-color: #fff;
+      .input-slot{
+         label{
+            line-height: normal;
+         }
+         
+      }
+   }
+	.sidenav-wrapper{
+	 	height:calc(100vh - 81px);
+      overflow:hidden;
+	 	.mat-drawer-inner-container{
+	 		overflow:hidden;
+	 	}
+	}
+	.chatarea-wrapper {
+		.chatarea-content {
+			.a-toolbar-content {
+				background-color:$chat-header-bg;
+				height:64px !important;
+				box-shadow:$chat-header-shadow;
+			}
+			.toggle-btn {
+				display:none;
+			}
+			.chat-body{				
+				.scroll-bar{
+					height: calc(100vh - 235px) !important;
+				}
+				.chat-block{
+					.chat-bubble-wrap{
+						margin: 0 1rem;
+						width: calc(50% - 70px);
+						.chat-bubble.odd{
+							border-radius:$chat-body-radius;
+						} 
+						.chat-bubble.even{
+						   border-radius: 20px 20px 20px 0;
+						   box-shadow:$chat-block-box-shadow;
+						   background-color: $accent;
+						}
+					}
+				}
+			}	
+		}	
+	}
+
+}
+
+.avatar-wrap {
+	width: 50px;
+	img {
+		width: 50px;
+		height: 50px;
+	}
+}
+@media (max-width: 959px) {
+ 	.chatarea-content {
+ 		.toggle-btn {
+ 			display: block !important;
+ 		}
+ 	}
+}
+
+@media (max-width: 599px) {
+	.chat-wrapper .chatarea-wrapper .chatarea-content .chat-body .chat-block .chat-bubble-wrap {
+		margin: 0 1rem;
+		width: calc(100% - 70px);
+	}
+	.chat-wrapper .chatarea-content .chat-head-right .video-icon {
+    	display: none;
+	}
+}

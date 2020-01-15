@@ -1,0 +1,61 @@
+// E-commerce Wrapper
+.e-commerce-wrapper {
+	svg {
+		width:100% !important;
+		height:100% !important;
+	}
+	.ngx-charts {
+	   float: none !important;
+	   overflow: visible;
+	}
+}
+.dash-title {
+ 	font-size: 1.3rem;
+ 	font-weight: 500;
+ 	letter-spacing: 1px;
+ 	// text-transform: uppercase;  
+}   	
+.Todo-list-wrapper {
+	.app-card {
+		.list {
+			.delete-btn {
+				opacity:0;
+			}
+			.input-slot{
+				min-width:40px;
+			}
+			&:hover {
+				background-color: #dfeaff!important;
+				.delete-btn {
+					opacity:1;
+					transition: all 0.5s ease-in-out;
+				}
+			}
+		}	
+	}
+}
+.top-selling-wrapper {
+	.cart-layout {
+		.number-chart {
+			width: 30%;
+			height: 130px;
+		}
+	}
+ 	.slick-prev:before, .slick-next:before{
+   	display:none;
+	}
+}
+.sales-stat-chart canvas{
+   height: 450px;
+}
+.add-list-form{
+   width: 450px;
+   .mat-dialog-actions{
+      margin-bottom: 0;
+   }
+}
+.a-badge{
+   &.primary-bg,&.accent-bg{
+      color: #fff;
+   }
+}
