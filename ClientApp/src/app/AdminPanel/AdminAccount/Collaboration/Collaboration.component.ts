@@ -3,6 +3,8 @@ import {AdminPanelServiceService} from '../../Service/AdminPanelService.service'
 import {MatTableDataSource} from '@angular/material';
 import {AccountService} from '../../Service/account.service';
 import {HttpClient} from '@angular/common/http';
+import { BaseUrl } from 'src/app/models/baseurl.data';
+import { User } from 'src/app/Models/User.model';
 
 @Component({
     selector: 'app-collaboration',
@@ -11,7 +13,7 @@ import {HttpClient} from '@angular/common/http';
 })
 
 export class CollaborationComponent implements OnInit {
-
+    Users
     popUpDeleteUserResponse: any;
     popUpNewUserResponse: any;
     collaborationData: any [];
@@ -29,7 +31,7 @@ export class CollaborationComponent implements OnInit {
     }
 
     getUsersInfo() {
-        this.accountService.GetUsers();
+        this.GetUsers();
         this.service.getCollaborationContent().valueChanges().subscribe(res => this.getCollaborationData(res));
     }
 
@@ -37,10 +39,9 @@ export class CollaborationComponent implements OnInit {
     getCollaborationData(response) {
 
         // this.collaborationData = response;
-        this.collaborationData = this.accountService.Users;
-        setTimeout(() => {
+        this.collaborationData = this.Users;
             this.dataSource = new MatTableDataSource<any>(this.collaborationData);
-        }, 3000);
+        
     }
 
     /**
@@ -113,5 +114,18 @@ export class CollaborationComponent implements OnInit {
 
 
      */
+
+    GetUsers(){
+        this.http.get(BaseUrl+ '/Admin/GetAdmins?$select=FullName,IsActive,Gender,UserName,Email,PhoneNumber,Role').subscribe(
+          res=>{
+            this.Users=res as User[]
+            this.Users = this.Users.filter(u=>u.Role=='Admin')
+            console.log(res)      
+          },
+          err=>{
+            console.log(err)
+          })
+          return this.Users
+        }
 
 }

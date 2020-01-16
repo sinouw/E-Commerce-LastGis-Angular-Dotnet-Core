@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using GIS.Models.Query;
 using GIS.Models.Query.dto;
@@ -83,13 +84,31 @@ namespace WebAPI.Controllers.EShop
         [EnableQuery]
         public async Task<ActionResult<IQueryable<Produit>>> SearchProduitsAsync(int? page, int pagesize = 10,string filter = "")
         {
+            List<Produit> prods;
 
-                List<Produit> prods = await _context.Produits.Include(x=>x.SousCategorie)
-                .Where(x=> filter.ToLower().Contains(x.NomProduit.ToLower())
-                || filter.ToLower().Contains(x.SousCategorie.NsousCategorie.ToLower())
-                || filter.ToLower().Contains(x.Marque.ToLower())).ToListAsync();
-           
             
+
+            if (!string.IsNullOrEmpty(filter))
+            {
+                string cleanfilter = StringCleaner(filter);
+                prods = await _context.Produits.Include(x => x.SousCategorie)
+              .Where(
+                x =>  EF.Functions.Like(cleanfilter,(StringCleaner("%"+x.NomProduit+"%")))
+              || EF.Functions.Like(StringCleaner(x.NomProduit), "%"+cleanfilter+"%")
+              
+              || EF.Functions.Like(StringCleaner(x.SousCategorie.NsousCategorie), "%"+cleanfilter+"%")
+              || EF.Functions.Like(cleanfilter, (StringCleaner("%" + x.SousCategorie.NsousCategorie + "%")))
+              
+              || EF.Functions.Like(StringCleaner(x.Marque), "%"+cleanfilter+"%")
+              || EF.Functions.Like(cleanfilter, (StringCleaner("%" + x.Marque + "%")))).ToListAsync();
+
+            }
+            else
+            {
+                 prods = await _context.Produits.Include(x => x.SousCategorie).ToListAsync();
+            }
+
+
             var countDetails = prods.Count();
 
             var result = new GIS.Models.Query.PageResult<Produit>
@@ -102,6 +121,11 @@ namespace WebAPI.Controllers.EShop
             };
                   return Ok(result);
             
+        }
+
+        public String StringCleaner(string s)
+        {
+            return Regex.Replace(s, @"[^a-zA-Z0-9\-]", "").ToLower();
         }
 
 

@@ -10,7 +10,7 @@
                 <div class="form-group pr-3" fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="calc(100% - 300px)" fxFlex.lg="calc(100% - 300px)" fxFlex.xl="calc(100% - 300px)">
                     <mat-form-field class="w-100" floatLabel="never">
                         <!-- <input matInput placeholder="Search Products" (keyup)="applyFilter($event.target.value,$event.code)"> -->
-                        <input matInput placeholder="Search Products" [(ngModel)]="filterValue">
+                        <input matInput placeholder="Search Products" [(ngModel)]="filterValue" (keyup.enter)="applyFilter()">
                     </mat-form-field>
                 </div>
                 <!-- form-group -->

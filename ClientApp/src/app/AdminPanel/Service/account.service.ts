@@ -34,9 +34,7 @@ export class AccountService {
     res=>{
       this.Users=res as User[]
       this.Users = this.Users.filter(u=>u.Role=='Admin')
-      console.log(res)
-    
-      
+      console.log(res)      
     },
     err=>{
       console.log(err)

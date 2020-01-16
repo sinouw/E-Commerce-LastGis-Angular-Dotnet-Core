@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { MatPaginator, MatSort, MatTableDataSource, PageEvent } from '@angular/material';
 import { Router } from '@angular/router';
 import { AdminPanelServiceService } from '../../Service/AdminPanelService.service';
 import { AdminGenericService } from '../../Service/AdminGeneric.service';
@@ -20,10 +20,23 @@ export class ProductsComponent implements OnInit {
 	productsGrid 			   : any;
 	popUpDeleteUserResponse : any;
 	showType				: string = 'list';
+
+	public pageNumber: number=0;
+    brandsOfProducts : any =[];
+         // MatPaginator Inputs
+    length = 100;
+    pageSize = 5;
+	pageSizeOptions: number[] = [5, 10, 25, 100];
+	
+	pageEvent: PageEvent;
+    cardsObs: Observable<any>;
+
+
 	// displayedProductsColumns : string [] = ['id', 'image','name','brand','category', 'product_code', 'discount_price', 'price','action' ];
 	displayedProductColumns : string [] = ['image','NomProduit','Marque','NsousCategorie', 'Remise', 'Prix','action' ];
 	@ViewChild(MatPaginator,{static: false}) paginator : MatPaginator;
 	@ViewChild(MatSort,{static: false}) sort           : MatSort;
+	filterValue: any;
 
 	constructor(public translate : TranslateService,
 					private router : Router, 
@@ -37,7 +50,15 @@ export class ProductsComponent implements OnInit {
 	getDataInfo(){
 		this.list().subscribe(res=>{
 			this.getProductResponse(res)
-			console.log(this.productsGrid);
+			this.productsGrid=res.Items
+			this.pageNumber = res.pageIndex;
+			this.length = res.Count;
+			this.brandsOfProducts=res.Brands;
+			this.productsList = new MatTableDataSource<any>(this.productsGrid);
+			this.cardsObs = this.productsList.connect();
+			this.productsList.paginator = this.paginator;
+			console.log(res)
+
 		},
 		err=>{
 			console.log(err);
@@ -123,27 +144,66 @@ export class ProductsComponent implements OnInit {
 		x.Prix.toString().includes(value))
    }
 
-   applyFilter(filterValue: string,event) {
-	   let value =filterValue.trim().toLowerCase()
-	   if(this.showType=='list'){
-			this.productsList.filter = value;
-			if (this.productsList.paginator) {
-				this.productsList.paginator.firstPage();
-			}
-	   }else{
-		this.SearchInGridList(value)		
-		if(event=="Backspace"){
-			this.SearchInGridList(value)			
-		}
-		if(value==null || value == ''){
-			this.productsGrid=this.productsListCopie
-			this.productsList = new MatTableDataSource(this.productsGrid);
-		}
-	   }
- }
-	list(){
-		return this.genericservice.get(BaseUrl+'/Produits')
-	}
+//    applyFilter(filterValue: string,event) {
+// 	   let value =filterValue.trim().toLowerCase()
+// 	   if(this.showType=='list'){
+// 			this.productsList.filter = value;
+// 			if (this.productsList.paginator) {
+// 				this.productsList.paginator.firstPage();
+// 			}
+// 	   }else{
+// 		this.SearchInGridList(value)		
+// 		if(event=="Backspace"){
+// 			this.SearchInGridList(value)			
+// 		}
+// 		if(value==null || value == ''){
+// 			this.productsGrid=this.productsListCopie
+// 			this.productsList = new MatTableDataSource(this.productsGrid);
+// 		}
+// 	   }
+//  }
+
+onPage(pageEvent: PageEvent) {        
+        this.list()
+        .subscribe(res=>{
+            this.productsGrid=res.Items
+            this.pageNumber = res.pageIndex;
+             this.length = res.Count;
+
+            this.productsList = new MatTableDataSource<any>(this.productsGrid);
+            this.cardsObs = this.productsList.connect();
+        },
+        err=>{
+            console.log(err);   
+        })    
+    }
+
+applyFilter() {
+    let value =this.filterValue.trim().toLowerCase()
+    console.log(value);
+    
+    this.genericservice.get(BaseUrl+'/Produits/search?&page='+0+'&pageSize='+this.pageSize+'&filter='+value)
+    .subscribe(res => {
+        this.productsGrid=res.Items
+        this.pageNumber = res.pageIndex;
+        this.length = res.Count;
+        // this.brandsOfProducts=res.Brands;
+        this.productsList = new MatTableDataSource<any>(this.productsGrid);
+        this.cardsObs = this.productsList.connect();
+        this.productsList.paginator = this.paginator;
+        console.log(res)
+    
+    },
+    err=>{
+        console.log(err);
+        
+	});
+}
+
+
+list(souscategorie="",filters="",page=0,pagesize=this.pageSize){
+	return this.genericservice.get(BaseUrl+'/Produits?&page='+page+'&pageSize='+pagesize+'&sousCategorie='+souscategorie+'&filter='+filters)
+}
 
 	deleteAProduct(id){
 		this.genericservice.delete(BaseUrl+'/Produits/'+id)

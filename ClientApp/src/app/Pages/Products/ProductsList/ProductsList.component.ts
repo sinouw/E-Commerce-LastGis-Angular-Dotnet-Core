@@ -28,7 +28,7 @@ export class ProductsListComponent implements OnInit {
     brandsOfProducts : any =[];
          // MatPaginator Inputs
     length = 100;
-    pageSize = 4;
+    pageSize = 5;
     pageSizeOptions: number[] = [5, 10, 25, 100];
     dataSource : MatTableDataSource<any> = new MatTableDataSource<any>();
     pageEvent: PageEvent;
