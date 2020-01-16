@@ -64,6 +64,7 @@ namespace WebAPI.Controllers.Eshop
                     fullPath = Path.Combine(path, file.FileName);
                     var stream = new FileStream(fullPath, FileMode.Create);
                     await file.CopyToAsync(stream);
+                    stream.Close();
                 }
                 _context.Images.Add(new Image() { ImageName = "Uploads/" + id + "/" + file.FileName, ProduitId = id });
                 await _context.SaveChangesAsync();

@@ -123,12 +123,15 @@ export class ProductsComponent implements OnInit {
    getDeleteResponse(id,response : string,i){
       if(response == "yes"){
       	if(this.showType == 'grid') {
-         	this.productsGrid.splice(i,1);
+			 this.productsGrid.splice(i,1);
+	
       	}else if(this.showType == 'list'){
 				this.productsList.data.splice(i,1);
-				this.productsList = new MatTableDataSource(this.productsGrid);
-      		this.productsList.paginator = this.paginator;
 		  }
+		  this.productsList = new MatTableDataSource<any>(this.productsGrid);
+
+		  this.cardsObs = this.productsList.connect();
+		  this.productsList.paginator = this.paginator;
 		  this.deleteAProduct(id)
 		  console.log(id);
 		  
@@ -144,24 +147,6 @@ export class ProductsComponent implements OnInit {
 		x.Prix.toString().includes(value))
    }
 
-//    applyFilter(filterValue: string,event) {
-// 	   let value =filterValue.trim().toLowerCase()
-// 	   if(this.showType=='list'){
-// 			this.productsList.filter = value;
-// 			if (this.productsList.paginator) {
-// 				this.productsList.paginator.firstPage();
-// 			}
-// 	   }else{
-// 		this.SearchInGridList(value)		
-// 		if(event=="Backspace"){
-// 			this.SearchInGridList(value)			
-// 		}
-// 		if(value==null || value == ''){
-// 			this.productsGrid=this.productsListCopie
-// 			this.productsList = new MatTableDataSource(this.productsGrid);
-// 		}
-// 	   }
-//  }
 
 onPage(pageEvent: PageEvent) {        
         this.list()

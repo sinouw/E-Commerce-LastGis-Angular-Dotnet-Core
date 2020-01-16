@@ -213,14 +213,23 @@ namespace WebAPI.Controllers.EShop
                 return NotFound();
             }
 
-            _context.Produits.Remove(produit);
-            string path = "wwwroot/uploads/" + id;
-            Directory.Delete(path, true);
+            try
+            {
+                _context.Produits.Remove(produit);
+                string path = "wwwroot/uploads/" + id;
+                Directory.Delete(path, true);
 
 
-            await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
 
-            return produit;
+                return produit;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+          
         }
 
         private bool ProduitExists(Guid id)
