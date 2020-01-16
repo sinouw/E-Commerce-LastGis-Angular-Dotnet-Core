@@ -51,13 +51,20 @@ export class AddNewSousCategorieComponent implements OnInit {
 	// onFormSubmit method is submit a add new sous Categorie form.
 	onFormSubmit(){
     this.http.post(BaseUrl+'/souscategories',this.addNewSousCategorieForm.value)
-    .subscribe(res=>{
+    .subscribe((res:any)=>{
       console.log(res);
+      let body = {
+        NsousCategorie      : res.NsousCategorie,
+        UserId          : res.UserId,
+        CreationDate    : res.CreationDate,
+        IdScat           : res.IdScat,
+      }
+
+      this.dialogRef.close(body);
+
     },err=>{
       console.log(err);
     })
-    console.log(this.addNewSousCategorieForm.value);
-		this.dialogRef.close(this.addNewSousCategorieForm.value);
 	}
 
 }

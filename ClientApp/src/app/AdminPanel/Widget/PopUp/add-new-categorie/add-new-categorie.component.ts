@@ -34,13 +34,23 @@ export class AddNewCategorieComponent implements OnInit {
 
 	// onFormSubmit method is submit a add new Categorie form.
 	onFormSubmit(){
+    let payload = this.accountservece.getPayload()
     this.http.post(BaseUrl+'/categories',this.addNewCategorieForm.value)
-    .subscribe(res=>{
+    .subscribe((res:any)=>{
       console.log(res);
+
+      let body = {
+        Ncategorie      : res.Ncategorie,
+        UserId          : res.UserId,
+        CreationDate    : res.CreationDate,
+        IdCat           : res.IdCat,
+      }
+
+      this.dialogRef.close(body);
     },err=>{
       console.log(err);
     })
-		this.dialogRef.close(this.addNewCategorieForm.value);
+		
 	}
 
 }

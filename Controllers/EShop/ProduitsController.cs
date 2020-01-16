@@ -45,7 +45,7 @@ namespace WebAPI.Controllers.EShop
             List<string> filters = new List<string>();
             if (string.IsNullOrEmpty(sousCategorie))
             {
-                prods2 = await _context.Produits.ToListAsync();
+                prods2 = await _context.Produits.Include(x => x.SousCategorie).ToListAsync();
             }
             else
             {

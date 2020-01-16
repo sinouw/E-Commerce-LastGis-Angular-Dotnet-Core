@@ -18,7 +18,7 @@ export class AddProductComponent implements OnInit {
     addProductBtnDisa = true
     form: FormGroup;
     mainImgPath: string;
-    colorsArray: string[] = ['Red', 'Blue', 'Yellow', 'Green'];
+    // colorsArray: string[] = ['Red', 'Blue', 'Yellow', 'Green'];
     sizeArray: number[] = [36, 38, 40, 42, 44, 46, 48];
     quantityArray: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     public imagePath;
@@ -63,9 +63,9 @@ export class AddProductComponent implements OnInit {
             Prix: ['', [Validators.required]],
             Disponible: ['', [Validators.required]],
             Description: ['', [Validators.required]],
-            Remise: [50, [Validators.required]],
+            // Remise: [50, [Validators.required]],
             IdScat: ['', [Validators.required]],
-            Couleur: ['', [Validators.required]],
+            // Couleur: ['', [Validators.required]],
             Marque: ['', [Validators.required]],
         });
     }
@@ -117,9 +117,9 @@ export class AddProductComponent implements OnInit {
             Prix: [],
             Disponible: [],
             Description: [],
-            Remise: 0,
+            // Remise: 0,
             IdScat: [],
-            Couleur: [],
+            // Couleur: [],
             Marque: [],
         });
         

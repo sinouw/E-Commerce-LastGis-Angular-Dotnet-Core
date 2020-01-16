@@ -33,10 +33,10 @@ export class ProductsComponent implements OnInit {
 
 
 	// displayedProductsColumns : string [] = ['id', 'image','name','brand','category', 'product_code', 'discount_price', 'price','action' ];
-	displayedProductColumns : string [] = ['image','NomProduit','Marque','NsousCategorie', 'Remise', 'Prix','action' ];
+	displayedProductColumns : string [] = ['image','NomProduit','Marque','Prix','action' ];
 	@ViewChild(MatPaginator,{static: false}) paginator : MatPaginator;
 	@ViewChild(MatSort,{static: false}) sort           : MatSort;
-	filterValue: any;
+	filterValue: any="";
 
 	constructor(public translate : TranslateService,
 					private router : Router, 
@@ -48,9 +48,21 @@ export class ProductsComponent implements OnInit {
 	}
 
 	getDataInfo(){
-		this.list().subscribe(res=>{
+		this.list().subscribe((res:any)=>{
 			this.getProductResponse(res)
 			this.productsGrid=res.Items
+			// res.Items.forEach(product => {
+			// 	this.productsGrid.push({
+			// 		IdProd:product.IdProd,
+			// 		Marque:product.Marque,
+			// 		NomProduit:product.NomProduit,
+			// 		NsousCategorie:product.SousCategorie.NsousCategorie,
+			// 		Description:product.Description,
+			// 		Prix:product.Prix,
+			// 		Disponible:product.Disponible,
+			// 		CreationDate:product.CreationDate,
+			// 	})
+			// });
 			this.pageNumber = res.pageIndex;
 			this.length = res.Count;
 			this.brandsOfProducts=res.Brands;
@@ -81,9 +93,7 @@ export class ProductsComponent implements OnInit {
 		if(type == 'list'){
 			document.getElementById('list').classList.add("active");
 			document.getElementById('grid').classList.remove('active');
-			// setTimeout(() => {
 				this.productsList = new MatTableDataSource(this.productsGrid);
-			// }, 2000);
 			setTimeout(()=>{
 				this.productsList.paginator = this.paginator;
 				this.productsList.sort = this.sort;
@@ -147,11 +157,25 @@ export class ProductsComponent implements OnInit {
 		x.Prix.toString().includes(value))
    }
 
-
+   list(souscategorie="",filters="",page=0,pagesize=this.pageSize){
+	return this.genericservice.get(BaseUrl+'/Produits?&page='+page+'&pageSize='+pagesize+'&sousCategorie='+souscategorie+'&filter='+filters)
+}
 onPage(pageEvent: PageEvent) {        
-        this.list()
+        this.list("","",pageEvent.pageIndex,pageEvent.pageSize)
         .subscribe(res=>{
-            this.productsGrid=res.Items
+			res.Items.forEach(product => {
+				this.productsGrid.push({
+					IdProd:product.IdProd,
+					Marque:product.Marque,
+					NomProduit:product.NomProduit,
+					NsousCategorie:product.SousCategorie.NsousCategorie,
+					Description:product.Description,
+					Prix:product.Prix,
+					Disponible:product.Disponible,
+					CreationDate:product.CreationDate,
+				})
+			});
+			// this.productsGrid=res.Items
             this.pageNumber = res.pageIndex;
              this.length = res.Count;
 
@@ -164,8 +188,9 @@ onPage(pageEvent: PageEvent) {
     }
 
 applyFilter() {
-    let value =this.filterValue.trim().toLowerCase()
-    console.log(value);
+	
+    let value :string = this.filterValue.trim().toLowerCase()
+    
     
     this.genericservice.get(BaseUrl+'/Produits/search?&page='+0+'&pageSize='+this.pageSize+'&filter='+value)
     .subscribe(res => {
@@ -186,9 +211,7 @@ applyFilter() {
 }
 
 
-list(souscategorie="",filters="",page=0,pagesize=this.pageSize){
-	return this.genericservice.get(BaseUrl+'/Produits?&page='+page+'&pageSize='+pagesize+'&sousCategorie='+souscategorie+'&filter='+filters)
-}
+
 
 	deleteAProduct(id){
 		this.genericservice.delete(BaseUrl+'/Produits/'+id)

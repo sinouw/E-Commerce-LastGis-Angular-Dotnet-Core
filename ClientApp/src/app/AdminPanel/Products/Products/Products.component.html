@@ -100,14 +100,7 @@
                                         <th class="text-nowrap px-3" mat-header-cell *matHeaderCellDef mat-sort-header>Marque</th>
                                         <td class="text-nowrap px-3" mat-cell *matCellDef="let element">{{element?.Marque}}</td>
                                     </ng-container>
-                                    <ng-container matColumnDef="NsousCategorie">
-                                        <th class="text-nowrap px-3" mat-header-cell *matHeaderCellDef mat-sort-header>Sous Categorie</th>
-                                        <td class="text-nowrap px-3" mat-cell *matCellDef="let element">{{element?.NsousCategorie}}</td>
-                                    </ng-container>
-                                    <ng-container matColumnDef="Remise">
-                                        <th class="text-nowrap px-3" mat-header-cell *matHeaderCellDef mat-sort-header>Remise</th>
-                                        <td class="text-nowrap px-3" mat-cell *matCellDef="let element">${{element?.Remise}}</td>
-                                    </ng-container>
+
                                     <ng-container matColumnDef="Prix">
                                         <th class="text-nowrap px-3" mat-header-cell *matHeaderCellDef mat-sort-header>Price</th>
                                         <td class="text-nowrap px3" mat-cell *matCellDef="let element">{{element?.Prix|currency}}</td>
