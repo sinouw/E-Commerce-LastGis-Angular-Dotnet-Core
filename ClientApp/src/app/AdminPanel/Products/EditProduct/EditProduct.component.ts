@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AdminPanelServiceService} from '../../Service/AdminPanelService.service';
-import {FormGroup, FormBuilder, FormControl} from '@angular/forms';
+import {FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms';
 import {Router, ActivatedRoute, Params} from '@angular/router';
 import {BaseUrl} from '../../../models/baseurl.data';
 import {AdminGenericService} from '../../Service/AdminGeneric.service';
@@ -57,11 +57,10 @@ export class EditProductComponent implements OnInit {
                 private http:HttpClient
     ) {
 
-        this.caracForm = new FormGroup({
-            key: new FormControl(),
-            value: new FormControl()
-       }); 
-
+        this.caracForm = this.formBuilder.group({
+            key: ['', [Validators.required]],
+            value: ['', [Validators.required]]
+       });
         this.getSousCategories();
         this.form = this.formBuilder.group({
             NomProduit: [],

@@ -119,27 +119,7 @@
                                     </div>
 
                                 </div>
-                                <div class="no-style mb-4">
-                                    <span class="font-medium"> Couleur </span>:
-                                    <div class="add-text" fxLayout="row wrap" fxLayoutAlign="start start">
 
-                                        <mat-select class="ml-2" matNativeControl formControlName="Couleur" type="text" placeholder="Color" autocomplete="off">
-                                            <mat-option value="Blanc">Blanc</mat-option>
-                                            <mat-option value="Noir">Noir</mat-option>
-                                            <mat-option value="Doré">Doré</mat-option>
-                                            <mat-option value="Silver">Gris</mat-option>
-                                            <mat-option value="Rouge">Rouge</mat-option>
-                                            <mat-option value="Jaune">Jaune</mat-option>
-                                            <mat-option value="Vert">Vert</mat-option>
-                                            <mat-option value="Bleu">Bleu</mat-option>
-                                            <mat-option value="orange">orange</mat-option>
-                                            <mat-option value="Rose">Rose</mat-option>
-                                            <mat-option value="Marron">Marron</mat-option>
-                                            <mat-option value="Violet">Violet</mat-option>
-                                        </mat-select>
-                                    </div>
-
-                                </div>
                                 <div class="short-des">
                                     <span class="font-medium"> Ajouter Description </span>:
                                     <p class="add-text"><textarea matInput formControlName="Description" placeholder="Description" autocomplete="off"></textarea></p>
@@ -170,7 +150,7 @@
                                         <tr>
                                             <td><input matInput formControlName="key" placeholder="ajouter une cle"></td>
                                             <td><input matInput formControlName="value" placeholder="ajouter une valeur"></td>
-                                            <td> <button mat-icon-button color="primary"><mat-icon>add</mat-icon></button></td>
+                                            <td> <button mat-icon-button color="primary" [disabled]="caracForm.invalid"><mat-icon>add</mat-icon></button></td>
 
                                         </tr>
                                     </table>

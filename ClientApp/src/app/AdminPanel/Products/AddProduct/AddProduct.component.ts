@@ -47,14 +47,12 @@ export class AddProductComponent implements OnInit {
 
     ngOnInit() {
 
+       this.caracForm = this.formBuilder.group({
+        key: ['', [Validators.required]],
+        value: ['', [Validators.required]]
+   });
 
-        this.caracForm = new FormGroup({
-            key: new FormControl(),
-            value: new FormControl()
-       }); 
 
-
-        // this.caracteristiques.push(this.carac)
 
         this.getSousCategories();
         this.mainImgPath = this.data[0].image;
@@ -63,9 +61,7 @@ export class AddProductComponent implements OnInit {
             Prix: ['', [Validators.required]],
             Disponible: ['', [Validators.required]],
             Description: ['', [Validators.required]],
-            // Remise: [50, [Validators.required]],
             IdScat: ['', [Validators.required]],
-            // Couleur: ['', [Validators.required]],
             Marque: ['', [Validators.required]],
         });
     }
@@ -74,7 +70,6 @@ export class AddProductComponent implements OnInit {
      * getImagePath is used to change the image path on click event.
      */
     public getImagePath(imgPath: string, index: number) {
-        // console.log(imgPath,index);
         document.querySelector('.border-active').classList.remove('border-active');
         this.mainImgPath = imgPath;
         document.getElementById(index + '_img').className += ' border-active';
@@ -82,7 +77,6 @@ export class AddProductComponent implements OnInit {
 
     onSubmit() {
         this.AddProduct();
-
     }
 
     getSousCategories() {
@@ -96,8 +90,6 @@ export class AddProductComponent implements OnInit {
     }
 
     AddProduct() {
-
-      
         this.genericservice.post(BaseUrl + '/Produits', this.form.value)
             .subscribe((res:any) => {
                     console.log(res);
@@ -117,9 +109,7 @@ export class AddProductComponent implements OnInit {
             Prix: [],
             Disponible: [],
             Description: [],
-            // Remise: 0,
             IdScat: [],
-            // Couleur: [],
             Marque: [],
         });
         
@@ -128,20 +118,16 @@ export class AddProductComponent implements OnInit {
             value:''
         })
 
+        this.caracteristiquesList=[]
         this.productImages=[]
         this.caracteristiques=[]
         this.mainImgPath = this.data[0].image;
         this.data[0].image_gallery = []
         this.data[0].image_gallery.splice(0, 0, this.mainImgPath);
-
         this.addProductBtnDisa = true
- 
     }
 
     UploadImages(id) {
-
-    
-
         this.postProductImages(this.productImages, id)
             .then(res => {
                 console.log(res);
