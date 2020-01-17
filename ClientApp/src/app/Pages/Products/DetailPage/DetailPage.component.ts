@@ -142,4 +142,8 @@ redirecttoCatpage(){
       document.getElementById(index + '_img').className += ' border-active';
   }
 
+  productPage(id, NScat) {
+   this.router.navigate(['/products', NScat, id]);
+}
+
 }

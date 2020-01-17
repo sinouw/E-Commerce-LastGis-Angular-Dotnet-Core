@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gis.Models.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,5 +15,6 @@ namespace GIS.Models.Query
         public List<string> Brands { get; set; }
         public string FilterProdName { get; set; }
         public List<string> Filters { get; set; }
+        public List<CaracDto> Caracs { get; set; }
     }
 }

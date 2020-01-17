@@ -37,6 +37,7 @@ import { MatButtonModule,
 			MatPaginatorModule
 		} from '@angular/material';
 
+
 @NgModule({
 	imports: [
 		CommonModule,

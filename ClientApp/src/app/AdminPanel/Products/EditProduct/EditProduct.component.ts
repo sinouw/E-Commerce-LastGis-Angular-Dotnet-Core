@@ -67,9 +67,7 @@ export class EditProductComponent implements OnInit {
             Prix: [],
             Disponible: [],
             Description: [],
-            Remise: [],
             IdScat: [],
-            Couleur: [],
             Marque: [],
             IdProd: []
         });
@@ -121,9 +119,7 @@ export class EditProductComponent implements OnInit {
             Prix: this.product.Prix,
             Disponible: this.product.Disponible,
             Description: this.product.Description,
-            Remise: this.product.Remise,
             IdScat: this.product.IdScat,
-            Couleur: this.product.Couleur,
             Marque: this.product.Marque,
             IdProd: this.idProd
         });

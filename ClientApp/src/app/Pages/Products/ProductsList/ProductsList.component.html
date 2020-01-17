@@ -26,21 +26,6 @@
 
 <div fxLayout="row wrap">
     <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="35" fxFlex.lg="25" fxFlex.xl="25">
-        <!-- Brand Filter Card -->
-        <mat-card class="product-card" style="margin: 10px">
-            <h5>Marque :</h5>
-            <mat-divider></mat-divider>
-            <mat-selection-list #list [(ngModel)]="selectedBrands" (ngModelChange)="onselectBrand()">
-                <mat-list-option *ngFor="let brand of brandsOfProducts" [value]="brand">
-                    {{brand}}
-                </mat-list-option>
-            </mat-selection-list>
-
-            <!-- <p>
-                        Options selected: {{brands.selectedOptions.selected.length}}
-                    </p> -->
-        </mat-card>
-
 
         <!-- Categorie Filter Card -->
         <mat-card class="product-card" style="margin: 10px">
@@ -63,15 +48,54 @@
                 </mat-expansion-panel>
             </mat-accordion>
         </mat-card>
-
-
-        <!-- slide********************* -->
-        <!-- <mat-card class="" style="margin: 10px;height: 70px;padding-top: 30px"> -->
-        <mat-card class="" style="margin: 10px;">
-            <h5>Prix :</h5>
+        <!-- ********************************************** -->
+        <mat-card class="product-card" style="margin: 10px">
+            <h5>Marque :</h5>
             <mat-divider></mat-divider>
+            <mat-selection-list #list [(ngModel)]="selectedBrands" (ngModelChange)="onselectBrand()">
+                <mat-list-option *ngFor="let brand of brandsOfProducts" [value]="brand">
+                    {{brand}}
+                </mat-list-option>
+            </mat-selection-list>
 
+            <!-- <p>
+                        Options selected: {{brands.selectedOptions.selected.length}}
+                    </p> -->
         </mat-card>
+
+
+
+
+
+
+
+
+
+
+        <!-- caracs ********************* -->
+
+        <mat-card *ngFor="let caracteristique of caracDto;let i=index;" class="product-card" style="margin: 10px;">
+            <h5>{{caracteristique?.Key}} :</h5>
+            <!-- ******************************* -->
+            <mat-divider></mat-divider>
+            <mat-selection-list #list>
+                <mat-list-option *ngFor="let values of caracteristique.Values" [value]="values" (click)="onselectCaract(caracteristique.Key,values)">
+                    {{values}}
+                </mat-list-option>
+            </mat-selection-list>
+        </mat-card>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     </div>

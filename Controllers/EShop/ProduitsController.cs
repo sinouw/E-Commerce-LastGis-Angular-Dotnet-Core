@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Gis.Models.DTO;
 using GIS.Models.Query;
 using GIS.Models.Query.dto;
 using Microsoft.AspNet.OData;
@@ -16,6 +17,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using WebAPI.Models;
+using WebAPI.Models.GisShop;
 using WebAPI.Models.ZahraShop;
 
 namespace WebAPI.Controllers.EShop
@@ -41,6 +43,8 @@ namespace WebAPI.Controllers.EShop
         public async Task<ActionResult<IQueryable<Produit>>> GetProduitsAsync(int? page, int pagesize = 10,string sousCategorie="",string filter = "")
         {
             List<Produit> prods2;
+            var caracs = new Dictionary<string, List<string>>();
+            var returnedcracs = new List<CaracDto>();
             List<string> brands = new List<string>();
             List<string> filters = new List<string>();
             if (string.IsNullOrEmpty(sousCategorie))
@@ -49,7 +53,32 @@ namespace WebAPI.Controllers.EShop
             }
             else
             {
-                prods2 = await _context.Produits.Include(x => x.SousCategorie).Where(x => x.SousCategorie.NsousCategorie.ToLower() == sousCategorie).ToListAsync();
+                var caracteristiques = new List<Caracteristique>();
+               
+                prods2 = await _context.Produits.Include(x => x.SousCategorie).Where(x => x.SousCategorie.NsousCategorie.ToLower() == sousCategorie).Include(x=>x.Caracteristiques).ToListAsync();
+                prods2.SelectMany(x => x.Caracteristiques).ToList().ForEach(x=> caracteristiques.Add(x));
+
+                
+                caracteristiques.ForEach(c =>
+                {
+                    if (caracs.Keys.Contains(c.Key))
+                    {
+                        if (caracs[c.Key] == null)
+                            caracs[c.Key] = new List<string>();
+
+                        if (!caracs[c.Key].Contains(c.Value))
+                            caracs[c.Key].Add(c.Value);
+                    }
+                    else
+                        caracs.Add(c.Key, new List<string>() { c.Value });
+                });
+
+                foreach (KeyValuePair<string, List<string>> entry in caracs)
+                {
+                    returnedcracs.Add(new CaracDto(entry.Key, entry.Value));
+                    // do something with entry.Value or entry.Key
+                }
+
             }
             if (!string.IsNullOrEmpty(filter))
             {
@@ -72,12 +101,12 @@ namespace WebAPI.Controllers.EShop
                 PageSize = pagesize,
                 Items = prods2.Skip((page ?? 0) * pagesize).Take(pagesize).ToList(),
                 Brands = brands.ToList(),
-                Filters = filters
+                Filters = filters,
+                Caracs = returnedcracs
             };
 
             return Ok(result);
         }
-
 
         // GET: api/Produits/search
         [HttpGet("search")]

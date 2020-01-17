@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Gis.Models.DTO;
 using Microsoft.AspNet.OData;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -28,6 +29,31 @@ namespace WebAPI.Controllers.EShop
         public async Task<ActionResult<IEnumerable<Caracteristique>>> GetCaracteristique()
         {
             return await _context.Caracteristique.ToListAsync();
+        }
+
+        // GET: api/Caracteristiques/reduced
+        [HttpGet("reduced")]
+        [EnableQuery]
+        public async Task<ActionResult<Dictionary<string, List<string>>>> GetReducedCaracteristique(string categorie)
+        {
+            var caracteristiques = await _context.Caracteristique.ToListAsync();
+            var caracs = new Dictionary<string, List<string>>();
+           
+            caracteristiques.ForEach(c=>
+                {
+                    if (caracs.Keys.Contains(c.Key))
+                    {
+                        if (caracs[c.Key] == null)
+                            caracs[c.Key] = new List<string>();
+
+                        if (!caracs[c.Key].Contains(c.Value))
+                            caracs[c.Key].Add(c.Value);
+                    }
+                    else
+                        caracs.Add(c.Key, new List<string>() { c.Value });
+                });
+                return Ok(caracs);
+
         }
 
         // GET: api/Caracteristiques/5
