@@ -107,16 +107,40 @@ export class ProductsListComponent implements OnInit {
 
 
     onselectCaract(caracnom,value) {
-    let caracForm = this.formBuilder.group({
+        let x
+        let caracForm = this.formBuilder.group({
         key: [caracnom, [Validators.required]],
         value: [value, [Validators.required]]
    });
     
-    this.caracs.push(caracForm.value)
-        
-        console.log(this.caracs);
-    }
+   if(this.caracs.length==0 || this.caracs==null ){
+       this.caracs.push(caracForm.value)
+       console.log(this.caracs);
 
+   }
+   else{
+       //push without duplicating
+      if (! this.caracs.some(x=>x.value==value && x.key==caracnom)) {
+        this.caracs.push(caracForm.value)
+        console.log(this.caracs);
+        
+      }else{
+        
+        for (let index = 0; index < this.caracs.length; index++) {
+            const c = this.caracs[index];
+            if(c.key==caracnom){
+                {if (c.value==value) {
+                    this.caracs.splice(index,1)
+                  }
+            }
+            }
+        }
+
+      }
+    }
+    console.log(this.caracs);
+}
+ 
     onselectBrand() {
         this.updateData(this.selectedBrands)
 
