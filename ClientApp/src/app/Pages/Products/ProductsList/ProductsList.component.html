@@ -74,15 +74,22 @@
 
         <!-- caracs ********************* -->
 
-        <mat-card *ngFor="let caracteristique of caracDto" class="product-card" style="margin: 10px;">
-            <h5>{{caracteristique?.Key}} :</h5>
-            <!-- ******************************* -->
+        <mat-card class="product-card" style="margin: 10px;" *ngIf="caracDto.length>0">
+            <div *ngFor="let caracteristique of caracDto">
+
+                <h5>{{caracteristique?.Key}} :</h5>
+                <!-- ******************************* -->
+                <mat-divider></mat-divider>
+                <mat-selection-list #list>
+                    <mat-list-option *ngFor="let values of caracteristique.Values" [value]="values" (click)="onselectCaract(caracteristique.Key,values)">
+                        {{values}}
+                    </mat-list-option>
+                </mat-selection-list>
+
+
+            </div>
             <mat-divider></mat-divider>
-            <mat-selection-list #list>
-                <mat-list-option *ngFor="let values of caracteristique.Values" [value]="values" (click)="onselectCaract(caracteristique.Key,values)">
-                    {{values}}
-                </mat-list-option>
-            </mat-selection-list>
+            <button matInput color="primary" mat-raised-button (click)="filterWithspecs()" style="margin-left: 50%;margin-top:20px;">Appliquer le filtre</button>
         </mat-card>
 
 

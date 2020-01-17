@@ -81,25 +81,6 @@ export class ProductsListComponent implements OnInit {
             });
     }
 
-    // getReducedCaracteristiques() {
-    //     this.genericservice.get(BaseUrl + '/Caracteristiques/reduced')
-    //         .subscribe((res:any) => {
-    //             this.caracteristiques = res;
-
-    //             for (let key in this.caracteristiques) {
-    //                 let value = this.caracteristiques[key];
-
-    //                 this.caracDto.push({key,value})
-    //                 // Use `key` and `value`
-    //             }
-
-    //         },
-    //         err=>{
-    //             console.log(err);
-
-    //         });
-    // }
-
     onselectCategorie(souscategorie) {
         this.router.navigate(['/products', souscategorie]);
         this.caracDto = []
@@ -125,7 +106,7 @@ export class ProductsListComponent implements OnInit {
         console.log(this.caracs);
         
       }else{
-        
+        //delete in case of repush 
         for (let index = 0; index < this.caracs.length; index++) {
             const c = this.caracs[index];
             if(c.key==caracnom){
@@ -140,7 +121,28 @@ export class ProductsListComponent implements OnInit {
     }
     console.log(this.caracs);
 }
- 
+
+filterWithspecs(){
+    console.log(this.caracs);
+        this.genericservice.post(BaseUrl + '/Produits/search/specs?&page=' + 0 + '&pageSize=' + this.pageSize + '&sousCategorie=' + this.type,this.caracs)
+        .subscribe(res => {
+        this.productsGrid = res.Items
+        this.pageNumber = res.pageIndex;
+        this.length = res.Count;
+        this.dataSource = new MatTableDataSource<any>(this.productsGrid);
+        this.cardsObs = this.dataSource.connect();
+        this.dataSource.paginator = this.paginator;
+        console.log(res)
+
+    },
+        err => {
+            console.log(err);
+        })
+
+    
+}
+
+
     onselectBrand() {
         this.updateData(this.selectedBrands)
 
@@ -269,7 +271,7 @@ export class ProductsListComponent implements OnInit {
     }
 
     applyFilter() {
-        let value = this.filterValue.trim().toLowerCase()
+        let value = this.filterValue.trim().toLowerCase().toString()
         console.log(value);
 
         this.genericservice.get(BaseUrl + '/Produits/search?&page=' + 0 + '&pageSize=' + this.pageSize + '&filter=' + value)

@@ -30,17 +30,23 @@ namespace WebAPI.Controllers.EShop
     public class ProduitsController : ControllerBase
     {
         private readonly EshopContext _context;
-    
+
 
         public ProduitsController(EshopContext context)
         {
             _context = context;
         }
 
+        //******************************************************************
+        //******************************************************************
+        //Get all Products
+        //******************************************************************
+        //******************************************************************
+
         // GET: api/Produits
         [HttpGet]
         [EnableQuery]
-        public async Task<ActionResult<IQueryable<Produit>>> GetProduitsAsync(int? page, int pagesize = 10,string sousCategorie="",string filter = "")
+        public async Task<ActionResult<IQueryable<Produit>>> GetProduitsAsync(int? page, int pagesize = 10, string sousCategorie = "", string filter = "")
         {
             List<Produit> prods2;
             var caracs = new Dictionary<string, List<string>>();
@@ -54,11 +60,11 @@ namespace WebAPI.Controllers.EShop
             else
             {
                 var caracteristiques = new List<Caracteristique>();
-               
-                prods2 = await _context.Produits.Include(x => x.SousCategorie).Where(x => x.SousCategorie.NsousCategorie.ToLower() == sousCategorie).Include(x=>x.Caracteristiques).ToListAsync();
-                prods2.SelectMany(x => x.Caracteristiques).ToList().ForEach(x=> caracteristiques.Add(x));
 
-                
+                prods2 = await _context.Produits.Include(x => x.SousCategorie).Where(x => x.SousCategorie.NsousCategorie.ToLower() == sousCategorie).Include(x => x.Caracteristiques).ToListAsync();
+                prods2.SelectMany(x => x.Caracteristiques).ToList().ForEach(x => caracteristiques.Add(x));
+
+
                 caracteristiques.ForEach(c =>
                 {
                     if (caracs.Keys.Contains(c.Key))
@@ -108,33 +114,77 @@ namespace WebAPI.Controllers.EShop
             return Ok(result);
         }
 
+        //******************************************************************
+        //******************************************************************
+        //search By Specs
+        //******************************************************************
+        //******************************************************************
+
+        // Post: api/Produits/search/specs
+        [HttpPost("search/specs")]
+        [EnableQuery]
+        public ActionResult<IQueryable<Produit>> SearchProduitsAsyncBySpecs([FromBody]List<SimpleCaracDto> specs ,int? page, int pagesize = 10, string sousCategorie = "")
+        {
+            var prods = new HashSet<Produit>();
+            specs.ForEach(carac =>
+            {
+                _context.Caracteristique
+                                .Include(x => x.Produit)
+                                .ThenInclude(x => x.SousCategorie)
+                                .Where(x => x.Produit.SousCategorie.NsousCategorie == sousCategorie)
+                                .Where(x => x.Key == carac.Key && x.Value == carac.Value)
+                                .Select(x => x.Produit)
+                                .ToList()
+                                .ForEach(x =>
+                                {
+                                    if (!prods.Any(p => p.IdProd == x.IdProd))
+                                        prods.Add(x);
+                                });
+            });
+
+            var countDetails = prods.Count();
+
+            var result = new GIS.Models.Query.PageResult<Produit>
+            {
+                Count = countDetails,
+                PageIndex = page ?? 0,
+                PageSize = pagesize,
+                Items = prods.Skip((page ?? 0) * pagesize).Take(pagesize).ToList(),
+
+            };
+            return Ok(result);
+        }
+
+        //******************************************************************
+        //******************************************************************
+        //search
+        //******************************************************************
+        //******************************************************************
+
         // GET: api/Produits/search
         [HttpGet("search")]
         [EnableQuery]
-        public async Task<ActionResult<IQueryable<Produit>>> SearchProduitsAsync(int? page, int pagesize = 10,string filter = "")
+        public async Task<ActionResult<IQueryable<Produit>>> SearchProduitsAsync(int? page, int pagesize = 10, string filter = "")
         {
             List<Produit> prods;
-
-            
-
             if (!string.IsNullOrEmpty(filter))
             {
                 string cleanfilter = StringCleaner(filter);
                 prods = await _context.Produits.Include(x => x.SousCategorie)
               .Where(
-                x =>  EF.Functions.Like(cleanfilter,(StringCleaner("%"+x.NomProduit+"%")))
-              || EF.Functions.Like(StringCleaner(x.NomProduit), "%"+cleanfilter+"%")
-              
-              || EF.Functions.Like(StringCleaner(x.SousCategorie.NsousCategorie), "%"+cleanfilter+"%")
+                //x =>  EF.Functions.Like(cleanfilter,(StringCleaner("%"+x.NomProduit+"%")))
+              x => EF.Functions.Like(StringCleaner(x.NomProduit), "%" + cleanfilter + "%")
+
+              //|| EF.Functions.Like(StringCleaner(x.SousCategorie.NsousCategorie), "%"+cleanfilter+"%")
               || EF.Functions.Like(cleanfilter, (StringCleaner("%" + x.SousCategorie.NsousCategorie + "%")))
-              
-              || EF.Functions.Like(StringCleaner(x.Marque), "%"+cleanfilter+"%")
+
+              //|| EF.Functions.Like(StringCleaner(x.Marque), "%"+cleanfilter+"%")
               || EF.Functions.Like(cleanfilter, (StringCleaner("%" + x.Marque + "%")))).ToListAsync();
 
             }
             else
             {
-                 prods = await _context.Produits.Include(x => x.SousCategorie).ToListAsync();
+                prods = await _context.Produits.Include(x => x.SousCategorie).ToListAsync();
             }
 
 
@@ -146,11 +196,19 @@ namespace WebAPI.Controllers.EShop
                 PageIndex = page ?? 0,
                 PageSize = pagesize,
                 Items = prods.Skip((page ?? 0) * pagesize).Take(pagesize).ToList(),
-                FilterProdName=filter
+                FilterProdName = filter
             };
-                  return Ok(result);
-            
+            return Ok(result);
+
         }
+
+
+        //******************************************************************
+        //******************************************************************
+        //******************************************************************
+        //******************************************************************
+        //******************************************************************
+
 
         public String StringCleaner(string s)
         {
@@ -164,7 +222,8 @@ namespace WebAPI.Controllers.EShop
         public async Task<ActionResult<Produit>> GetProduit(Guid id)
         {
             //var produit = await _context.Produits.Include(p => p.Caracteristiques).Include(p=>p.Images).SingleOrDefaultAsync(p=>p.IdProd==id);
-            var produit = await _context.Produits.Select(s => new {
+            var produit = await _context.Produits.Select(s => new
+            {
                 s.IdProd,
                 s.NomProduit,
                 s.Description,
@@ -180,7 +239,7 @@ namespace WebAPI.Controllers.EShop
                 //FrontImg=s.Images.First<Image>().ImageName,
                 FrontImg = s.FrontImg,
                 s.Caracteristiques
-            }).SingleOrDefaultAsync(p=>p.IdProd==id);
+            }).SingleOrDefaultAsync(p => p.IdProd == id);
 
             if (produit == null)
             {
@@ -194,13 +253,13 @@ namespace WebAPI.Controllers.EShop
         [HttpPut("{id}")]
         public async Task<IActionResult> PutProduit(Guid id, Produit produit)
         {
-            if(id != produit.IdProd)
+            if (id != produit.IdProd)
             {
                 return BadRequest();
             }
 
 
-            
+
             _context.Entry(produit).State = EntityState.Modified;
             try
             {
@@ -225,7 +284,7 @@ namespace WebAPI.Controllers.EShop
         [HttpPost]
         public async Task<ActionResult<Produit>> PostProduit(Produit produit)
         {
-            
+
             _context.Produits.Add(produit);
             await _context.SaveChangesAsync();
 
@@ -258,7 +317,7 @@ namespace WebAPI.Controllers.EShop
 
                 throw e;
             }
-          
+
         }
 
         private bool ProduitExists(Guid id)
@@ -266,7 +325,7 @@ namespace WebAPI.Controllers.EShop
             return _context.Produits.Any(e => e.IdProd == id);
         }
 
-        
+
 
     }
 }
