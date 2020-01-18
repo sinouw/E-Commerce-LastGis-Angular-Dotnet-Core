@@ -153,6 +153,8 @@ namespace WebAPI.Controllers.EShop
         [EnableQuery]
         public ActionResult<IQueryable<Produit>> SearchProduitsAsyncBySpecs([FromBody]List<SimpleCaracDto> specs , int? page, int pagesize = 10, string sousCategorie = "", string filterPrix = "desc")
         {
+            var caracteristiques = new List<Caracteristique>();
+
             var prods = new HashSet<Produit>();
             if (filterPrix == "desc")
             {
@@ -169,7 +171,9 @@ namespace WebAPI.Controllers.EShop
                                 .ForEach(x =>
                                 {
                                     if (!prods.Any(p => p.IdProd == x.IdProd))
-                                        prods.Add(x);
+                                    { prods.Add(x);
+                                        
+                                    }
                                 });
             });
 

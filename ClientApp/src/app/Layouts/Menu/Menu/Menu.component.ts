@@ -47,7 +47,8 @@ export class MenuComponent implements OnInit {
     private genericservice: AdminGenericService) {
       this.getCategories().subscribe((res:any) => {
         // debugger
-        
+        console.clear()
+        console.log(res);
         
         // debugger
           res.forEach(categorie => {

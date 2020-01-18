@@ -113,11 +113,11 @@
                                 </div>
                                 <table class="w-100 table-scroll-wrap" mat-table [dataSource]="caracteristiquesList" matSort>
                                     <ng-container matColumnDef="key">
-                                        <th class="text-nowrap px-3" mat-header-cell *matHeaderCellDef mat-sort-header>Cle </th>
+                                        <th class="text-nowrap px-3" mat-header-cell *matHeaderCellDef mat-sort-header>Caracteristique </th>
                                         <td class="text-nowrap product-name" mat-cell *matCellDef="let element"><span>{{element?.key}}</span></td>
                                     </ng-container>
                                     <ng-container matColumnDef="value">
-                                        <th class="text-nowrap px-3" mat-header-cell *matHeaderCellDef mat-sort-header>Valeur</th>
+                                        <th class="text-nowrap px-3" mat-header-cell *matHeaderCellDef mat-sort-header>Description</th>
                                         <td class="text-nowrap product-name" mat-cell *matCellDef="let element"><span>{{element?.value}}</span></td>
                                     </ng-container>
 
