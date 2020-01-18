@@ -46,11 +46,8 @@ export class MenuComponent implements OnInit {
    constructor(public menuItems: MenuItems,public router: Router, public translate: TranslateService,
     private genericservice: AdminGenericService) {
       this.getCategories().subscribe((res:any) => {
-        // debugger
-        console.clear()
         console.log(res);
         
-        // debugger
           res.forEach(categorie => {
             let scatmenu :any =[]
           categorie.children.forEach(souscateg => {
@@ -77,7 +74,6 @@ export class MenuComponent implements OnInit {
           )
            this.souscategMenu.length=0 
         });
-        // this.MenuChilren=this.categories
         
  }); 
 

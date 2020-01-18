@@ -69,15 +69,15 @@
         <mat-card class="product-card" style="margin: 10px">
             <h5>Marque :</h5>
             <mat-divider></mat-divider>
-            <!-- <mat-selection-list #list [(ngModel)]="selectedBrands" (ngModelChange)="onselectBrand()"> -->
-            <mat-selection-list #list [(ngModel)]="selectedBrands">
+            <mat-selection-list #list [(ngModel)]="selectedBrands" (ngModelChange)="onselectBrand()">
+                <!-- <mat-selection-list #list [(ngModel)]="selectedBrands"> -->
                 <mat-list-option *ngFor="let brand of brandsOfProducts" [value]="brand">
                     {{brand}}
                 </mat-list-option>
             </mat-selection-list>
-            <mat-divider></mat-divider>
+            <!-- <mat-divider></mat-divider> -->
 
-            <button matInput color="primary" mat-raised-button (click)="onselectBrand()" style="margin-left: 50%;margin-top:20px;">Appliquer le filtre</button>
+            <!-- <button matInput color="primary" mat-raised-button (click)="onselectBrand()" style="margin-left: 50%;margin-top:20px;">Appliquer le filtre</button> -->
 
             <!-- <p>
                         Options selected: {{brands.selectedOptions.selected.length}}
@@ -126,7 +126,7 @@
                         <p class="category-wrap mb-2">{{product?.Marque || null}}</p>
                         <div class="product-price">
                             <div fxFlex fxLayoutAlign="space-between">
-                                <h6 class="accent-color">{{product?.Prix | currency}}</h6>
+                                <h6 class="accent-color">{{product?.Prix | currency :'TND'}}</h6>
                             </div>
                         </div>
                         <!--product-price-->

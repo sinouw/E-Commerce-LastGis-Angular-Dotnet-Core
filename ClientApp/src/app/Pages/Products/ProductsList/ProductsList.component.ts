@@ -32,8 +32,8 @@ export class ProductsListComponent implements OnInit {
     brandsOfProducts: any = [];
     // MatPaginator Inputs
     length = 100;
-    pageSize = 25;
-    pageSizeOptions: number[] = [ 25 , 50, 100];
+    pageSize = 5;
+    pageSizeOptions: number[] = [5, 25 , 50, 100];
     dataSource: MatTableDataSource<any> = new MatTableDataSource<any>();
     pageEvent: PageEvent;
     cardsObs: Observable<any>;
@@ -74,7 +74,6 @@ export class ProductsListComponent implements OnInit {
 
 
     onFilterPrixChange(){
-        console.clear()
         console.log(this.stringfilterPrix);
         if (this.stringfilterPrix==0) {
             this.filterPrix="desc"
@@ -211,7 +210,7 @@ export class ProductsListComponent implements OnInit {
     }
 
     list(souscategorie = "", filters = this.selectedBrands, page = 0, pagesize = this.pageSize) {
-        return this.genericservice.get(BaseUrl + '/Produits?&page=' + page + '&pageSize=' + pagesize + '&sousCategorie=' + souscategorie + '&filter=' + filters+'&filterPrix='+this.filterPrix)
+        return this.genericservice.post(BaseUrl + '/Produits/prod?&page=' + page + '&pageSize=' + pagesize + '&sousCategorie=' + souscategorie + '&filter=' + filters+'&filterPrix='+this.filterPrix,this.caracs)
     }
     getData(type = this.type, filters = this.selectedBrands) {
         this.list(type, filters).subscribe(res => {

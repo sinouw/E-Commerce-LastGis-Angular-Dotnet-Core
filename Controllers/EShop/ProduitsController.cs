@@ -44,58 +44,184 @@ namespace WebAPI.Controllers.EShop
         //******************************************************************
 
         // GET: api/Produits
-        [HttpGet]
+        [HttpPost("prod")]
         [EnableQuery]
-        public async Task<ActionResult<IQueryable<Produit>>> GetProduitsAsync(int? page, int pagesize = 10, string sousCategorie = "", string filter = "",string filterPrix = "desc")
+        public ActionResult<IQueryable<Produit>> GetProduits([FromBody]List<SimpleCaracDto> specs, int? page, int pagesize = 10, string sousCategorie = "", string filter = "", string filterPrix = "desc")
         {
-            List<Produit> prods2;
+            var prods2 = new HashSet<Produit>();
             var caracs = new Dictionary<string, List<string>>();
             var returnedcracs = new List<CaracDto>();
             List<string> brands = new List<string>();
             List<string> filters = new List<string>();
+            string[] brandstofilter= {};
 
-            
+            if (!string.IsNullOrEmpty(filter))
+            {
+                brandstofilter = filter.Split(",");
+            }
+          
+
             if (string.IsNullOrEmpty(sousCategorie))
             {
-               
-                    if (filterPrix == "desc")
-                    {
-                    prods2 = await _context.Produits.Include(x => x.SousCategorie).OrderByDescending(x=>x.Prix).ToListAsync();
 
-                    }
-                    else
-                    {
-                    prods2 = await _context.Produits.Include(x => x.SousCategorie).OrderBy(x => x.Prix).ToListAsync();
+                if (filterPrix == "desc")
+                {
+                    _context.Produits.Include(x => x.SousCategorie).OrderByDescending(x => x.Prix)
+                       .ToList().ForEach(x => prods2.Add(x));
 
-                    }
-             
+                }
+                else
+                {
+                    _context.Produits.Include(x => x.SousCategorie).OrderBy(x => x.Prix)
+                        .ToList().ForEach(x => prods2.Add(x));
+
+                }
+
+
                 if (!string.IsNullOrEmpty(filter))
                 {
-                    prods2 = prods2.Where(p => filter.ToLower().Contains(p.Marque.ToLower())).ToList();
+                    var filtredprods = new HashSet<Produit>();
+                    foreach (var brand in brandstofilter)
+                    {
+                        foreach (var prod in prods2)
+                        {
+                            if (prod.Marque == brand)
+                            {
+                                filtredprods.Add(prod);
+                            }
+                        }
+                    }
+                    prods2 = filtredprods;
+                    //var prodlist = prods2.Where(p => filter.ToLower().Contains(p.Marque.ToLower()))
+                    //    .ToList();
+
+                    //prodlist.ToList().ForEach(x => prods2.Add(x));
+                    
                 }
+
             }
             else
             {
-                    var caracteristiques = new List<Caracteristique>();
-               
+
+                if (specs.Count() != 0)
+                {
+                    //When whe have specs and we should filter products
+
                     if (filterPrix == "desc")
                     {
-                        prods2 = await _context.Produits.Include(x => x.SousCategorie).Where(x => x.SousCategorie.NsousCategorie.ToLower() == sousCategorie).Include(x => x.Caracteristiques).OrderByDescending(x=>x.Prix).ToListAsync();
+                        //prods2 = await _context.Produits.Include(x => x.SousCategorie).Where(x => x.SousCategorie.NsousCategorie.ToLower() == sousCategorie).Include(x => x.Caracteristiques).OrderByDescending(x => x.Prix).ToListAsync();
+
+                        //******************************************************************************************************
+                        //******************************************************************************************************
+
+                        specs.ForEach(carac =>
+                        {
+                            _context.Caracteristique
+                                            .Include(x => x.Produit)
+                                            .ThenInclude(x => x.SousCategorie)
+                                            .OrderByDescending(x => x.Produit.Prix)
+                                            .Where(x => x.Produit.SousCategorie.NsousCategorie == sousCategorie)
+                                            .Where(x => x.Key == carac.Key && x.Value == carac.Value)
+                                            .Select(x => x.Produit)
+                                            .ToList()
+                                            .ForEach(x =>
+                                            {
+                                                if (!prods2.Any(p => p.IdProd == x.IdProd))
+                                                {
+                                                    prods2.Add(x);
+
+                                                }
+                                            });
+                        });
+
+
+                        //************************************************************************************************************
+                        //*****************************************************************************************************************
 
                     }
                     else
                     {
-                        prods2 = await _context.Produits.Include(x => x.SousCategorie).Where(x => x.SousCategorie.NsousCategorie.ToLower() == sousCategorie).Include(x => x.Caracteristiques).OrderBy(x => x.Prix).ToListAsync();
+                        //_context.Produits
+                        //    .Include(x => x.SousCategorie)
+                        //    .Where(x => x.SousCategorie.NsousCategorie.ToLower() == sousCategorie)
+                        //    .Include(x => x.Caracteristiques).OrderBy(x => x.Prix)
+                        //    .ToList().ForEach(x => prods2.Add(x));
+
+                        //*****************************************************************************************************************
+                        //*****************************************************************************************************************
+
+                        specs.ForEach(carac =>
+                        {
+                            _context.Caracteristique
+                                            .Include(x => x.Produit)
+                                            .ThenInclude(x => x.SousCategorie)
+                                            .OrderBy(x => x.Produit.Prix)
+                                            .Where(x => x.Produit.SousCategorie.NsousCategorie == sousCategorie)
+                                            .Where(x => x.Key == carac.Key && x.Value == carac.Value)
+                                            .Select(x => x.Produit)
+                                            .ToList()
+                                            .ForEach(x =>
+                                            {
+                                                if (!prods2.Any(p => p.IdProd == x.IdProd))
+                                                {
+                                                    prods2.Add(x);
+
+                                                }
+                                            });
+                        });
+
+
+                        //*****************************************************************************************************************
+                        //*****************************************************************************************************************
+                    }
+                }
+                else
+                {
+                    //Normal process
+                    if (filterPrix == "desc")
+                    {
+                        _context.Produits
+                            .Include(x => x.SousCategorie)
+                            .Where(x => x.SousCategorie.NsousCategorie.ToLower() == sousCategorie)
+                            .Include(x => x.Caracteristiques)
+                            .OrderByDescending(x => x.Prix)
+                            .ToList().ForEach(x => prods2.Add(x));
 
                     }
-           
+                    else
+                    {
+                        _context.Produits
+                            .Include(x => x.SousCategorie)
+                            .Where(x => x.SousCategorie.NsousCategorie.ToLower() == sousCategorie)
+                            .Include(x => x.Caracteristiques)
+                            .OrderBy(x => x.Prix)
+                            .ToList().ForEach(x => prods2.Add(x));
+
+                    }
+                }
                 if (!string.IsNullOrEmpty(filter))
+                //if (filter.Count()!=0)
                 {
-                    prods2 = prods2.Where(p => filter.ToLower().Contains(p.Marque.ToLower())).ToList();
+
+                    var filtredprods = new HashSet<Produit>();
+                    foreach (var brand in brandstofilter)
+                    {
+                        foreach (var prod in prods2)
+                        {
+                            if (prod.Marque == brand)
+                            {
+                                filtredprods.Add(prod);
+                            }
+                        }
+                    }
+                    prods2 = filtredprods;
+                    //prods2.Where(p => filter.ToLower().Contains(p.Marque.ToLower()))
+                    // .ToList().ForEach(x => prods2.Add(x));
+
                 }
 
+                var caracteristiques = new List<Caracteristique>();
                 prods2.SelectMany(x => x.Caracteristiques).ToList().ForEach(x => caracteristiques.Add(x));
-
                 caracteristiques.ForEach(c =>
                 {
                     if (caracs.Keys.Contains(c.Key))
@@ -117,7 +243,7 @@ namespace WebAPI.Controllers.EShop
                 }
 
             }
-          
+
 
             var brandys = _context.Produits.Select(x => x.Marque).ToList()
                 .Distinct();
