@@ -57,13 +57,13 @@ export class DetailPageComponent implements OnInit {
       this.list().subscribe((res:any)=>{
          console.log("Products: ",res);
 
-         // res.Items.forEach(prod => {
-         //    if (prod.IdProd!=this.id) {
-         //       this.productsGrid.push(prod)
-         //    }
-         // });
+         res.Items.forEach(prod => {
+            if (prod.IdProd!=this.id) {
+               this.productsGrid.push(prod)
+            }
+         });
 
-         this.productsGrid=res.Items
+         // this.productsGrid=res.Items
    },
    err=>{
       console.log(err);
