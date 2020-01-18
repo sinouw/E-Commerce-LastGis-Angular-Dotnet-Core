@@ -44,6 +44,7 @@ export class ProductsListComponent implements OnInit {
 
 
     filterPrix:any="desc"
+    stringfilterPrix=0
     subscribers: any = {};
     productsGrid: any = [];
     selectedBrands: any = [];
@@ -73,8 +74,16 @@ export class ProductsListComponent implements OnInit {
 
 
     onFilterPrixChange(){
+        console.clear()
+        console.log(this.stringfilterPrix);
+        if (this.stringfilterPrix==0) {
+            this.filterPrix="desc"
+        } else {
+            this.filterPrix="asc"
+        }
         console.log(this.filterPrix);
-        this.updateData(this.selectedBrands)
+        
+         this.updateData(this.selectedBrands)
     }
 
     getCategoriesDtosimple() {
