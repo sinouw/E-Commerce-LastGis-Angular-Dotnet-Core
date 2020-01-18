@@ -233,20 +233,34 @@ namespace WebAPI.Controllers.EShop
                         .OrderByDescending(x => x.Prix)
                         .Include(x => x.SousCategorie)
                         .Where(
-                            x => EF.Functions.Like(cleanfilter, (StringCleaner("%" + x.NomProduit + "%")))
-                            || EF.Functions.Like(cleanfilter, (StringCleaner("%" + x.SousCategorie.NsousCategorie + "%")))
-                            || EF.Functions.Like(cleanfilter, (StringCleaner("%" + x.Marque + "%")))).ToListAsync();
-                        }
+                            x => EF.Functions.Like(cleanfilter, ("%" + StringCleaner(x.NomProduit ) + "%"))
+                            || EF.Functions.Like(StringCleaner(x.NomProduit), ("%" + cleanfilter+ "%"))
+                            || cleanfilter.Contains(StringCleaner(x.NomProduit))
+
+                            || EF.Functions.Like(cleanfilter, ("%" + StringCleaner(x.SousCategorie.NsousCategorie) + "%"))
+                            || EF.Functions.Like(StringCleaner(x.SousCategorie.NsousCategorie), ("%" + cleanfilter + "%"))
+                            || cleanfilter.Contains(StringCleaner(x.SousCategorie.NsousCategorie))
+
+                            || EF.Functions.Like(cleanfilter, ("%" + StringCleaner(x.Marque)+ "%"))
+                            || EF.Functions.Like(x.Marque, ("%" + cleanfilter + "%"))
+                            || cleanfilter.Contains(StringCleaner(x.Marque))
+                            ).ToListAsync();
+                }
                 else
                 {
                     prods = await _context.Produits
                         .OrderBy(x=>x.Prix)
                         .Include(x => x.SousCategorie)
                         .Where(
-                            x => EF.Functions.Like(cleanfilter, (StringCleaner("%" + x.NomProduit + "%")))
+                         x => EF.Functions.Like(cleanfilter, (StringCleaner("%" + x.NomProduit + "%")))
+                            || EF.Functions.Like(x.NomProduit, (StringCleaner("%" + cleanfilter + "%")))
+
                             || EF.Functions.Like(cleanfilter, (StringCleaner("%" + x.SousCategorie.NsousCategorie + "%")))
-                            || EF.Functions.Like(cleanfilter, (StringCleaner("%" + x.Marque + "%")))).ToListAsync();
-                        }
+                            || EF.Functions.Like(x.SousCategorie.NsousCategorie, (StringCleaner("%" + cleanfilter + "%")))
+
+                            || EF.Functions.Like(cleanfilter, (StringCleaner("%" + x.Marque + "%")))
+                            || EF.Functions.Like(x.Marque, (StringCleaner("%" + cleanfilter + "%")))).ToListAsync();
+                }
             }
             else
             {
