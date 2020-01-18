@@ -123,7 +123,8 @@ namespace WebAPI.Controllers.EShop
         // Post: api/Produits/search/specs
         [HttpPost("search/specs")]
         [EnableQuery]
-        public ActionResult<IQueryable<Produit>> SearchProduitsAsyncBySpecs([FromBody]List<SimpleCaracDto> specs ,int? page, int pagesize = 10, string sousCategorie = "")
+        public ActionResult<IQueryable<Produit>> SearchProduitsAsyncBySpecs([FromBody]List<SimpleCaracDto> specs , int? page, int pagesize = 10, string sousCategorie = "")
+        //public ActionResult<IQueryable<Produit>> SearchProduitsAsyncBySpecs([FromBody]List<SimpleCaracDto> specs , [FromBody]List<string> selectedBrands, int? page, int pagesize = 10, string sousCategorie = "")
         {
             var prods = new HashSet<Produit>();
             specs.ForEach(carac =>
@@ -141,6 +142,13 @@ namespace WebAPI.Controllers.EShop
                                         prods.Add(x);
                                 });
             });
+
+            var selectedprods = new HashSet<Produit>();
+
+            //selectedBrands.ForEach(marque =>
+            //{
+            //    prods.Where(x => x.Marque == marque).ToList().ForEach(x=> selectedprods.Add(x));
+            //});
 
             var countDetails = prods.Count();
 

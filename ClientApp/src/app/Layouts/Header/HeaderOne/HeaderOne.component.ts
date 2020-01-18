@@ -14,6 +14,7 @@ export class HeaderOneComponent implements OnInit {
    cartProducts     : any;
    popupResponse    : any;
    wishlistProducts : any;
+   filterValue:any;
 
    constructor(public embryoService: EmbryoService , private accountservice : AccountService) {}
 
@@ -26,7 +27,16 @@ export class HeaderOneComponent implements OnInit {
       else{
          this.embryoService.connected = false 
       }
-     
+   }
+
+   applyFilter(){
+      if (this.filterValue==="") {
+         return
+      }else{
+         console.log(this.filterValue);
+      }
+      
+      // console.log(value);
       
    }
 
@@ -82,4 +92,6 @@ export class HeaderOneComponent implements OnInit {
    public addToCart(value) {
       this.embryoService.addToCart(value, 'wishlist');
    }
+
+
 }

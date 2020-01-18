@@ -45,10 +45,10 @@ export class ProductsListComponent implements OnInit {
 
 
     subscribers: any = {};
-    productsGrid: any;
+    productsGrid: any = [];
     selectedBrands: any = [];
     filterValue: string;
-    caracs:Caracteristique[]=[]
+    caracs: Caracteristique[] = []
 
     constructor(
         public formBuilder: FormBuilder,
@@ -61,8 +61,6 @@ export class ProductsListComponent implements OnInit {
     }
 
     ngOnInit() {
-
-    
         this.route.params.subscribe((res: any) => {
             this.type = res.type;
             this.caracDto = []
@@ -87,63 +85,97 @@ export class ProductsListComponent implements OnInit {
     }
 
 
-    onselectCaract(caracnom,value) {
+    onselectCaract(caracnom, value) {
         let x
         let caracForm = this.formBuilder.group({
-        key: [caracnom, [Validators.required]],
-        value: [value, [Validators.required]]
-   });
-    
-   if(this.caracs.length==0 || this.caracs==null ){
-       this.caracs.push(caracForm.value)
-       console.log(this.caracs);
+            key: [caracnom, [Validators.required]],
+            value: [value, [Validators.required]]
+        });
 
-   }
-   else{
-       //push without duplicating
-      if (! this.caracs.some(x=>x.value==value && x.key==caracnom)) {
-        this.caracs.push(caracForm.value)
-        console.log(this.caracs);
-        
-      }else{
-        //delete in case of repush 
-        for (let index = 0; index < this.caracs.length; index++) {
-            const c = this.caracs[index];
-            if(c.key==caracnom){
-                {if (c.value==value) {
-                    this.caracs.splice(index,1)
-                  }
-            }
+        if (this.caracs.length == 0 || this.caracs == null) {
+            this.caracs.push(caracForm.value)
+            console.log(this.caracs);
+
+        }
+        else {
+            //push without duplicating
+            if (!this.caracs.some(x => x.value == value && x.key == caracnom)) {
+                this.caracs.push(caracForm.value)
+                console.log(this.caracs);
+
+            } else {
+                //delete in case of repush 
+                for (let index = 0; index < this.caracs.length; index++) {
+                    const c = this.caracs[index];
+                    if (c.key == caracnom) {
+                        {
+                            if (c.value == value) {
+                                this.caracs.splice(index, 1)
+                            }
+                        }
+                    }
+                }
+
             }
         }
-
-      }
+        console.log(this.caracs);
     }
-    console.log(this.caracs);
-}
 
-filterWithspecs(){
-    console.log(this.caracs);
-        this.genericservice.post(BaseUrl + '/Produits/search/specs?&page=' + 0 + '&pageSize=' + this.pageSize + '&sousCategorie=' + this.type,this.caracs)
-        .subscribe(res => {
-        this.productsGrid = res.Items
-        this.pageNumber = res.pageIndex;
-        this.length = res.Count;
-        this.dataSource = new MatTableDataSource<any>(this.productsGrid);
-        this.cardsObs = this.dataSource.connect();
-        this.dataSource.paginator = this.paginator;
-        console.log(res)
 
-    },
-        err => {
-            console.log(err);
-        })
+    filterWithspecs() {
+        console.log(this.caracs);
+        if (this.caracs.length == 0) {
+            this.updateData(this.selectedBrands)
+        }
+        else {
+            this.genericservice.post(BaseUrl + '/Produits/search/specs?&page=' + 0 + '&pageSize=' + this.pageSize + '&sousCategorie=' + this.type, this.caracs)
+                .subscribe(res => {
 
-    
-}
+                     let selectedProds:any=[]
+
+                                 
+                    if(this.selectedBrands.length==0){
+                        
+                        this.productsGrid = res.Items
+                        this.pageNumber = res.pageIndex;
+                        this.length = res.Count;
+                        this.dataSource = new MatTableDataSource<any>(this.productsGrid);
+                        this.cardsObs = this.dataSource.connect();
+                        this.dataSource.paginator = this.paginator;
+                        console.log(res)
+                    }
+                    else{
+                        this.selectedBrands.forEach(brand => {
+                            
+                            res.Items.forEach(prod => {
+                                if(prod.Marque == brand)
+                                selectedProds.push(prod)
+                            });
+                            
+                        });  
+
+                        this.productsGrid = selectedProds
+                        this.pageNumber = res.pageIndex;
+                        this.length = selectedProds.length;
+                        this.dataSource = new MatTableDataSource<any>(this.productsGrid);
+                        this.cardsObs = this.dataSource.connect();
+                        this.dataSource.paginator = this.paginator;
+                        console.log(res)
+                    }
+
+                },
+                    err => {
+                        console.log(err)
+                    })
+                }
+
+
+
+    }
 
 
     onselectBrand() {
+
         this.updateData(this.selectedBrands)
 
         console.log(this.selectedBrands);
@@ -177,9 +209,9 @@ filterWithspecs(){
             this.cardsObs = this.dataSource.connect();
             this.dataSource.paginator = this.paginator;
             console.log(res)
-            this.caracDto=res.Caracs
+            this.caracDto = res.Caracs
             console.log(this.caracDto);
-            
+
 
         },
             err => {

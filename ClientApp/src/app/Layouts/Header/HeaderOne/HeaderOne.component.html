@@ -37,16 +37,16 @@
         <div class="container">
             <div class="header-v1-bottom-inner">
                 <embryo-Menu></embryo-Menu>
-                <div class="search-box">
+                <!-- <div class="search-box">
                     <button type="button" mat-fab (click)="toggleSearch()">
             <i class="material-icons notranslate">
               search
             </i>
           </button>
-                </div>
+                </div> -->
                 <div class="search-form">
                     <form>
-                        <input type="text" placeholder="Search and hit enter">
+                        <input type="text" placeholder="écrivez et cliquez sur entrée" (keyup.enter)="applyFilter()" name="filter" [(ngModel)]="filterValue">
                         <button type="button" mat-fab class="close-btn" (click)="toggleSearch()">
               <i class="material-icons">
                 close
@@ -63,10 +63,10 @@
     <mat-toolbar-row class="responsive-bar relative">
         <div class="container">
             <div fxLayoutAlign="space-between">
-
+                <!-- 
                 <button class="responsive-toggle" mat-icon-button (click)="toggleSidebar()">
             <i class="material-icons">menu</i>
-          </button>
+          </button> -->
                 <div>
                     <div class="search-box-bar">
                         <button type="button" mat-mini-fab (click)="toggleSearch()">
@@ -77,7 +77,7 @@
                     </div>
                     <div class="search-form">
                         <form>
-                            <input type="text" placeholder="Search and hit enter">
+                            <input matInput type="text" placeholder="écrivez et cliquez sur entrée" (keyup.enter)="applyFilter()" name="filter" [(ngModel)]="filterValue">
                             <button type="button" mat-fab class="close-btn" (click)="toggleSearch()">
                     <i class="material-icons">
                       close

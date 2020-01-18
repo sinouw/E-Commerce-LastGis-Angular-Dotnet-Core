@@ -50,10 +50,7 @@ export class DetailPageComponent implements OnInit {
          this.getProduct()
          this.getData();
       })
-      console.log(this.id);
-      
-      
-      
+      console.log(this.id);  
    }
 
    getProducts(){
