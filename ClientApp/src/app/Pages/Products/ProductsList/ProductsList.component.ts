@@ -43,7 +43,7 @@ export class ProductsListComponent implements OnInit {
 
 
 
-    filterPrix:any=0
+    filterPrix:any="desc"
     subscribers: any = {};
     productsGrid: any = [];
     selectedBrands: any = [];
@@ -133,7 +133,7 @@ export class ProductsListComponent implements OnInit {
             this.updateData(this.selectedBrands)
         }
         else {
-            this.genericservice.post(BaseUrl + '/Produits/search/specs?&page=' + 0 + '&pageSize=' + this.pageSize + '&sousCategorie=' + this.type, this.caracs)
+            this.genericservice.post(BaseUrl + '/Produits/search/specs?&page=' + 0 + '&pageSize=' + this.pageSize + '&sousCategorie=' + this.type+'&filterPrix='+this.filterPrix, this.caracs)
                 .subscribe(res => {
 
                      let selectedProds:any=[]
@@ -202,7 +202,7 @@ export class ProductsListComponent implements OnInit {
     }
 
     list(souscategorie = "", filters = this.selectedBrands, page = 0, pagesize = this.pageSize) {
-        return this.genericservice.get(BaseUrl + '/Produits?&page=' + page + '&pageSize=' + pagesize + '&sousCategorie=' + souscategorie + '&filter=' + filters)
+        return this.genericservice.get(BaseUrl + '/Produits?&page=' + page + '&pageSize=' + pagesize + '&sousCategorie=' + souscategorie + '&filter=' + filters+'&filterPrix='+this.filterPrix)
     }
     getData(type = this.type, filters = this.selectedBrands) {
         this.list(type, filters).subscribe(res => {
@@ -338,7 +338,7 @@ export class ProductsListComponent implements OnInit {
         let value = this.filterValue.trim().toLowerCase().toString()
         console.log(value);
 
-        this.genericservice.get(BaseUrl + '/Produits/search?&page=' + 0 + '&pageSize=' + this.pageSize + '&filter=' + value)
+        this.genericservice.get(BaseUrl + '/Produits/search?&page=' + 0 + '&pageSize=' + this.pageSize + '&filter=' + value+'&filterPrix='+this.filterPrix)
             .subscribe(res => {
                 this.productsGrid = res.Items
                 this.pageNumber = res.pageIndex;

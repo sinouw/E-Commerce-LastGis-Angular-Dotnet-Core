@@ -59,8 +59,8 @@
             <mat-form-field>
                 <!-- <mat-label>Trier Prix :</mat-label> -->
                 <mat-select [(ngModel)]="filterPrix" (selectionChange)="onFilterPrixChange()">
-                    <mat-option [value]="0">Par Ordre Descendant </mat-option>
-                    <mat-option [value]="1">Par Ordre Ascendant </mat-option>
+                    <mat-option [value]="desc">Par Ordre Descendant </mat-option>
+                    <mat-option [value]="asc">Par Ordre Ascendant </mat-option>
                 </mat-select>
             </mat-form-field>
 
