@@ -113,9 +113,10 @@
     <ng-container>
         <ng-container *ngIf="productsGrid && productsGrid.length >= 0 && length!=0; else elseBlock">
             <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.gt-md="25" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="70" *ngFor="let product of cardsObs | async; let i=index;">
-                <mat-card [style.minHeight]="'80%'" [style.minWidth]="'80%'" class="product-card" style="margin: 10px">
+                <mat-card [style.minHeight]="'30%'" [style.minWidth]="'80%'" class="product-card" style="margin: 10px">
                     <a class="p-link">
-                        <img (click)="productPage(product.IdProd,product.Marque)" width="100%" height="100%" mat-card-image [src]="product?.FrontImg" alt="Photo of a Shiba Inu">
+                        <img (click)="productPage(product.IdProd,product.Marque)" mat-card-image [src]="product?.FrontImg" alt="Photo of a Shiba Inu">
+                        <!-- <img (click)="productPage(product.IdProd,product.Marque)" width="100%" height="100%" mat-card-image [src]="product?.FrontImg" alt="Photo of a Shiba Inu"> -->
                     </a>
 
                     <!-- wishlist-icon-->

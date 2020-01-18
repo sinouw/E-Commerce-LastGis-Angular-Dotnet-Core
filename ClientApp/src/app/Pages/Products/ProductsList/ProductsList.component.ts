@@ -239,7 +239,8 @@ export class ProductsListComponent implements OnInit {
                this.productsGrid = res.Items
                this.pageNumber = res.pageIndex;
                this.length = res.Count;
-            //    this.brandsOfProducts=res.Brands;
+                // this.brandsOfProducts=res.Brands;
+                this.caracDto = res.Caracs
                this.dataSource = new MatTableDataSource<any>(this.productsGrid);
                this.cardsObs = this.dataSource.connect();
                this.dataSource.paginator = this.paginator;

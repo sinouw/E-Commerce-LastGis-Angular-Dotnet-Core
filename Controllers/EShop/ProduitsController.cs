@@ -89,12 +89,12 @@ namespace WebAPI.Controllers.EShop
 
                     }
            
-                prods2.SelectMany(x => x.Caracteristiques).ToList().ForEach(x => caracteristiques.Add(x));
-
                 if (!string.IsNullOrEmpty(filter))
                 {
                     prods2 = prods2.Where(p => filter.ToLower().Contains(p.Marque.ToLower())).ToList();
                 }
+
+                prods2.SelectMany(x => x.Caracteristiques).ToList().ForEach(x => caracteristiques.Add(x));
 
                 caracteristiques.ForEach(c =>
                 {
