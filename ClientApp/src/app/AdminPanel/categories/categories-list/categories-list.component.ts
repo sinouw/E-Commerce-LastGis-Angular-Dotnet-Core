@@ -50,7 +50,7 @@ export class CategoriesListComponent implements OnInit {
     }
 
     getCategories() {
-        this.genericservice.get(BaseUrl + '/categories')
+        this.genericservice.get(BaseUrl + '/Categories/foradmins')
             .subscribe(res => {
                 console.log(res);
                 this.categories = res;

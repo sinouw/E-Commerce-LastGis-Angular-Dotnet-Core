@@ -74,8 +74,21 @@ namespace WebAPI.Controllers.EShop
 
         }
 
+        // GET: api/Categories/foradmins
+        [HttpGet("foradmins")]
+        [Authorize(Roles = "Admin,SuperAdmin")]
+        [EnableQuery]
+        public async Task<ActionResult<IEnumerable<Categorie>>> GetCategoriesforadmins()
+        {
+            return await _context.Categories.Include(c => c.SousCategories)
+                .ToListAsync();
+        }
+
+
+
         // GET: api/Categories/5
         [HttpGet("{id}")]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         [EnableQuery]
         public async Task<ActionResult<Categorie>> GetCategorie(Guid id)
         {
@@ -91,6 +104,7 @@ namespace WebAPI.Controllers.EShop
 
         // PUT: api/Categories/5
         [HttpPut("{id}")]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> PutCategorie(Guid id, Categorie categorie)
         {
             if (id != categorie.IdCat)
@@ -121,6 +135,7 @@ namespace WebAPI.Controllers.EShop
 
         // POST: api/Categories
         [HttpPost]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<ActionResult<Categorie>> PostCategorie(Categorie categorie)
         {
             _context.Categories.Add(categorie);
@@ -131,6 +146,7 @@ namespace WebAPI.Controllers.EShop
 
         // DELETE: api/Categories/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<ActionResult<Categorie>> DeleteCategorie(Guid id)
         {
             var categorie = await _context.Categories.FindAsync(id);

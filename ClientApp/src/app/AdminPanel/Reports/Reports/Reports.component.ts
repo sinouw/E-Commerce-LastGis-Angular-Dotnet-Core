@@ -86,7 +86,7 @@ export class ReportsComponent implements OnInit {
 
 
    getpubImages(){
-     return this.genericservice.get(BaseUrl+'/PubImages')
+     return this.genericservice.get(BaseUrl+'/PubImages/')
    }
 
    UploadImage(files) {

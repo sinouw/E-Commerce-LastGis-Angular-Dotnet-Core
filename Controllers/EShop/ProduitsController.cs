@@ -416,20 +416,6 @@ namespace WebAPI.Controllers.EShop
 
         }
 
-
-        //******************************************************************
-        //******************************************************************
-        //******************************************************************
-        //******************************************************************
-        //******************************************************************
-
-
-        public String StringCleaner(string s)
-        {
-            return Regex.Replace(s, @"[^a-zA-Z0-9\-]", "").ToLower();
-        }
-
-
         // GET: api/Produits/5
         [HttpGet("{id}")]
         [EnableQuery]
@@ -461,8 +447,99 @@ namespace WebAPI.Controllers.EShop
             }
 
             return Ok(produit);
+
+
         }
 
+        // GET: api/Produits/homeProducts
+        [HttpGet("homeProducts")]
+        public async Task<ActionResult<IEnumerable<Produit>>> GetProduitsHomePage(int? page, int pagesize = 10)
+        {
+            var prods = await _context.Produits.ToListAsync();
+
+            var countDetails = prods.Count();
+
+            var result = new GIS.Models.Query.PageResult<Produit>
+            {
+                Count = countDetails,
+                PageIndex = page ?? 0,
+                PageSize = pagesize,
+                Items = prods.Skip((page ?? 0) * pagesize).Take(pagesize).ToList(),
+
+            };
+
+            return Ok(result);
+        }
+
+        public String StringCleaner(string s)
+        {
+            return Regex.Replace(s, @"[^a-zA-Z0-9\-]", "").ToLower();
+        }
+
+        //******************************************************************
+        //******************************************************************
+        //**************************Admin***********************************
+        //******************************************************************
+        //******************************************************************
+        //******************************************************************
+
+        // GET: api/Produits/AdminProduits
+        [Authorize(Roles = "Admin,SuperAdmin")]
+        [HttpGet("AdminProduits")]
+        public async Task<ActionResult<IEnumerable<Produit>>> GetProduits(int? page, int pagesize = 10)
+        {
+            var prods = await _context.Produits.ToListAsync();
+
+
+            var countDetails = prods.Count();
+
+            var result = new GIS.Models.Query.PageResult<Produit>
+            {
+                Count = countDetails,
+                PageIndex = page ?? 0,
+                PageSize = pagesize,
+                Items = prods.Skip((page ?? 0) * pagesize).Take(pagesize).ToList(),
+
+            };
+
+            return Ok(result);
+        }
+
+        // GET: api/Produits/AdminProduits/5
+        [Authorize(Roles = "Admin,SuperAdmin")]
+        [HttpGet("AdminProduits/{id}")]
+        [EnableQuery]
+        public async Task<ActionResult<Produit>> GetProduitForAdmin(Guid id)
+        {
+            //var produit = await _context.Produits.Include(p => p.Caracteristiques).Include(p=>p.Images).SingleOrDefaultAsync(p=>p.IdProd==id);
+            var produit = await _context.Produits.Select(s => new
+            {
+                s.IdProd,
+                s.NomProduit,
+                s.Description,
+                s.Prix,
+                s.Disponible,
+                s.Remise,
+                s.Couleur,
+                s.Marque,
+                s.CreationDate,
+                s.IdScat,
+                NsousCategorie = s.SousCategorie.NsousCategorie,
+                s.Images,
+                //FrontImg=s.Images.First<Image>().ImageName,
+                FrontImg = s.FrontImg,
+                s.Caracteristiques
+            }).SingleOrDefaultAsync(p => p.IdProd == id);
+
+            if (produit == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(produit);
+        }
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         // PUT: api/Produits/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutProduit(Guid id, Produit produit)
@@ -495,6 +572,7 @@ namespace WebAPI.Controllers.EShop
         }
 
         // POST: api/Produits
+        [Authorize(Roles = "Admin,SuperAdmin")]
         [HttpPost]
         public async Task<ActionResult<Produit>> PostProduit(Produit produit)
         {
@@ -506,6 +584,7 @@ namespace WebAPI.Controllers.EShop
         }
 
         // DELETE: api/Produits/5
+        [Authorize(Roles = "Admin,SuperAdmin")]
         [HttpDelete("{id}")]
         public async Task<ActionResult<Produit>> DeleteProduit(Guid id)
         {

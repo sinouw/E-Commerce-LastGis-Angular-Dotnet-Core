@@ -29,7 +29,6 @@ namespace WebAPI.Controllers.EShop
         [EnableQuery]
         public  ActionResult<IQueryable<SousCategorie>> GetSousCategories()
         {
-            //return await _context.SousCategories.Include(sc=>sc.Produits).Include( sc => sc.Categorie ).ToListAsync();
             var souscates =  _context.SousCategories.Select(s => new
             {
                s.IdScat,
@@ -37,17 +36,35 @@ namespace WebAPI.Controllers.EShop
                Ncategorie = s.Categorie.Ncategorie,
                s.CreationDate,
                s.UserId,
-                //s.Categorie,
                 Products = s.Produits
+            });
 
+            return Ok(souscates);
+        }
+
+        // GET: api/SousCategories/forAdmin
+        [HttpGet("forAdmin")]
+        [Authorize(Roles = "Admin,SuperAdmin")]
+        [EnableQuery]
+        public ActionResult<IQueryable<SousCategorie>> GetSousCategoriesforAdmin()
+        {
+            var souscates = _context.SousCategories.Select(s => new
+            {
+                s.IdScat,
+                s.NsousCategorie,
+                Ncategorie = s.Categorie.Ncategorie,
+                s.CreationDate,
+                s.UserId,
+                Products = s.Produits
             });
 
             return Ok(souscates);
         }
 
         // GET: api/SousCategories/5
-        [HttpGet("{id}")]
         [EnableQuery]
+        [HttpGet("{id}")]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<ActionResult<SousCategorie>> GetSousCategorie(Guid id)
         {
             var sousCategorie = await _context.SousCategories.Include(sc => sc.Categorie).SingleOrDefaultAsync(sc => sc.IdScat == id);
@@ -62,6 +79,7 @@ namespace WebAPI.Controllers.EShop
 
         // PUT: api/SousCategories/5
         [HttpPut("{id}")]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> PutSousCategorie(Guid id, SousCategorie sousCategorie)
         {
             if (id != sousCategorie.IdScat)
@@ -92,6 +110,8 @@ namespace WebAPI.Controllers.EShop
 
         // POST: api/SousCategories
         [HttpPost]
+        [Authorize(Roles = "Admin,SuperAdmin")]
+
         public async Task<ActionResult<SousCategorie>> PostSousCategorie(SousCategorie sousCategorie)
         {
             _context.SousCategories.Add(sousCategorie);
@@ -102,6 +122,7 @@ namespace WebAPI.Controllers.EShop
 
         // DELETE: api/SousCategories/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<ActionResult<SousCategorie>> DeleteSousCategorie(Guid id)
         {
             var sousCategorie = await _context.SousCategories.FindAsync(id);

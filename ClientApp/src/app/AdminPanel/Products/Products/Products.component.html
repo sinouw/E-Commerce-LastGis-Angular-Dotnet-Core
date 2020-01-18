@@ -161,9 +161,9 @@
                 </mat-card>
             </div>
         </div>
+        <mat-paginator [pageSize]="pageSize" [length]="length" [pageSizeOptions]="pageSizeOptions" (page)="onPage($event)"></mat-paginator>
     </ng-template>
 </ng-container>
-<mat-paginator [pageSize]="pageSize" [length]="length" [pageSizeOptions]="pageSizeOptions" (page)="onPage($event)"></mat-paginator>
 
 <ng-template #elseBlock>
     <h5 class="ml-5">No product found</h5>

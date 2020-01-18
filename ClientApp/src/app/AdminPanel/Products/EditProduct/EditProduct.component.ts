@@ -137,7 +137,7 @@ export class EditProductComponent implements OnInit {
     }
 
     getProduct(id): any {
-        return this.genericservice.get(BaseUrl + '/Produits/' + id);
+        return this.genericservice.get(BaseUrl + '/Produits/AdminProduits/' + id);
     }
 
     getSousCategories() {

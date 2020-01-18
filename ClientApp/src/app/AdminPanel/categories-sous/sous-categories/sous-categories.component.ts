@@ -69,7 +69,7 @@ export class SousCategoriesComponent implements OnInit {
     }
 
     getSousCategories() {
-        this.genericservice.get(BaseUrl + `/souscategories`)
+        this.genericservice.get(BaseUrl + `/souscategories/forAdmin`)
             .subscribe(res => {
                 this.souscategories = res;
                 console.log(res);

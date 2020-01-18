@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Gis.Models.DTO;
 using Microsoft.AspNet.OData;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -56,8 +57,11 @@ namespace WebAPI.Controllers.EShop
 
         }
 
+      
+
         // GET: api/Caracteristiques/5
         [HttpGet("{id}")]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         [EnableQuery]
         public async Task<ActionResult<Caracteristique>> GetCaracteristique(Guid id)
         {
@@ -73,6 +77,7 @@ namespace WebAPI.Controllers.EShop
 
         // PUT: api/Caracteristiques/5
         [HttpPut("{id}")]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> PutCaracteristique(Guid id, Caracteristique caracteristique)
         {
             if (id != caracteristique.IdCarac)
@@ -103,6 +108,7 @@ namespace WebAPI.Controllers.EShop
 
         // POST: api/Caracteristiques
         [HttpPost]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<ActionResult<Caracteristique>> PostCaracteristique(Caracteristique caracteristique)
         {
             _context.Caracteristique.Add(caracteristique);
@@ -113,6 +119,7 @@ namespace WebAPI.Controllers.EShop
 
         // DELETE: api/Caracteristiques/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<ActionResult<Caracteristique>> DeleteCaracteristique(Guid id)
         {
             var caracteristique = await _context.Caracteristique.FindAsync(id);

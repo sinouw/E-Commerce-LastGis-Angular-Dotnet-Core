@@ -157,11 +157,11 @@ export class ProductsComponent implements OnInit {
 		x.Prix.toString().includes(value))
    }
 
-   list(souscategorie="",filters="",page=0,pagesize=this.pageSize){
-	return this.genericservice.get(BaseUrl+'/Produits?&page='+page+'&pageSize='+pagesize+'&sousCategorie='+souscategorie+'&filter='+filters)
+   list(page=0,pagesize=this.pageSize){
+	return this.genericservice.get(BaseUrl+'/Produits/AdminProduits?&page='+page+'&pageSize='+pagesize)
 }
 onPage(pageEvent: PageEvent) {        
-        this.list("","",pageEvent.pageIndex,pageEvent.pageSize)
+        this.list(pageEvent.pageIndex,pageEvent.pageSize)
         .subscribe(res=>{
 			res.Items.forEach(product => {
 				this.productsGrid.push({

@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using GIS.Models.DTO;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -23,8 +24,8 @@ namespace WebAPI.Controllers.Eshop
             _context = context ?? throw new Exception();
         }
 
-        [HttpGet]
         //Get : api/images
+        [HttpGet]
         public async Task<ICollection<Image>> Get()
         {
             return await _context.Images.ToListAsync();
