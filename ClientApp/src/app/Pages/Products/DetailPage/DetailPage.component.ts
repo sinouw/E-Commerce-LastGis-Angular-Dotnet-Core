@@ -30,7 +30,7 @@ export class DetailPageComponent implements OnInit {
    ImagesPath: any= [];
    pageNumber: any= 0;
    pageSize: any = 4;
-   productsGrid: any;
+   productsGrid: any=[];
    caracs: any=[];
    caracteristiquesList: any;
    displayedProductColumns : string [] = ['key','value']; 
@@ -56,6 +56,13 @@ export class DetailPageComponent implements OnInit {
    getProducts(){
       this.list().subscribe((res:any)=>{
          console.log("Products: ",res);
+
+         // res.Items.forEach(prod => {
+         //    if (prod.IdProd!=this.id) {
+         //       this.productsGrid.push(prod)
+         //    }
+         // });
+
          this.productsGrid=res.Items
    },
    err=>{

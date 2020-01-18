@@ -5,6 +5,12 @@
             <div class="product-detail-page bg-grey section-gap" *ngFor="let detailData of data">
                 <!-- <div class="bg-grey section-gap"> -->
                 <div class="container">
+                    <!-- <div style="font-size:50px;border-bottom: 4px double;text-align: center"> -->
+                    <!-- <strong> -->
+                    <!-- {{Product?.NomProduit}} -->
+                    <!-- </strong> -->
+                    <!-- </div> -->
+                    <br>
                     <div fxLayout='row wrap' fxLayoutAlign="center center" class="col-gap">
                         <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md=90 fxFlex.lg="80" fxFlex.xl="90">
                             <div fxLayout='row wrap' class="col-gap position-relative">
@@ -30,95 +36,94 @@
                                             <!-- product-detail-image-gallery -->
                                         </div>
 
-
-
                                         <!-- MainPath Image -->
                                         <div fxFlex.xs="85" fxFlex.sm="85" fxFlex.md="85" fxFlex.lg="85" fxFlex.xl="85" class="relative" *ngIf="mainImgPath">
                                             <img width="626" height="800" mat-card-image [src]="mainImgPath" alt="Photo of a Shiba Inu">
                                         </div>
-
                                     </div>
+
                                 </div>
 
                                 <!-- ********************* -->
                                 <!-- ********************* -->
-                                <div>
+                                <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md=50 fxFlex.lg="50" fxFlex.xl="50">
+                                    <div class="product-detail-content ml-3">
 
-                                    <a class="primary-color font-medium" href="javascript:void(0)" routerLink="/products">Retour vers produits</a>
-                                    <br/>
-                                    <br/>
-                                    <br/>
-                                    <!-- <span class="font-medium"> Nom du produit  </span>: -->
-                                    <div style="color: #06047b;font-size:30px">
-                                        <strong>
+
+                                        <a class="primary-color font-medium" href="javascript:void(0)" routerLink="/products">Retour vers produits</a>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <!-- <span class="font-medium"> Nom du produit  </span>: -->
+                                        <div class="box-info-product" style="font-size:20px">
+                                            Nom Produit : <strong style="font-size:20px">
                                                 {{Product?.NomProduit}}
                                         </strong>
-                                    </div>
-                                    <br>
-                                    <h5>{{Product?.Description}}</h5>
+                                        </div>
 
-                                    <br/>
+                                        <div class="box-info-product" style="font-size:20px">
 
-
-                                    <div class="box-info-product" style="font-size:30px;">
-
-                                        Prix :
-                                        <strong style="color: rgb(255, 102, 0);border-bottom: 4px double;"> 
-                                                {{Product?.Prix}} DT
-                                        
-                                        </strong>
-                                    </div>
-
-
-                                    <div class="box-info-product" style="font-size:20px">
-
-                                        Marque :
-                                        <span style="border-bottom: 4px;"> 
+                                            Marque :
+                                            <span style="border-bottom: 4px;"> 
                                             
                                                 {{Product?.Marque}}
                                             
                                             </span>
-                                    </div>
+                                        </div>
 
 
-                                    <div *ngIf="Product.Disponible;else nonDispoBloc">
-                                        <div class="box-info-product" style="font-size:20px;">
+                                        <div *ngIf="Product.Disponible;else nonDispoBloc">
+                                            <div class="box-info-product" style="font-size:20px;">
 
-                                            Disponibilté :
-                                            <strong style="color: #47BF20;"> 
+                                                Disponibilté :
+                                                <strong style="color: #47BF20;"> 
                                                             En stock
                                                     
                                                     </strong>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <ng-template #nonDispoBloc>
-                                        <div class="box-info-product" style="font-size:20px;">
+                                        <ng-template #nonDispoBloc>
+                                            <div class="box-info-product" style="font-size:20px;">
 
-                                            Disponibilté :
-                                            <strong style="color: rgb(189, 0, 0);"> 
+                                                Disponibilté :
+                                                <strong style="color: rgb(189, 0, 0);"> 
                                                                      Stock épuisé
                                                             
                                                             </strong>
+                                            </div>
+                                        </ng-template>
+
+
+                                        <div class="box-info-product" style="font-size:20px;">
+
+                                            Prix :
+                                            <strong style="font-size:30px;color: #06047b;border-bottom: 4px double;"> 
+                                                        {{Product?.Prix}} DT
+                                            
+                                            </strong>
                                         </div>
-                                    </ng-template>
 
-                                    <br/>
-
-                                    <table class="w-100 table-scroll-wrap" mat-table [dataSource]="caracteristiquesList" matSort>
-                                        <ng-container matColumnDef="key">
-                                            <th class="text-nowrap px-3" mat-header-cell *matHeaderCellDef mat-sort-header>Cle </th>
-                                            <td class="text-nowrap product-name" mat-cell *matCellDef="let element"><span>{{element?.key}}</span></td>
-                                        </ng-container>
-                                        <ng-container matColumnDef="value">
-                                            <th class="text-nowrap px-3" mat-header-cell *matHeaderCellDef mat-sort-header>Valeur</th>
-                                            <td class="text-nowrap product-name" mat-cell *matCellDef="let element"><span>{{element?.value}}</span></td>
-                                        </ng-container>
-
-                                        <tr mat-header-row *matHeaderRowDef="displayedProductColumns"></tr>
-                                        <tr mat-row *matRowDef="let row; columns: displayedProductColumns"></tr>
-                                    </table>
+                                    </div>
                                 </div>
+                                <div style="font-size:20px">
+                                    Description :
+                                    <br/>
+                                    <h5>{{Product?.Description}}</h5>
 
+                                </div>
+                                <table class="w-100 table-scroll-wrap" mat-table [dataSource]="caracteristiquesList" matSort>
+                                    <ng-container matColumnDef="key">
+                                        <th class="text-nowrap px-3" mat-header-cell *matHeaderCellDef mat-sort-header>Cle </th>
+                                        <td class="text-nowrap product-name" mat-cell *matCellDef="let element"><span>{{element?.key}}</span></td>
+                                    </ng-container>
+                                    <ng-container matColumnDef="value">
+                                        <th class="text-nowrap px-3" mat-header-cell *matHeaderCellDef mat-sort-header>Valeur</th>
+                                        <td class="text-nowrap product-name" mat-cell *matCellDef="let element"><span>{{element?.value}}</span></td>
+                                    </ng-container>
+
+                                    <tr mat-header-row *matHeaderRowDef="displayedProductColumns"></tr>
+                                    <tr mat-row *matRowDef="let row; columns: displayedProductColumns"></tr>
+                                </table>
 
                                 <div class="block-title text-center gap">
                                     <h2>You Might Also Like</h2>
