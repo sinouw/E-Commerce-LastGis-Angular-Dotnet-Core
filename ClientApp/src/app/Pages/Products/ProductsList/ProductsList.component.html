@@ -20,6 +20,7 @@
                 </div>
                 <!-- contact-btn -->
             </div>
+
         </div>
     </div>
 </mat-card>
@@ -45,8 +46,24 @@
                         <li href="" style="cursor: pointer;"> {{souscat}}</li>
                     </ul>
 
+
                 </mat-expansion-panel>
             </mat-accordion>
+        </mat-card>
+
+        <!-- ********************************************** -->
+        <!-- ********************************************** -->
+        <mat-card class="product-card" style="margin: 10px">
+            <h5>Filter Prix :</h5>
+            <mat-divider></mat-divider>
+            <mat-form-field>
+                <!-- <mat-label>Trier Prix :</mat-label> -->
+                <mat-select [(ngModel)]="filterPrix" (selectionChange)="onFilterPrixChange()">
+                    <mat-option [value]="0">Par Ordre Descendant </mat-option>
+                    <mat-option [value]="1">Par Ordre Ascendant </mat-option>
+                </mat-select>
+            </mat-form-field>
+
         </mat-card>
         <!-- ********************************************** -->
         <mat-card class="product-card" style="margin: 10px">

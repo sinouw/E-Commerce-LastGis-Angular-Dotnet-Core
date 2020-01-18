@@ -32,8 +32,8 @@ export class ProductsListComponent implements OnInit {
     brandsOfProducts: any = [];
     // MatPaginator Inputs
     length = 100;
-    pageSize = 5;
-    pageSizeOptions: number[] = [5, 10, 25, 100];
+    pageSize = 25;
+    pageSizeOptions: number[] = [ 25 , 50, 100];
     dataSource: MatTableDataSource<any> = new MatTableDataSource<any>();
     pageEvent: PageEvent;
     cardsObs: Observable<any>;
@@ -43,7 +43,7 @@ export class ProductsListComponent implements OnInit {
 
 
 
-
+    filterPrix:any=0
     subscribers: any = {};
     productsGrid: any = [];
     selectedBrands: any = [];
@@ -71,6 +71,11 @@ export class ProductsListComponent implements OnInit {
         })
     }
 
+
+    onFilterPrixChange(){
+        console.log(this.filterPrix);
+        this.updateData(this.selectedBrands)
+    }
 
     getCategoriesDtosimple() {
         this.genericservice.get(BaseUrl + '/Categories/CategSousCategdto')

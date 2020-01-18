@@ -46,17 +46,29 @@ namespace WebAPI.Controllers.EShop
         // GET: api/Produits
         [HttpGet]
         [EnableQuery]
-        public async Task<ActionResult<IQueryable<Produit>>> GetProduitsAsync(int? page, int pagesize = 10, string sousCategorie = "", string filter = "")
+        public async Task<ActionResult<IQueryable<Produit>>> GetProduitsAsync(int? page, int pagesize = 10, string sousCategorie = "", string filter = "",string filterPrix = "desc")
         {
             List<Produit> prods2;
             var caracs = new Dictionary<string, List<string>>();
             var returnedcracs = new List<CaracDto>();
             List<string> brands = new List<string>();
             List<string> filters = new List<string>();
+
+            
             if (string.IsNullOrEmpty(sousCategorie))
             {
-                prods2 = await _context.Produits.Include(x => x.SousCategorie).ToListAsync();
+               
+                    if (filterPrix == "desc")
+                    {
+                    prods2 = await _context.Produits.Include(x => x.SousCategorie).OrderByDescending(x=>x.Prix).ToListAsync();
 
+                    }
+                    else
+                    {
+                    prods2 = await _context.Produits.Include(x => x.SousCategorie).OrderBy(x => x.Prix).ToListAsync();
+
+                    }
+             
                 if (!string.IsNullOrEmpty(filter))
                 {
                     prods2 = prods2.Where(p => filter.ToLower().Contains(p.Marque.ToLower())).ToList();
@@ -64,9 +76,19 @@ namespace WebAPI.Controllers.EShop
             }
             else
             {
-                var caracteristiques = new List<Caracteristique>();
+                    var caracteristiques = new List<Caracteristique>();
+               
+                    if (filterPrix == "desc")
+                    {
+                        prods2 = await _context.Produits.Include(x => x.SousCategorie).Where(x => x.SousCategorie.NsousCategorie.ToLower() == sousCategorie).Include(x => x.Caracteristiques).OrderByDescending(x=>x.Prix).ToListAsync();
 
-                prods2 = await _context.Produits.Include(x => x.SousCategorie).Where(x => x.SousCategorie.NsousCategorie.ToLower() == sousCategorie).Include(x => x.Caracteristiques).ToListAsync();
+                    }
+                    else
+                    {
+                        prods2 = await _context.Produits.Include(x => x.SousCategorie).Where(x => x.SousCategorie.NsousCategorie.ToLower() == sousCategorie).Include(x => x.Caracteristiques).OrderBy(x => x.Prix).ToListAsync();
+
+                    }
+           
                 prods2.SelectMany(x => x.Caracteristiques).ToList().ForEach(x => caracteristiques.Add(x));
 
                 if (!string.IsNullOrEmpty(filter))
@@ -129,15 +151,17 @@ namespace WebAPI.Controllers.EShop
         // Post: api/Produits/search/specs
         [HttpPost("search/specs")]
         [EnableQuery]
-        public ActionResult<IQueryable<Produit>> SearchProduitsAsyncBySpecs([FromBody]List<SimpleCaracDto> specs , int? page, int pagesize = 10, string sousCategorie = "")
-        //public ActionResult<IQueryable<Produit>> SearchProduitsAsyncBySpecs([FromBody]List<SimpleCaracDto> specs , [FromBody]List<string> selectedBrands, int? page, int pagesize = 10, string sousCategorie = "")
+        public ActionResult<IQueryable<Produit>> SearchProduitsAsyncBySpecs([FromBody]List<SimpleCaracDto> specs , int? page, int pagesize = 10, string sousCategorie = "", string filterPrix = "desc")
         {
             var prods = new HashSet<Produit>();
+            if (filterPrix == "desc")
+            {
             specs.ForEach(carac =>
             {
                 _context.Caracteristique
                                 .Include(x => x.Produit)
                                 .ThenInclude(x => x.SousCategorie)
+                                .OrderByDescending(x=>x.Produit.Prix)
                                 .Where(x => x.Produit.SousCategorie.NsousCategorie == sousCategorie)
                                 .Where(x => x.Key == carac.Key && x.Value == carac.Value)
                                 .Select(x => x.Produit)
@@ -149,12 +173,27 @@ namespace WebAPI.Controllers.EShop
                                 });
             });
 
-            var selectedprods = new HashSet<Produit>();
+            }
+            else
+            {
+                specs.ForEach(carac =>
+                {
+                    _context.Caracteristique
+                                    .Include(x => x.Produit)
+                                    .ThenInclude(x => x.SousCategorie)
+                                    .OrderBy(x => x.Produit.Prix)
+                                    .Where(x => x.Produit.SousCategorie.NsousCategorie == sousCategorie)
+                                    .Where(x => x.Key == carac.Key && x.Value == carac.Value)
+                                    .Select(x => x.Produit)
+                                    .ToList()
+                                    .ForEach(x =>
+                                    {
+                                        if (!prods.Any(p => p.IdProd == x.IdProd))
+                                            prods.Add(x);
+                                    });
+                });
 
-            //selectedBrands.ForEach(marque =>
-            //{
-            //    prods.Where(x => x.Marque == marque).ToList().ForEach(x=> selectedprods.Add(x));
-            //});
+            }
 
             var countDetails = prods.Count();
 
@@ -178,27 +217,44 @@ namespace WebAPI.Controllers.EShop
         // GET: api/Produits/search
         [HttpGet("search")]
         [EnableQuery]
-        public async Task<ActionResult<IQueryable<Produit>>> SearchProduitsAsync(int? page, int pagesize = 10, string filter = "")
+        public async Task<ActionResult<IQueryable<Produit>>> SearchProduitsAsync(int? page, int pagesize = 10, string filter = "", string filterPrix = "desc")
         {
             List<Produit> prods;
             if (!string.IsNullOrEmpty(filter))
             {
                 string cleanfilter = StringCleaner(filter);
-                prods = await _context.Produits.Include(x => x.SousCategorie)
-              .Where(
-                //x =>  EF.Functions.Like(cleanfilter,(StringCleaner("%"+x.NomProduit+"%")))
-              x => EF.Functions.Like(StringCleaner(x.NomProduit), "%" + cleanfilter + "%")
-
-              //|| EF.Functions.Like(StringCleaner(x.SousCategorie.NsousCategorie), "%"+cleanfilter+"%")
-              || EF.Functions.Like(cleanfilter, (StringCleaner("%" + x.SousCategorie.NsousCategorie + "%")))
-
-              //|| EF.Functions.Like(StringCleaner(x.Marque), "%"+cleanfilter+"%")
-              || EF.Functions.Like(cleanfilter, (StringCleaner("%" + x.Marque + "%")))).ToListAsync();
-
+                if (filterPrix == "desc")
+                {
+                    prods = await _context.Produits
+                        .OrderByDescending(x => x.Prix)
+                        .Include(x => x.SousCategorie)
+                        .Where(
+                            x => EF.Functions.Like(cleanfilter, (StringCleaner("%" + x.NomProduit + "%")))
+                            || EF.Functions.Like(cleanfilter, (StringCleaner("%" + x.SousCategorie.NsousCategorie + "%")))
+                            || EF.Functions.Like(cleanfilter, (StringCleaner("%" + x.Marque + "%")))).ToListAsync();
+                        }
+                else
+                {
+                    prods = await _context.Produits
+                        .OrderBy(x=>x.Prix)
+                        .Include(x => x.SousCategorie)
+                        .Where(
+                            x => EF.Functions.Like(cleanfilter, (StringCleaner("%" + x.NomProduit + "%")))
+                            || EF.Functions.Like(cleanfilter, (StringCleaner("%" + x.SousCategorie.NsousCategorie + "%")))
+                            || EF.Functions.Like(cleanfilter, (StringCleaner("%" + x.Marque + "%")))).ToListAsync();
+                        }
             }
             else
             {
-                prods = await _context.Produits.Include(x => x.SousCategorie).ToListAsync();
+                if (filterPrix == "desc")
+                {
+                    prods = await _context.Produits.Include(x => x.SousCategorie).OrderByDescending(x => x.Prix).ToListAsync();
+                }
+                else
+                {
+                    prods = await _context.Produits.Include(x => x.SousCategorie).OrderBy(x => x.Prix).ToListAsync();
+                }
+
             }
 
 
