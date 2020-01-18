@@ -221,14 +221,41 @@ export class ProductsListComponent implements OnInit {
 
     updateData(filters = this.selectedBrands) {
         this.list(this.type, filters, 0, this.pageSize).subscribe(res => {
-            this.productsGrid = res.Items
-            this.pageNumber = res.pageIndex;
-            this.length = res.Count;
-            // this.brandsOfProducts=res.Brands;
-            this.dataSource = new MatTableDataSource<any>(this.productsGrid);
-            this.cardsObs = this.dataSource.connect();
-            this.dataSource.paginator = this.paginator;
-            console.log(res)
+       if(this.caracs.length==0){
+               this.productsGrid = res.Items
+               this.pageNumber = res.pageIndex;
+               this.length = res.Count;
+               // this.brandsOfProducts=res.Brands;
+               this.dataSource = new MatTableDataSource<any>(this.productsGrid);
+               this.cardsObs = this.dataSource.connect();
+               this.dataSource.paginator = this.paginator;
+               console.log(res)
+       }else{
+           let selectedProds:any=[]
+           res.Items.forEach(prod => {
+               prod.Caracteristiques.forEach(carac=>{
+
+                this.caracs.forEach(filtercaracs => {
+                    if(filtercaracs.key==carac.Key && filtercaracs.value==carac.Value){
+                            selectedProds.push(prod);
+                    }
+                });
+
+               })
+               
+           });
+
+           this.productsGrid = selectedProds;
+           this.pageNumber = res.pageIndex;
+           this.length = selectedProds.length;
+           // this.brandsOfProducts=res.Brands;
+           this.dataSource = new MatTableDataSource<any>(this.productsGrid);
+           this.cardsObs = this.dataSource.connect();
+           this.dataSource.paginator = this.paginator;
+           console.log(res)
+
+
+       }
 
         },
             err => {

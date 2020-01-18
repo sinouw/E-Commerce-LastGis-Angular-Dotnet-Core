@@ -56,6 +56,11 @@ namespace WebAPI.Controllers.EShop
             if (string.IsNullOrEmpty(sousCategorie))
             {
                 prods2 = await _context.Produits.Include(x => x.SousCategorie).ToListAsync();
+
+                if (!string.IsNullOrEmpty(filter))
+                {
+                    prods2 = prods2.Where(p => filter.ToLower().Contains(p.Marque.ToLower())).ToList();
+                }
             }
             else
             {
@@ -64,6 +69,10 @@ namespace WebAPI.Controllers.EShop
                 prods2 = await _context.Produits.Include(x => x.SousCategorie).Where(x => x.SousCategorie.NsousCategorie.ToLower() == sousCategorie).Include(x => x.Caracteristiques).ToListAsync();
                 prods2.SelectMany(x => x.Caracteristiques).ToList().ForEach(x => caracteristiques.Add(x));
 
+                if (!string.IsNullOrEmpty(filter))
+                {
+                    prods2 = prods2.Where(p => filter.ToLower().Contains(p.Marque.ToLower())).ToList();
+                }
 
                 caracteristiques.ForEach(c =>
                 {
@@ -86,10 +95,7 @@ namespace WebAPI.Controllers.EShop
                 }
 
             }
-            if (!string.IsNullOrEmpty(filter))
-            {
-                prods2 = prods2.Where(p => filter.ToLower().Contains(p.Marque.ToLower())).ToList();
-            }
+          
 
             var brandys = _context.Produits.Select(x => x.Marque).ToList()
                 .Distinct();
