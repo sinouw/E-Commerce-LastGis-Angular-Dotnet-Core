@@ -47,11 +47,12 @@ export class DetailPageComponent implements OnInit {
       this.route.params.subscribe(res => {
          this.id = res.id;
          this.type = res.type;
+         this.getProduct()
          this.getData();
       })
       console.log(this.id);
       
-      this.getProduct()
+      
       
    }
 

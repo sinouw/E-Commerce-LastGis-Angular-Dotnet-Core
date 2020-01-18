@@ -49,7 +49,7 @@
             </mat-accordion>
         </mat-card>
         <!-- ********************************************** -->
-        <mat-card class="product-card" style="margin: 10px">
+        <mat-card class="product-card" style="margin: 10px" *ngIf="productsGrid.length>0">
             <h5>Marque :</h5>
             <mat-divider></mat-divider>
             <mat-selection-list #list [(ngModel)]="selectedBrands" (ngModelChange)="onselectBrand()">
@@ -62,12 +62,6 @@
                         Options selected: {{brands.selectedOptions.selected.length}}
                     </p> -->
         </mat-card>
-
-
-
-
-
-
 
 
 
