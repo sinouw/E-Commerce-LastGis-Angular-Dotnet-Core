@@ -8,6 +8,7 @@ export const ProductsRoutes: Routes = [
 	{
       path: '',
       redirectTo: 'ProductsComponent',
+      canActivate: [AuthGuard],
       pathMatch: 'full'
    },
 	{
