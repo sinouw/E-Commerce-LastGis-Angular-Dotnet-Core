@@ -243,10 +243,21 @@ namespace WebAPI.Controllers.EShop
                 }
 
             }
+            var brandys = new List<string>().AsEnumerable();
 
-
-            var brandys = _context.Produits.Select(x => x.Marque).ToList()
+            if (string.IsNullOrEmpty(sousCategorie)) {
+                 brandys = _context.Produits.Select(x => x.Marque).ToList()
                 .Distinct();
+            }
+            else
+            {
+                 brandys = _context.Produits
+                    .Include(x=>x.SousCategorie)
+                    .Where(x=>x.SousCategorie.NsousCategorie==sousCategorie)
+                    .Select(x => x.Marque).ToList()
+                .Distinct();
+            }
+            
             foreach (var item in brandys)
             {
                 brands.Add(item);
