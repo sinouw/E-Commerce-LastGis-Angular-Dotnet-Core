@@ -30,6 +30,7 @@ export class AddProductComponent implements OnInit {
     displayedProductColumns : string [] = ['key','value','action' ];  
     caracForm :FormGroup ;
     sousCateg:any = ""; 
+    keyInput:any = ""; 
 
     
     'data': any = [
@@ -41,11 +42,14 @@ export class AddProductComponent implements OnInit {
         }
     ];
     keysList: any=[];
+    valuesList: any=[];
+    caracs: any=[];
 
     constructor(public formBuilder: FormBuilder,
                 private genericservice: AdminGenericService,
                 private http : HttpClient) {
     }
+
 
     ngOnInit() {
 
@@ -111,8 +115,9 @@ export class AddProductComponent implements OnInit {
         if (this.sousCateg!="") {
             this.http.get(BaseUrl+'/Caracteristiques/bysouscaterie?sousCategorie='+this.sousCateg)
             .subscribe((res:any)=>{
+
                 console.log(res);
-                // this.keysList
+                this.caracs = res
                 res.forEach(carac => {
                     this.keysList.push(carac.Key)
                 });
@@ -122,6 +127,21 @@ export class AddProductComponent implements OnInit {
             err=>{
                 console.log(err);
             })         
+        }
+        
+    }
+
+
+    onchangekey(){
+        console.log(this.keyInput);
+
+        if(this.keyInput!=""){
+            this.valuesList=[]
+            this.caracs.forEach(carac => {
+                if(carac.Key==this.keyInput){
+                    this.valuesList=carac.Value
+                }
+            });
         }
         
     }
