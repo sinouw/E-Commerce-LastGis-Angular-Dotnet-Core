@@ -15,6 +15,7 @@ import { Observable } from 'rxjs';
 
 export class ProductsComponent implements OnInit {
 	
+	// paginatorif=false
 	productsList 		      : any;
 	productsListCopie		      : any;
 	productsGrid 			   : any;
@@ -51,12 +52,16 @@ export class ProductsComponent implements OnInit {
 		this.list().subscribe((res:any)=>{
 			this.getProductResponse(res)
 			this.productsGrid=res.Items
-			this.pageNumber = res.pageIndex;
+            this.pageNumber = res.pageIndex;
 			this.length = res.Count;
-			this.brandsOfProducts=res.Brands;
-			this.productsList = new MatTableDataSource<any>(this.productsGrid);
+			console.log(this.length);
+			console.log(res.Count);
+			
+			
+            this.productsList = new MatTableDataSource<any>(this.productsGrid);
 			this.cardsObs = this.productsList.connect();
 			this.productsList.paginator = this.paginator;
+			
 			console.log(res)
 
 		},
@@ -71,6 +76,7 @@ export class ProductsComponent implements OnInit {
 	  this.productsGrid = response.Items;
 	  this.productsListCopie = response.Items;
 	  this.productShowType(this.showType)
+	  this.productsList.paginator = this.paginator;
    }
 
   	/**
@@ -135,15 +141,6 @@ export class ProductsComponent implements OnInit {
       }
    }
 
-   SearchInGridList(value){
-	this.productsGrid=this.productsGrid
-	.filter(x=>
-		x.NomProduit.toLowerCase().includes(value) ||
-		x.Marque.toLowerCase().includes(value) || 
-		x.NsousCategorie.toLowerCase().includes(value) || 
-		x.Prix.toString().includes(value))
-   }
-
    list(page=0,pagesize=this.pageSize){
 	return this.genericservice.get(BaseUrl+'/Produits/AdminProduits?&page='+page+'&pageSize='+pagesize)
 }
@@ -154,7 +151,9 @@ onPage(pageEvent: PageEvent) {
             this.pageNumber = res.pageIndex;
              this.length = res.Count;
             this.productsList = new MatTableDataSource<any>(this.productsGrid);
-            this.cardsObs = this.productsList.connect();
+			this.cardsObs = this.productsList.connect();
+			this.productsList.paginator = this.paginator;
+
         },
         err=>{
             console.log(err);   
@@ -164,14 +163,12 @@ onPage(pageEvent: PageEvent) {
 applyFilter() {
 	
     let value :string = this.filterValue.trim().toLowerCase()
-    
-    
+
     this.genericservice.get(BaseUrl+'/Produits/search?&page='+0+'&pageSize='+this.pageSize+'&filter='+value)
     .subscribe(res => {
         this.productsGrid=res.Items
         this.pageNumber = res.pageIndex;
         this.length = res.Count;
-        // this.brandsOfProducts=res.Brands;
         this.productsList = new MatTableDataSource<any>(this.productsGrid);
         this.cardsObs = this.productsList.connect();
         this.productsList.paginator = this.paginator;

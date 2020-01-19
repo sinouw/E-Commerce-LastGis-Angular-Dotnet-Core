@@ -118,11 +118,13 @@
                                     </ng-container>
                                     <tr mat-header-row *matHeaderRowDef="displayedProductColumns"></tr>
                                     <tr mat-row *matRowDef="let row; columns: displayedProductColumns"></tr>
+                                    <mat-paginator style="visibility: hidden;" [pageSize]="pageSize" [length]="length" [pageSizeOptions]="pageSizeOptions" (page)="onPage($event)"></mat-paginator>
                                 </table>
+                                <mat-paginator [pageSize]="pageSize" [length]="length" [pageSizeOptions]="pageSizeOptions" (page)="onPage($event)"></mat-paginator>
+
                             </div>
                         </div>
                         <!-- product-list-tabel-->
-                        <mat-paginator [pageSize]="pageSize" [length]="length" [pageSizeOptions]="pageSizeOptions" (page)="onPage($event)"></mat-paginator>
 
                     </mat-card>
                 </div>
