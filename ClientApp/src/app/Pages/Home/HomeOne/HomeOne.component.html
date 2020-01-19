@@ -26,13 +26,13 @@
 </div>
 <div class="shop-card-wrapper section-gap" *ngIf="productsArray">
     <div class="block-title text-center">
-        <h2>Featured Products</h2>
+        <h2>Produits Populaires</h2>
     </div>
 
 
     <div class="container">
         <mat-tab-group [(selectedIndex)]="SelectedSousCategorie" (click)="SelectSousCategieProducts($event.target.innerText)">
-            <mat-tab label="Show All"></mat-tab>
+            <mat-tab label="Afficher tout"></mat-tab>
             <div *ngFor="let sousCategorie of sousCategories">
                 <mat-tab label="{{sousCategorie?.NsousCategorie}}" *ngIf="sousCategorie.Products.length>0"></mat-tab>
             </div>

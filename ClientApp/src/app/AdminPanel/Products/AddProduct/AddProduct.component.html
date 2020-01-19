@@ -116,7 +116,7 @@
                                 <div>
                                     <span class="font-medium"> Ajouter le nom du Sous Categorie </span>:
                                     <p class="add-text">
-                                        <mat-select matNativeControl formControlName="IdScat" placeholder="Sous categorie List">
+                                        <mat-select matNativeControl formControlName="IdScat" placeholder="Sous categorie List" #souscateg [(ngModel)]="sousCateg" name="ok" (ngModelChange)="onsouscategchange()">
                                             <mat-option *ngFor="let souscategorie of souscategories" [value]="souscategorie.IdScat">{{ souscategorie.NsousCategorie }}</mat-option>
 
                                         </mat-select>
@@ -140,13 +140,19 @@
                                             <th>Ajouter</th>
                                         </tr>
                                         <tr>
-                                            <td><input matInput formControlName="key" placeholder="ajouter une cle"></td>
-                                            <td><input matInput formControlName="value" placeholder="ajouter une valeur"></td>
+                                            <td><input list="keys-list" matInput formControlName="key" autocomplete="off" placeholder="ajouter une cle"></td>
+
+
+                                            <td><input matInput formControlName="value" autocomplete="off" placeholder="ajouter une valeur"></td>
                                             <td> <button mat-icon-button color="primary" [disabled]="caracForm.invalid"><mat-icon>add</mat-icon></button></td>
 
                                         </tr>
                                     </table>
                                 </form>
+
+                                <datalist id="keys-list" *ngIf="keysList.length!=0">
+                                    <option *ngFor="let key of keysList" [value]="key">{{key}}</option>
+                                  </datalist>
 
                                 <div class="mb-5 detail-btns">
                                     <button mat-raised-button color="accent" class="button-lg mr-1" [disabled]="form.invalid || addProductBtnDisa" (click)="onSubmit()">Creer</button>

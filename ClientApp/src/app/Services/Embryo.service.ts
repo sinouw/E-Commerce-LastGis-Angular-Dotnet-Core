@@ -24,7 +24,7 @@ export class EmbryoService {
    
    /**** Get currency code:- https://en.wikipedia.org/wiki/ISO_4217 *****/
    currency  : string = 'TND';
-   language  : string = 'en';     
+   language  : string = 'fr';     
 
    shipping  : number = 12.95;
    tax       : number = 27.95;

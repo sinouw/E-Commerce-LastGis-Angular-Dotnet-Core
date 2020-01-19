@@ -29,6 +29,7 @@ export class AddProductComponent implements OnInit {
     caracteristiquesList
     displayedProductColumns : string [] = ['key','value','action' ];  
     caracForm :FormGroup ;
+    sousCateg:any = ""; 
 
     
     'data': any = [
@@ -39,6 +40,7 @@ export class AddProductComponent implements OnInit {
             ]
         }
     ];
+    keysList: any=[];
 
     constructor(public formBuilder: FormBuilder,
                 private genericservice: AdminGenericService,
@@ -53,7 +55,7 @@ export class AddProductComponent implements OnInit {
    });
 
 
-
+ 
         this.getSousCategories();
         this.mainImgPath = this.data[0].image;
         this.form = this.formBuilder.group({
@@ -102,6 +104,28 @@ export class AddProductComponent implements OnInit {
                     console.log(err);
                 });
     }
+
+    onsouscategchange(){
+       this.keysList.length=0
+        console.log(this.sousCateg);
+        if (this.sousCateg!="") {
+            this.http.get(BaseUrl+'/Caracteristiques/bysouscaterie?sousCategorie='+this.sousCateg)
+            .subscribe((res:any)=>{
+                console.log(res);
+                // this.keysList
+                res.forEach(carac => {
+                    this.keysList.push(carac.Key)
+                });
+                console.log(this.keysList);
+                
+            },
+            err=>{
+                console.log(err);
+            })         
+        }
+        
+    }
+ 
 
     Discard() {
         this.form = this.formBuilder.group({

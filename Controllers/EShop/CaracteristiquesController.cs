@@ -57,7 +57,42 @@ namespace WebAPI.Controllers.EShop
 
         }
 
-      
+
+        //**********************************************
+        //**********************************************
+
+        // GET: api/Caracteristiques/bysouscaterie
+        [HttpGet("bysouscaterie")]
+        [EnableQuery]
+        public async Task<ActionResult<Dictionary<string, List<string>>>> GetReducedCaracteristiqueBySousCateg(Guid sousCategorie)
+        {
+            var caracteristiques = await _context.Caracteristique
+                .Include(x=>x.Produit)
+                .ThenInclude(x=>x.SousCategorie)
+                .Where(x=>x.Produit.SousCategorie.IdScat==sousCategorie)
+                .ToListAsync();
+            var caracs = new Dictionary<string, List<string>>();
+
+            caracteristiques.ForEach(c =>
+            {
+                if (caracs.Keys.Contains(c.Key))
+                {
+                    if (caracs[c.Key] == null)
+                        caracs[c.Key] = new List<string>();
+
+                    if (!caracs[c.Key].Contains(c.Value))
+                        caracs[c.Key].Add(c.Value);
+                }
+                else
+                    caracs.Add(c.Key, new List<string>() { c.Value });
+            });
+            return Ok(caracs);
+
+        }
+        //**********************************************
+        //**********************************************
+
+
 
         // GET: api/Caracteristiques/5
         [HttpGet("{id}")]
