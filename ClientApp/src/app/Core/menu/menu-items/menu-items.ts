@@ -246,7 +246,7 @@ const HeaderOneItems = [
 // },
     {
         state: 'contact',
-        name: 'CONTACT US',
+        name: 'Contactez nous',
         type: 'link',
         icon: 'perm_contact_calendar'
     },
@@ -289,12 +289,12 @@ const FooterOneItems = [
                 type: 'link',
                 icon: 'arrow_right_alt',
             },
-            {
-                state: 'contact',
-                name: 'CONTACT US',
-                type: 'link',
-                icon: 'perm_contact_calendar',
-            }
+            // {
+            //     state: 'contact',
+            //     name: 'Contactez nous',
+            //     type: 'link',
+            //     icon: 'perm_contact_calendar',
+            // }
         ]
     },
     {

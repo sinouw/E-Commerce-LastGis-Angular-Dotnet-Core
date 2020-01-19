@@ -90,24 +90,25 @@ export class MenuComponent implements OnInit {
         },
         {
           state: 'products',
+          name: 'CATEGORIES',
+          type: 'sub',
+          icon: 'party_mode',
+          children: this.MenuChilren
+        },
+        {
+          state: 'products',
           name: 'PRODUCTS',
           type: 'link',
           icon: 'party_mode'
       },
    
-      {
-        state: 'products',
-        name: 'CATEGORIES',
-        type: 'sub',
-        icon: 'party_mode',
-        children: this.MenuChilren
-      },
-      {
-        state: 'contact',
-        name: 'CONTACT US',
-        type: 'link',
-        icon: 'perm_contact_calendar'
-    },
+     
+    //   {
+    //     state: 'contact',
+    //     name: 'Contactez nous',
+    //     type: 'link',
+    //     icon: 'perm_contact_calendar'
+    // },
   ]
    }
 
