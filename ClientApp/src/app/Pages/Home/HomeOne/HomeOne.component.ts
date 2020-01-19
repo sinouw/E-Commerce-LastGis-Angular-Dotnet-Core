@@ -22,6 +22,8 @@ export class HomeoneComponent implements OnInit, AfterViewChecked{
    productsArray         : any;
    productsSliderData    : any;
    newProductsSliderData : any;
+   SelectedSousCategorie:any=0;
+
    slideConfig = {
       slidesToShow: 4,
       slidesToScroll:4,
@@ -108,7 +110,6 @@ export class HomeoneComponent implements OnInit, AfterViewChecked{
       this.listsousCategories().subscribe(res=>{
          this.sousCategories=res
             console.log(this.sousCategories);
-            
          },
          err=>{
             console.log(err);
@@ -122,8 +123,29 @@ export class HomeoneComponent implements OnInit, AfterViewChecked{
          err=>{
             console.log(err);
          })
-      
+   }
 
+   SelectSousCategieProducts(souscategorie){
+      
+      if(this.SelectedSousCategorie==0){
+         this.listProduit().subscribe(res=>{
+            this.Products=res.Items
+               console.log(this.Products);
+            })
+      }else{
+         console.log(souscategorie);
+         
+         this.genericservice.get(BaseUrl+'/Produits/homeProducts?&page=0&pageSize=8&souscategorie='+souscategorie)
+         .subscribe(res=>{
+            this.Products=res.Items
+               console.log(this.Products);
+            },
+            err=>{
+               console.log(err);
+               
+            })
+      }
+      
    }
 
    ngAfterViewChecked() : void {
@@ -205,11 +227,10 @@ export class HomeoneComponent implements OnInit, AfterViewChecked{
    }
 
    listProduit(){
-		// return this.genericservice.get(BaseUrl+'/Produits?$orderby=CreationDate desc &$top=10')
 		return this.genericservice.get(BaseUrl+'/Produits/homeProducts?&page=0&pageSize=8')
    }
    
    listsousCategories(){
-		return this.genericservice.get(BaseUrl+'/souscategories?$top=2')
+		return this.genericservice.get(BaseUrl+'/souscategories')
 	}
 }

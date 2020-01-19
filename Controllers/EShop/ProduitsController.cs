@@ -453,9 +453,17 @@ namespace WebAPI.Controllers.EShop
 
         // GET: api/Produits/homeProducts
         [HttpGet("homeProducts")]
-        public async Task<ActionResult<IEnumerable<Produit>>> GetProduitsHomePage(int? page, int pagesize = 10)
+        public async Task<ActionResult<IEnumerable<Produit>>> GetProduitsHomePage(int? page, int pagesize = 10,string souscategorie ="")
         {
-            var prods = await _context.Produits.ToListAsync();
+            var prods = new List<Produit>();
+            if (string.IsNullOrEmpty(souscategorie))
+            {
+                prods = await _context.Produits.ToListAsync();
+            }
+            else
+            {
+                prods = await _context.Produits.Include(x => x.SousCategorie).Where(x => x.SousCategorie.NsousCategorie == souscategorie).ToListAsync();
+            }
 
             var countDetails = prods.Count();
 
