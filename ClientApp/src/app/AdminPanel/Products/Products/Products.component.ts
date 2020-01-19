@@ -51,18 +51,6 @@ export class ProductsComponent implements OnInit {
 		this.list().subscribe((res:any)=>{
 			this.getProductResponse(res)
 			this.productsGrid=res.Items
-			// res.Items.forEach(product => {
-			// 	this.productsGrid.push({
-			// 		IdProd:product.IdProd,
-			// 		Marque:product.Marque,
-			// 		NomProduit:product.NomProduit,
-			// 		NsousCategorie:product.SousCategorie.NsousCategorie,
-			// 		Description:product.Description,
-			// 		Prix:product.Prix,
-			// 		Disponible:product.Disponible,
-			// 		CreationDate:product.CreationDate,
-			// 	})
-			// });
 			this.pageNumber = res.pageIndex;
 			this.length = res.Count;
 			this.brandsOfProducts=res.Brands;
@@ -139,7 +127,6 @@ export class ProductsComponent implements OnInit {
 				this.productsList.data.splice(i,1);
 		  }
 		  this.productsList = new MatTableDataSource<any>(this.productsGrid);
-
 		  this.cardsObs = this.productsList.connect();
 		  this.productsList.paginator = this.paginator;
 		  this.deleteAProduct(id)
@@ -163,22 +150,9 @@ export class ProductsComponent implements OnInit {
 onPage(pageEvent: PageEvent) {        
         this.list(pageEvent.pageIndex,pageEvent.pageSize)
         .subscribe(res=>{
-			res.Items.forEach(product => {
-				this.productsGrid.push({
-					IdProd:product.IdProd,
-					Marque:product.Marque,
-					NomProduit:product.NomProduit,
-					NsousCategorie:product.SousCategorie.NsousCategorie,
-					Description:product.Description,
-					Prix:product.Prix,
-					Disponible:product.Disponible,
-					CreationDate:product.CreationDate,
-				})
-			});
-			// this.productsGrid=res.Items
+			this.productsGrid=res.Items
             this.pageNumber = res.pageIndex;
              this.length = res.Count;
-
             this.productsList = new MatTableDataSource<any>(this.productsGrid);
             this.cardsObs = this.productsList.connect();
         },

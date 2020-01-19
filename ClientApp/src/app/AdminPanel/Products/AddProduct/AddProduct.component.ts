@@ -169,6 +169,8 @@ export class AddProductComponent implements OnInit {
         this.data[0].image_gallery = []
         this.data[0].image_gallery.splice(0, 0, this.mainImgPath);
         this.addProductBtnDisa = true
+        this.sousCateg=""
+        this.keyInput=""
     }
 
     UploadImages(id) {
