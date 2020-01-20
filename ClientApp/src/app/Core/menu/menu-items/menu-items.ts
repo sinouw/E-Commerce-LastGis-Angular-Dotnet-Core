@@ -21,7 +21,7 @@ const HeaderOneItems = [
  
     {
         state: 'products',
-        name: 'Products',
+        name: 'PRODUITS',
         type: 'link',
         icon: 'party_mode'
     },

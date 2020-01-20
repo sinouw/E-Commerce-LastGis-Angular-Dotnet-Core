@@ -97,7 +97,7 @@ export class MenuComponent implements OnInit {
         },
         {
           state: 'products',
-          name: 'PRODUCTS',
+          name: 'PRODUITS',
           type: 'link',
           icon: 'party_mode'
       },

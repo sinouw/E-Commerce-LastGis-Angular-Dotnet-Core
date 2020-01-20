@@ -49,8 +49,8 @@
             </mat-accordion>
         </mat-card>
 
-        <mat-card class="product-card" style="margin: 10px">
-            <h5>Filter Prix :</h5>
+        <mat-card *ngIf="brandsOfProducts.length>0" class="product-card" style="margin: 10px">
+            <h5>Filtrer Par Prix :</h5>
             <mat-divider></mat-divider>
             <mat-form-field>
                 <mat-select [(ngModel)]="stringfilterPrix" (selectionChange)="onFilterPrixChange()">
@@ -138,5 +138,5 @@
 
 <mat-paginator [pageSize]="pageSize " [length]="length " [pageSizeOptions]="pageSizeOptions " (page)="onPage($event) "></mat-paginator>
 <ng-template #elseBlock>
-    <h5 class="ml-5 ">No product found</h5>
+    <h5 class="ml-5 ">Aucun produit trouvé</h5>
 </ng-template>

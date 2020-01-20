@@ -30,7 +30,7 @@ export class AccountService {
   }
 
   GetUsers(){
-  this.http.get(BaseUrl+ '/Admin/GetAdmins?$select=FullName,IsActive,Gender,UserName,Email,PhoneNumber,Role').subscribe(
+  this.http.get(BaseUrl+ '/Admin/GetAdmins').subscribe(
     res=>{
       this.Users=res as User[]
       this.Users = this.Users.filter(u=>u.Role=='Admin')

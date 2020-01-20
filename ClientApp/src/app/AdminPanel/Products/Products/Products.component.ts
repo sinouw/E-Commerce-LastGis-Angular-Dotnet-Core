@@ -26,8 +26,8 @@ export class ProductsComponent implements OnInit {
     brandsOfProducts : any =[];
          // MatPaginator Inputs
     length = 100;
-    pageSize = 5;
-	pageSizeOptions: number[] = [5, 10, 25, 100];
+    pageSize = 6;
+    pageSizeOptions: number[] = [6, 12 , 18, 24,30];
 	
 	pageEvent: PageEvent;
     cardsObs: Observable<any>;

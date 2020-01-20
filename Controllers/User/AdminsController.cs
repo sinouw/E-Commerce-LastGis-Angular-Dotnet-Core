@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using Gis.Models.DTO;
 using Microsoft.AspNet.OData;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -36,9 +37,13 @@ namespace WebAPI.Controllers
         [HttpGet("GetAdmins")]
         [EnableQuery]
         //Get : /api/Admin
-        public async Task<ActionResult<User>> getAdmin()
+        public ActionResult<User> getAdmin(string userid="")
         {
-            var users = await _userManager.Users.ToListAsync();
+            var users = new List<UserAddDto>();
+            _userManager.Users
+                .Where(x=>x.Id!=userid)
+                .ToList()
+                .ForEach(x => users.Add(new UserAddDto(x.FullName, x.Role, x.Email, x.PhoneNumber, x.UserName)));
             return Ok(users);
         }
 
@@ -101,7 +106,7 @@ namespace WebAPI.Controllers
         //Get : /api/Admin/id
         [Authorize(Roles = "SuperAdmin")]
         [HttpGet("GetRole/{id}")]
-        public async Task<IActionResult> getAdmin(string id)
+        public async Task<IActionResult> getAdminRole(string id)
         {
             var user = await _userManager.Users.SingleOrDefaultAsync(c => c.Id == id);
             if (user == null)

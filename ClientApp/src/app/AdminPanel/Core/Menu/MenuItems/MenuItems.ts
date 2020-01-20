@@ -35,12 +35,12 @@ const MENUITEMS = [
   },
   {
     state: 'admin-panel',
-    name: 'Products',
+    name: 'Produits',
     type: 'sub',
     icon: 'shopping_cart',
     children: [
-      {state: 'products', name: 'Products',type : 'link'},
-      {state: 'product-add', name: 'Product Add',type : 'link'}
+      {state: 'products', name: 'Liste Produits',type : 'link'},
+      {state: 'product-add', name: 'Ajout Produit',type : 'link'}
     ]
   },
   {

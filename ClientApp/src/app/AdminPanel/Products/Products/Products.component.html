@@ -2,20 +2,20 @@
     <div fxLayout="row wrap" fxLayoutAlign="space-between center">
         <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="30" fxFlex.lg="30" fxFlex.xl="30">
             <div class="pr-3">
-                <div class="dash-title">Search</div>
+                <div class="dash-title">Chercher</div>
             </div>
         </div>
         <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="70" fxFlex.lg="70" fxFlex.xl="70">
             <div fxLayout="row wrap">
                 <div class="form-group pr-3" fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="calc(100% - 300px)" fxFlex.lg="calc(100% - 300px)" fxFlex.xl="calc(100% - 300px)">
                     <mat-form-field class="w-100" floatLabel="never">
-                        <input matInput placeholder="Search Products" [(ngModel)]="filterValue" (keyup.enter)="applyFilter()">
+                        <input matInput placeholder="Chercher Produit" [(ngModel)]="filterValue" (keyup.enter)="applyFilter()">
                     </mat-form-field>
                 </div>
                 <!-- form-group -->
                 <div class="contact-btn" fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="300px" fxFlex.lg="300px" fxFlex.xl="300px">
-                    <button class="mr-2 mb-2" mat-raised-button color="primary" (click)="applyFilter()">Search</button>
-                    <button mat-raised-button color="primary" [routerLink]="['/admin-panel/product-add']">Add Product<mat-icon class="ml-2">add</mat-icon></button>
+                    <button class="mr-2 mb-2" mat-raised-button color="primary" (click)="applyFilter()">Chercher</button>
+                    <button mat-raised-button color="primary" [routerLink]="['/admin-panel/product-add']">Ajouter Produit<mat-icon class="ml-2">add</mat-icon></button>
                 </div>
 
                 <!-- contact-btn -->
@@ -25,7 +25,7 @@
 </mat-card>
 <div class="m-3" fxLayoutAlign="space-between center">
     <div class="title">
-        <h5 class="mb-0">{{'Product' | translate }} {{showType | translate}}</h5>
+        <h5 class="mb-0">{{showType | translate}}e Produits</h5>
     </div>
     <!-- title -->
     <div class="product-icon">
@@ -102,7 +102,7 @@
                                     </ng-container>
 
                                     <ng-container matColumnDef="Prix">
-                                        <th class="text-nowrap px-3" mat-header-cell *matHeaderCellDef mat-sort-header>Price</th>
+                                        <th class="text-nowrap px-3" mat-header-cell *matHeaderCellDef mat-sort-header>Prix</th>
                                         <td class="text-nowrap px3" mat-cell *matCellDef="let element">{{element?.Prix|currency}}</td>
                                     </ng-container>
                                     <ng-container matColumnDef="action">
@@ -169,5 +169,5 @@
 </ng-container>
 
 <ng-template #elseBlock>
-    <h5 class="ml-5">No product found</h5>
+    <h5 class="ml-5">Aucun produit trouvé</h5>
 </ng-template>

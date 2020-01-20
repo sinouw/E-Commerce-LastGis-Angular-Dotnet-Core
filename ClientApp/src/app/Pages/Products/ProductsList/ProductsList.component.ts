@@ -32,8 +32,8 @@ export class ProductsListComponent implements OnInit {
     brandsOfProducts: any = [];
     // MatPaginator Inputs
     length = 100;
-    pageSize = 5;
-    pageSizeOptions: number[] = [5, 25 , 50, 100];
+    pageSize = 6;
+    pageSizeOptions: number[] = [6, 12 , 18, 24,30];
     dataSource: MatTableDataSource<any> = new MatTableDataSource<any>();
     pageEvent: PageEvent;
     cardsObs: Observable<any>;

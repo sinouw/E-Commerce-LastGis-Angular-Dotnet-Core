@@ -1,33 +1,33 @@
 <mat-card *ngIf="type == 'info'">
-    <h4> Edit Profile Information</h4>
+    <h4> Modifier les Informations de Profile</h4>
     <div fxLayout="row wrap" class="col-gap">
         <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="50" fxFlex.lg="50" fxFlex.xl="50">
             <form [formGroup]="info">
                 <div class="example-container">
                     <mat-form-field class="w-100 mb-3">
-                        <input matInput placeholder="User Name" formControlName="UserName">
-                        <mat-error *ngIf="info.get('UserName').hasError('required') && info.get('UserName').touched">This field should not be empty.</mat-error>
+                        <input matInput placeholder="Nom d'utilisateur" formControlName="UserName">
+                        <mat-error *ngIf="info.get('UserName').hasError('required') && info.get('UserName').touched">Ce champ ne doit pas être vide.</mat-error>
                     </mat-form-field>
                     <mat-form-field class="w-100 mb-3">
-                        <input matInput placeholder="Full Name" formControlName="FullName">
-                        <mat-error *ngIf="info.get('FullName').hasError('required') && info.get('FullName').touched">This field should not be empty.</mat-error>
+                        <input matInput placeholder="Nom Complet" formControlName="FullName">
+                        <mat-error *ngIf="info.get('FullName').hasError('required') && info.get('FullName').touched">Ce champ ne doit pas être vide.</mat-error>
                     </mat-form-field>
                     <div class="mb-3">
                         <mat-radio-group formControlName="Gender">
-                            <mat-radio-button class="mr-2" value="Male">Male</mat-radio-button>
-                            <mat-radio-button value="Female">Female</mat-radio-button>
+                            <mat-radio-button class="mr-2" value="Male">Homme</mat-radio-button>
+                            <mat-radio-button value="Female">Femme</mat-radio-button>
                         </mat-radio-group>
                     </div>
                     <mat-form-field class="w-100 mb-3">
-                        <input matInput placeholder="Mobile No." formControlName="PhoneNumber">
-                        <mat-error *ngIf="info.get('PhoneNumber').hasError('required') && info.get('PhoneNumber').touched">This field should not be empty.</mat-error>
+                        <input matInput placeholder="Telephone" formControlName="PhoneNumber">
+                        <mat-error *ngIf="info.get('PhoneNumber').hasError('required') && info.get('PhoneNumber').touched">Ce champ ne doit pas être vide.</mat-error>
                     </mat-form-field>
                     <mat-form-field class="w-100 mb-3">
                         <input matInput type="email" placeholder="Email" formControlName="Email">
-                        <mat-error *ngIf="info.get('Email').hasError('required') && info.get('Email').touched">This field should not be empty.</mat-error>
-                        <mat-error *ngIf="info.get('Email').hasError('pattern') && info.get('Email').touched">Please enter a valid email.</mat-error>
+                        <mat-error *ngIf="info.get('Email').hasError('required') && info.get('Email').touched">Ce champ ne doit pas être vide.</mat-error>
+                        <mat-error *ngIf="info.get('Email').hasError('pattern') && info.get('Email').touched">entrer un email valide.</mat-error>
                     </mat-form-field>
-                    <button mat-raised-button color="accent" (click)="submitProfileInfo()">Save</button>
+                    <button mat-raised-button color="accent" (click)="submitProfileInfo()">Valider</button>
                 </div>
                 <!-- example-container -->
             </form>

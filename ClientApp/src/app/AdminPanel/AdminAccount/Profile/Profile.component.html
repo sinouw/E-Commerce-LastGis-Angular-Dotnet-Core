@@ -1,20 +1,20 @@
 <mat-card>
-    <h4>Profile Information</h4>
+    <h4>Informations de Profile</h4>
     <div class="pt-3">
         <div class="proflie-field mb-3">
-            <label>User Name:</label>
+            <label>Nom d'utilisateur:</label>
             <span>{{userDetails?.UserName}}</span>
         </div>
         <div class="proflie-field mb-3">
-            <label>Full Name:</label>
+            <label>Nom Complet:</label>
             <span>{{userDetails?.FullName}}</span>
         </div>
         <div class="proflie-field mb-3">
-            <label>Gender:</label>
+            <label>Sexe:</label>
             <span>{{userDetails?.Gender}}</span>
         </div>
         <div class="proflie-field mb-3">
-            <label>Mobile Number:</label>
+            <label>Telephone :</label>
             <span>{{userDetails?.PhoneNumber}}</span>
         </div>
         <div class="proflie-field mb-3">
@@ -22,9 +22,9 @@
             <span *ngFor="let Role of roles">{{Role}}</span>
         </div>
         <div class="proflie-field mb-3">
-            <label>E-mail id:</label>
+            <label>E-mail:</label>
             <span class="text-ellipse">{{userDetails?.Email}}</span>
         </div>
-        <button mat-raised-button color="accent" [routerLink]="['edit']" [queryParams]="{type:'info'}">Edit</button>
+        <button mat-raised-button color="accent" [routerLink]="['edit']" [queryParams]="{type:'info'}">Modifier</button>
     </div>
 </mat-card>

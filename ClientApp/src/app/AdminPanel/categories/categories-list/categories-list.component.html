@@ -1,12 +1,12 @@
 <div class="dash-title mb-4 ml-3">
-    Categorie List
+    Liste Categories
 </div>
 <!-- dash-title -->
 <mat-card class="m-3">
     <div fxLayout="row wrap">
         <div fxFlex.gt-md="600px" fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
             <mat-form-field class="w-100">
-                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Chercher">
             </mat-form-field>
         </div>
     </div>
@@ -16,7 +16,7 @@
     <div fxLayout="column">
         <mat-card>
             <button color="primary" mat-raised-button (click)="addNewCategorieDialog()">
-                        Add Categorie
+                        Ajouter Categorie
                      </button>
             <div class="table-responsive-x">
                 <table mat-table [dataSource]="dataSource" class="w-100 table-scroll-wrap">
@@ -31,10 +31,6 @@
                     <ng-container matColumnDef="action">
                         <th class="px-3 text-nowrap" mat-header-cell *matHeaderCellDef> Action </th>
                         <td class="px-3 text-nowrap" mat-cell *matCellDef="let element;let i = index;">
-                            <!-- <button mat-icon-button (click)="onSeeDialog()" color="primary">
-                                <i class="material-icons">remove_red_eye</i>
-                            </button> -->
-
                             <button mat-icon-button (click)="listSousCategories(element.IdCat)" color="primary">
                                 <i class="material-icons">list</i>
                             </button>
@@ -59,7 +55,7 @@
 </ng-container>
 <ng-template #elseBlock>
     <button color="primary" mat-raised-button (click)="addNewCategorieDialog()">
-                Add Categorie
+                Ajouter Categorie
              </button>
-    <h5 class="ml-5">No data found</h5>
+    <h5 class="ml-5">Aucune Categorie Trouvée</h5>
 </ng-template>

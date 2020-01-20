@@ -1,11 +1,11 @@
 <form [formGroup]="addNewSousCategorieForm" class="popup-card-width add-new-user">
     <div>
-        <h2 mat-dialog-title>Edit Sous Categorie</h2>
+        <h2 mat-dialog-title>Modifier Sous Categorie</h2>
     </div>
     <mat-dialog-content class="mb-4">
 
         <mat-form-field class="w-100">
-            <select matNativeControl formControlName="CategorieId" placeholder="categorie List">
+            <select matNativeControl formControlName="CategorieId" placeholder="Liste categories ">
                 <option *ngFor="let categorie of categories" [value]="categorie.IdCat">{{ categorie.Ncategorie }}</option>
 
             </select>
@@ -27,8 +27,8 @@
         </mat-form-field>
     </mat-dialog-content>
     <mat-dialog-actions class="m-0">
-        <button type="button" mat-raised-button (click)="dialogRef.close()" color="primary">CLOSE</button>
-        <button (click)="onFormSubmit()" type="submit" [disabled]="!addNewSousCategorieForm.valid" mat-raised-button color="warn">SUBMIT</button>
+        <button type="button" mat-raised-button (click)="dialogRef.close()" color="primary">Fermer</button>
+        <button (click)="onFormSubmit()" type="submit" [disabled]="!addNewSousCategorieForm.valid" mat-raised-button color="warn">Valider</button>
     </mat-dialog-actions>
 </form>
 <!-- add-new-Categorie -->

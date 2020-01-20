@@ -1,12 +1,12 @@
 <div class="dash-title mb-4 ml-3">
-    Sous Categorie List
+    Liste Sous Categories
 </div>
 <!-- dash-title -->
 <mat-card class="m-3">
     <div fxLayout="row wrap">
         <div fxFlex.gt-md="600px" fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
             <mat-form-field class="w-100">
-                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Chercher">
             </mat-form-field>
         </div>
     </div>
@@ -56,7 +56,7 @@
 </ng-container>
 <ng-template #elseBlock>
     <button color="primary" mat-raised-button (click)="addNewSousCategorieDialog()">
-                Add new Categorie
+                Ajouter Nouvelle Sous Categorie
              </button>
-    <h5 class="ml-5">No data found</h5>
+    <h5 class="ml-5">Aucune Sous Categorie Trouvée</h5>
 </ng-template>

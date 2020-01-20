@@ -9,7 +9,7 @@
                         </div>
                         <!-- login-user-img -->
                         <div class="px-3">
-                            <h4>Hi, {{User?.FullName}}</h4>
+                            <h4>Salut, {{User?.FullName}}</h4>
                             <div class="text-muted text-xl">{{User?.Email}}</div>
                         </div>
                     </div>
@@ -27,15 +27,10 @@
                             <mat-list-item role="listitem" *ngIf="role=='SuperAdmin'">
                                 <a [routerLink]="['/admin-panel/account/collaboration']" routerLinkActive="tab-active">
                                     <i class="material-icons">location_on</i>
-                                    <span>Users</span>
+                                    <span>Utilisateurs</span>
                                 </a>
                             </mat-list-item>
-                            <!-- <mat-list-item role="listitem"> 
-                        <a [routerLink]="['/admin-panel/account/settings']" routerLinkActive="tab-active">
-                           <i class="material-icons">credit_card</i> 
-                           <span>Account Settings</span> 
-                        </a>
-                     </mat-list-item> -->
+
                         </mat-list>
                     </div>
                     <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="70" fxFlex.lg="80" fxFlex.xl="80" class="user-content-wrapper my-0">

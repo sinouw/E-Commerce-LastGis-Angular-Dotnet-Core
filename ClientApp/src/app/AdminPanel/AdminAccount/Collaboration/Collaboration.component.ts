@@ -42,7 +42,7 @@ export class CollaborationComponent implements OnInit {
         this.collaborationData = this.Users;
         setTimeout(() => {
             this.dataSource = new MatTableDataSource<any>(this.collaborationData);
-        }, 1000);
+        }, 2000);
         
     }
 
@@ -66,11 +66,21 @@ export class CollaborationComponent implements OnInit {
         if (response == 'yes') {
             this.dataSource.data.splice(i, 1);
             console.log(i);
-            this.accountService.DeleteUser(username);
+            this.DeleteUser(username);
             // this.getUsersInfo()
             this.dataSource = new MatTableDataSource(this.dataSource.data);
         }
     }
+
+    DeleteUser(username){
+        this.http.delete(BaseUrl+'/Admin/Delete/'+username).subscribe(
+          res=>{
+            this.GetUsers()
+          },err=>{
+            console.log(err);
+            
+          })
+      }
 
     /**
      * addNewUserDialog method is used to open a add new client dialog.
@@ -99,30 +109,14 @@ export class CollaborationComponent implements OnInit {
         }
     }
 
-    /*
-    ChangeToSuper(username: string, i) {
-        this.http.put(BaseUrl + '/Admin/Togglestatus/' + username)
-            .subscribe(res => {
-                    console.log(res);
-                    setTimeout(() => {
-
-                        this.getUsersInfo();
-                    }, 5000);
-                },
-                err => {
-                    console.log(err);
-                });
-    }
-
-
-     */
-
     GetUsers(){
-        this.http.get(BaseUrl+ '/Admin/GetAdmins?$select=FullName,IsActive,Gender,UserName,Email,PhoneNumber,Role').subscribe(
+        var payLoad = JSON.parse(window.atob(localStorage.getItem('token').split('.')[1]));
+    console.log(payLoad.UserID);
+    
+        this.http.get(BaseUrl+ '/Admin/GetAdmins?&userid='+payLoad.UserID).subscribe(
           res=>{
-            this.Users=res as User[]
-            this.Users = this.Users.filter(u=>u.Role=='Admin')
-            console.log(res)      
+            this.Users=res
+                console.log(this.Users)
           },
           err=>{
             console.log(err)
