@@ -24,7 +24,6 @@ export class ReportsComponent implements OnInit {
    displayedTransferColumns : string [] = ['transid','date','account', 'type', 'amount', 'balance','status'];
 
    displayedExpenseColumns : string [] = ['itmNo','date', 'type','companyName','amount','status'];
-   imagenumber: any;
 	
    constructor(private genericservice : AdminGenericService) {
    }
@@ -46,26 +45,7 @@ export class ReportsComponent implements OnInit {
    ngOnInit() {
       
       this.getpubImages()
-       .subscribe(res=>{
-         // console.log(res);
-         this.DBPubImages=res
-         console.log(this.DBPubImages);
-
-         this.DBPubImages.forEach(e => {
-            this.ImagesPath.unshift(e.PubImageName)
-         });
-         this.imagenumber = this.ImagesPath.length
-         this.mainImgPath =this.ImagesPath[0]
-         console.log("Main Image Path : ",this.mainImgPath);
-         this.data[0].image_gallery=this.ImagesPath
-            console.log("gallery images : " ,this.data[0].image_gallery);
-         
-      },
-      err=>{
-         console.log(err);
-         
-      })
-
+       
       
       
    }
@@ -86,8 +66,31 @@ export class ReportsComponent implements OnInit {
 
 
    getpubImages(){
-     return this.genericservice.get(BaseUrl+'/PubImages/')
+      this.data[0].image_gallery=[]   
+      this.ImagesPath = ['https://via.placeholder.com/625x800'];
+
+     this.genericservice.get(BaseUrl+'/PubImages/')
+     .subscribe(res=>{
+      // console.log(res);
+      this.DBPubImages=res
+      console.log(this.DBPubImages);
+
+      this.DBPubImages.forEach(e => {
+         this.ImagesPath.unshift(e.PubImageName)
+      });
+      this.mainImgPath =this.ImagesPath[0]
+      console.log("Main Image Path : ",this.mainImgPath);
+      this.data[0].image_gallery=this.ImagesPath
+         console.log("gallery images : " ,this.data[0].image_gallery);
+      
+   },
+   err=>{
+      console.log(err);
+      
+   })
+
    }
+
 
    UploadImage(files) {
       this.PubImages.push(files[0]);
@@ -117,11 +120,15 @@ export class ReportsComponent implements OnInit {
    console.log("notfound");
    
   }
+  
 
   DeleteImagesDB(id){
    this.genericservice.delete(BaseUrl+'/PubImages/'+id)
    .subscribe(res => {
       console.log(res);
+      setTimeout(() => {
+         this.getpubImages()
+      }, 1000);
       // helloworld!!!   
    },
    err=>console.log(err)
@@ -129,9 +136,16 @@ export class ReportsComponent implements OnInit {
   }
 
   UploadImages() {
+
       this.genericservice.postPubImages(this.PubImages)
           .then(res => {
               console.log(res);
+              this.PubImages.length=0
+              setTimeout(() => {
+                 this.getpubImages()
+              }, 2000);
+
+              
           },
           err=>console.log(err)
           );

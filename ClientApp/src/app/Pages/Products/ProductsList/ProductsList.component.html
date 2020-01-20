@@ -97,27 +97,14 @@
 
     </div>
     <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="70" fxFlex.lg="70" fxFlex.xl="70">
+        <mat-paginator [pageSize]="pageSize " [length]="length " [pageSizeOptions]="pageSizeOptions " (page)="onPage($event) "></mat-paginator>
+
         <div fxLayout="row wrap" fxLayoutAlign="flex-start">
 
             <ng-container *ngIf="productsGrid && productsGrid.length >= 0 && length!=0; else elseBlock">
-                <div fxLayoutAlign="" fxFlex.xs="100" fxFlex.sm="100" fxFlex.lg="33" fxFlex.gt-lg="33" fxFlex.gt-md="33" fxFlex.gt-sm="30" fxFlex.gt-xs="30" *ngFor="let product of cardsObs | async; let i=index;">
-
+                <div fxLayoutAlign="" fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="33" fxFlex.lg="33" fxFlex.gt-lg="33" fxFlex.gt-md="33" fxFlex.gt-sm="33" fxFlex.gt-xs="33" *ngFor="let product of cardsObs | async; let i=index;">
                     <mat-card [style.minHeight]="'80%'" [style.minWidth]="'80%'" class="product-card" style="margin: 10px">
-
-                        <!-- ************************************************************************************************************************************************************************************ -->
-                        <!-- ************************************************************************************************************************************************************************************ -->
-                        <!-- ************************************************************************************************************************************************************************************ -->
-                        <!-- ************************************************************************************************************************************************************************************ -->
-
-                        <a>
-                            <img mat-card-image style="object-fit: cover;width: 100%;height: 80%;" (click)="productPage(product.IdProd,product.Marque)" mat-card-image [src]="product?.FrontImg" alt="Photo of a Shiba Inu">
-                            <!-- <img mat-card-image style="object-fit: cover;width: 100%;height: 80%;" (click)="productPage(product.IdProd,product.Marque)" mat-card-image [src]="product?.FrontImg" alt="Photo of a Shiba Inu"> -->
-                        </a>
-                        <!-- ************************************************************************************************************************************************************************************ -->
-                        <!-- ************************************************************************************************************************************************************************************ -->
-                        <!-- ************************************************************************************************************************************************************************************ -->
-                        <!-- ************************************************************************************************************************************************************************************ -->
-
+                        <a><img mat-card-image style="object-fit: cover;width: 100%;height: 80%;" (click)="productPage(product.IdProd,product.Marque)" mat-card-image [src]="product?.FrontImg" alt="Photo of a Shiba Inu"></a>
                         <mat-card-content class="product-content relative ">
                             <h5>
                                 <a class="title-link ">
