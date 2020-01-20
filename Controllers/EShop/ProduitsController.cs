@@ -502,6 +502,16 @@ namespace WebAPI.Controllers.EShop
         //******************************************************************
         //******************************************************************
 
+
+        // GET: api/Produits/brandsbysouscateg
+        [HttpGet("brandsbysouscateg")]
+        [EnableQuery]
+        public async Task<ActionResult<IEnumerable<string>>> GetBrandsbysouscateg()
+        {
+            var brands = await _context.Produits.Select(x=>x.Marque).Distinct().ToListAsync();
+            return Ok(brands);
+        }
+
         // GET: api/Produits/AdminProduits
         [Authorize(Roles = "Admin,SuperAdmin")]
         [HttpGet("AdminProduits")]

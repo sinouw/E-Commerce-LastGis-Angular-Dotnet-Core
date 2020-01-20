@@ -88,7 +88,7 @@
 
                                 <span class="font-medium"> Ajouter la Marque </span>:
                                 <div class="product-detail-price">
-                                    <h5 class="primary-color add-text"><input matInput formControlName="Marque" placeholder="Marque" autocomplete="off"></h5>
+                                    <h5 class="primary-color add-text"><input list="brands-list" matInput formControlName="Marque" placeholder="Marque" autocomplete="off"></h5>
                                     <div *ngIf="form.get('Marque').hasError('required') && form.get('Marque').touched">Ce champ ne doit pas être vide.</div>
 
                                 </div>
@@ -156,6 +156,9 @@
                                 <datalist id="values-list" *ngIf="valuesList.length!=0">
                                     <option *ngFor="let value of valuesList" [value]="value">{{value}}</option>
                                   </datalist>
+                                <datalist id="brands-list" *ngIf="brands.length!=0">
+                                        <option *ngFor="let brand of brands" [value]="brand">{{brand}}</option>
+                                      </datalist>
 
                                 <div class="mb-5 detail-btns">
                                     <button mat-raised-button color="accent" class="button-lg mr-1" [disabled]="form.invalid || addProductBtnDisa" (click)="onSubmit()">Creer</button>

@@ -44,6 +44,7 @@ export class AddProductComponent implements OnInit {
     keysList: any=[];
     valuesList: any=[];
     caracs: any=[];
+    brands: any=[];
 
     constructor(public formBuilder: FormBuilder,
                 private genericservice: AdminGenericService,
@@ -52,6 +53,8 @@ export class AddProductComponent implements OnInit {
 
 
     ngOnInit() {
+
+        this.getBrands()
 
        this.caracForm = this.formBuilder.group({
         key: ['', [Validators.required]],
@@ -145,6 +148,17 @@ export class AddProductComponent implements OnInit {
         }
         
     }
+
+   getBrands(){
+    this.http.get(BaseUrl+'/Produits/brandsbysouscateg')
+    .subscribe((res:any)=>{
+        console.log(res);
+        this.brands = res    
+    },
+    err=>{
+        console.log(err);
+    })         
+   }
  
 
     Discard() {

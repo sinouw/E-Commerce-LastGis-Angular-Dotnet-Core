@@ -71,6 +71,9 @@ namespace WebAPI.Controllers.EShop
                 .ThenInclude(x=>x.SousCategorie)
                 .Where(x=>x.Produit.SousCategorie.IdScat==sousCategorie)
                 .ToListAsync();
+
+
+
             var caracs = new Dictionary<string, List<string>>();
 
             caracteristiques.ForEach(c =>
