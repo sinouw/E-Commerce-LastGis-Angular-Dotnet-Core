@@ -9,16 +9,12 @@
             <div fxLayout="row wrap">
                 <div class="form-group pr-3" fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="calc(100% - 300px)" fxFlex.lg="calc(100% - 300px)" fxFlex.xl="calc(100% - 300px)">
                     <mat-form-field class="w-100" floatLabel="never">
-                        <!-- <input matInput placeholder="Search Products" (keyup)="applyFilter($event.target.value,$event.code)"> -->
                         <input matInput placeholder="Search Products" [(ngModel)]="filterValue" (keyup.enter)="applyFilter()">
                     </mat-form-field>
                 </div>
-                <!-- form-group -->
                 <div class="contact-btn" fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="300px" fxFlex.lg="300px" fxFlex.xl="300px">
-                    <!-- <button class="mr-2 mb-2" mat-raised-button color="primary">Search</button> -->
                     <button mat-raised-button color="primary" (click)="applyFilter()">Search</button>
                 </div>
-                <!-- contact-btn -->
             </div>
 
         </div>
@@ -38,14 +34,14 @@
                 <mat-expansion-panel style="margin-bottom: 5px" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                     <mat-expansion-panel-header>
                         <mat-panel-title>
-                            {{categorie?.CategName}}
+                            ► {{categorie?.CategName}}
                         </mat-panel-title>
                         <mat-panel-description>
                             <!-- description -->
                         </mat-panel-description>
                     </mat-expansion-panel-header>
                     <ul *ngFor="let souscat of categorie.SousCategs" (click)="onselectCategorie(souscat)">
-                        <li href="" style="cursor: pointer;"> {{souscat}}</li>
+                        <li href="" style="cursor: pointer;">→ h4{{souscat}}</li>
                     </ul>
 
 
@@ -53,13 +49,10 @@
             </mat-accordion>
         </mat-card>
 
-        <!-- ********************************************** -->
-        <!-- ********************************************** -->
         <mat-card class="product-card" style="margin: 10px">
             <h5>Filter Prix :</h5>
             <mat-divider></mat-divider>
             <mat-form-field>
-                <!-- <mat-label>Trier Prix :</mat-label> -->
                 <mat-select [(ngModel)]="stringfilterPrix" (selectionChange)="onFilterPrixChange()">
                     <mat-option [value]="0">Par Ordre Descendant </mat-option>
                     <mat-option [value]="1">Par Ordre Ascendant </mat-option>
@@ -72,30 +65,21 @@
             <h5>Marque :</h5>
             <mat-divider></mat-divider>
             <mat-selection-list #list [(ngModel)]="selectedBrands" (ngModelChange)="onselectBrand()">
-                <!-- <mat-selection-list #list [(ngModel)]="selectedBrands"> -->
                 <mat-list-option *ngFor="let brand of brandsOfProducts" [value]="brand">
                     {{brand}}
                 </mat-list-option>
             </mat-selection-list>
-            <!-- <mat-divider></mat-divider> -->
 
-            <!-- <button matInput color="primary" mat-raised-button (click)="onselectBrand()" style="margin-left: 50%;margin-top:20px;">Appliquer le filtre</button> -->
-
-            <!-- <p>
-                            Options selected: {{brands.selectedOptions.selected.length}}
-                        </p> -->
         </mat-card>
 
 
 
 
-        <!-- caracs ********************* -->
 
         <mat-card class="product-card" style="margin: 10px;" *ngIf="caracDto.length>0">
             <div *ngFor="let caracteristique of caracDto">
 
                 <h5>{{caracteristique?.Key}} :</h5>
-                <!-- ******************************* -->
                 <mat-divider></mat-divider>
                 <mat-selection-list #list>
                     <mat-list-option *ngFor="let values of caracteristique.Values" [value]="values" (click)="onselectCaract(caracteristique.Key,values)">
@@ -116,31 +100,43 @@
         <div fxLayout="row wrap" fxLayoutAlign="flex-start">
 
             <ng-container *ngIf="productsGrid && productsGrid.length >= 0 && length!=0; else elseBlock">
-                <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.gt-md="25" fxFlex.gt-sm="50" fxFlex.gt-xs="50" *ngFor="let product of cardsObs | async; let i=index;">
+                <div fxLayoutAlign="" fxFlex.xs="100" fxFlex.sm="100" fxFlex.lg="33" fxFlex.gt-lg="33" fxFlex.gt-md="33" fxFlex.gt-sm="30" fxFlex.gt-xs="30" *ngFor="let product of cardsObs | async; let i=index;">
 
-                    <mat-card class="product-card" style="margin: 10px">
-                        <a class="p-link">
-                            <img (click)="productPage(product.IdProd,product.Marque)" mat-card-image [src]="product?.FrontImg" alt="Photo of a Shiba Inu">
-                            <!-- <img (click)="productPage(product.IdProd,product.Marque)" width="100%" height="100%" mat-card-image [src]="product?.FrontImg" alt="Photo of a Shiba Inu"> -->
-                        </a>
+                    <mat-card [style.minHeight]="'80%'" [style.minWidth]="'80%'" class="product-card" style="margin: 10px">
 
-                        <!-- wishlist-icon-->
-                        <mat-card-content class="product-content relative">
-                            <h5><a class="title-link">{{product.NomProduit || null}}</a> </h5>
-                            <!-- <p class="category-wrap mb-2">{{product?.NsousCategorie || null}}</p> -->
-                            <p class="category-wrap mb-2">{{product?.Marque || null}}</p>
-                            <div class="product-price">
-                                <div fxFlex fxLayoutAlign="space-between">
-                                    <h6 class="accent-color">{{product?.Prix | currency :'TND'}}</h6>
+                        <!-- ************************************************************************************************************************************************************************************ -->
+                        <!-- ************************************************************************************************************************************************************************************ -->
+                        <!-- ************************************************************************************************************************************************************************************ -->
+                        <!-- ************************************************************************************************************************************************************************************ -->
+
+                        <div>
+                            <img mat-card-image style="object-fit: cover;width: 100%;height: 80%;" (click)="productPage(product.IdProd,product.Marque)" mat-card-image [src]="product?.FrontImg" alt="Photo of a Shiba Inu">
+                            <!-- <img (click)=" productPage(product.IdProd,product.Marque) " mat-card-image [src]="product?.FrontImg " alt="Photo of a Shiba Inu "> -->
+                        </div>
+                        <!-- ************************************************************************************************************************************************************************************ -->
+                        <!-- ************************************************************************************************************************************************************************************ -->
+                        <!-- ************************************************************************************************************************************************************************************ -->
+                        <!-- ************************************************************************************************************************************************************************************ -->
+
+                        <mat-card-content class="product-content relative ">
+                            <h5>
+                                <a class="title-link ">
+                               →  {{product.NomProduit || null}}</a>
+                            </h5>
+                            <mat-divider></mat-divider>
+                            <h6 style="margin-top: 15px ">
+                                <p class="category-wrap mb-2 "> → {{product?.Marque || null}}</p>
+
+                            </h6>
+                            <div class="product-price ">
+                                <div fxFlex fxLayoutAlign="space-between ">
+                                    <h5 class="accent-color "> {{product?.Prix | currency :'TND'}}</h5>
                                 </div>
                             </div>
-                            <!--product-price-->
-                            <div class="m-icon">
-                                <button mat-fab (click)="productPage(product.IdProd,product.Marque)"><i class="material-icons">remove_red_eye</i></button>
+                            <div class="m-icon ">
+                                <button mat-fab (click)="productPage(product.IdProd,product.Marque) "><i class="material-icons ">remove_red_eye</i></button>
                             </div>
-                            <!-- m-icon -->
                         </mat-card-content>
-                        <!-- product-content -->
 
                     </mat-card>
                 </div>
@@ -154,7 +150,7 @@
 
 
 
-<mat-paginator [pageSize]="pageSize" [length]="length" [pageSizeOptions]="pageSizeOptions" (page)="onPage($event)"></mat-paginator>
+<mat-paginator [pageSize]="pageSize " [length]="length " [pageSizeOptions]="pageSizeOptions " (page)="onPage($event) "></mat-paginator>
 <ng-template #elseBlock>
-    <h5 class="ml-5">No product found</h5>
+    <h5 class="ml-5 ">No product found</h5>
 </ng-template>
