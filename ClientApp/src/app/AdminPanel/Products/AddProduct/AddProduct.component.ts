@@ -177,14 +177,21 @@ export class AddProductComponent implements OnInit {
         })
 
         this.caracteristiquesList=[]
-        this.productImages=[]
         this.caracteristiques=[]
+        this.productImages=[]
         this.mainImgPath = this.data[0].image;
         this.data[0].image_gallery = []
         this.data[0].image_gallery.splice(0, 0, this.mainImgPath);
         this.addProductBtnDisa = true
         this.sousCateg=""
         this.keyInput=""
+    }
+
+    rechargeimages(){
+        this.productImages=[]
+        this.mainImgPath = this.data[0].image;
+        this.data[0].image_gallery = []
+        this.data[0].image_gallery.splice(0, 0, this.mainImgPath);
     }
 
     UploadImages(id) {

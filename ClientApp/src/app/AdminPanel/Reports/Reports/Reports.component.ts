@@ -143,9 +143,7 @@ export class ReportsComponent implements OnInit {
               this.PubImages.length=0
               setTimeout(() => {
                  this.getpubImages()
-              }, 2000);
-
-              
+              }, 2000);        
           },
           err=>console.log(err)
           );
