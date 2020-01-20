@@ -1,13 +1,10 @@
-<div class="dash-title mb-4 ml-3">
-    Home
-</div>
 <div fxLayout="column">
 
     <div class="inner-container">
 
         <div class="product-detail-page  section-gap" *ngFor="let detailData of data">
             <div class="dash-title mb-4 ml-3">
-                images Publicité :
+                images de Publicité :
             </div>
             <mat-card>
                 <!-- <div class="bg-grey section-gap"> -->
@@ -97,7 +94,7 @@
 
                             </div>
                             <div class="mb-3 detail-btns">
-                                <button mat-raised-button color="warn" class="button-lg mr-3" (click)="DeletePubImage()">Delete</button>
+                                <button mat-raised-button color="warn" class="button-lg mr-3" (click)="DeletePubImage()">Supprimer</button>
                                 <button mat-raised-button color="primary" class="button-lg mr-3" (click)="UploadImages()">Modifier</button>
                                 <button mat-raised-button class="button-lg mr-3" (click)="getpubImages()">Recharger</button>
                             </div>
