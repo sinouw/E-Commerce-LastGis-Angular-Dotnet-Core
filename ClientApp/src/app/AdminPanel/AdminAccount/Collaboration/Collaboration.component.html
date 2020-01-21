@@ -1,6 +1,6 @@
 <mat-card>
     <button color="primary" mat-raised-button (click)="addNewUserDialog()">
-      Add Admin
+      Ajouter un Admin
    </button>
 
     <ng-container *ngIf="collaborationData && collaborationData.length>0; else elseBlock">
@@ -11,7 +11,7 @@
                     <td class="px-3" mat-cell *matCellDef="let element"> <img src={ {element.image}} width="40" height="40"></td>
                 </ng-container> -->
                 <ng-container matColumnDef="FullName">
-                    <th class="px-3" mat-header-cell *matHeaderCellDef> Full Name </th>
+                    <th class="px-3" mat-header-cell *matHeaderCellDef> Nom Complet </th>
                     <td class="px-3" mat-cell *matCellDef="let element"> {{element.FullName}} </td>
                 </ng-container>
                 <ng-container matColumnDef="Email">
@@ -19,7 +19,7 @@
                     <td class="px-3" mat-cell *matCellDef="let element"> {{element.Email}} </td>
                 </ng-container>
                 <ng-container matColumnDef="PhoneNumber">
-                    <th class="px-3" mat-header-cell *matHeaderCellDef> Phone Number </th>
+                    <th class="px-3" mat-header-cell *matHeaderCellDef> Numero de Telephone </th>
                     <td class="px-3" mat-cell *matCellDef="let element"> {{element.PhoneNumber}} </td>
                 </ng-container>
                 <ng-container matColumnDef="Role">
@@ -40,6 +40,7 @@
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
             </table>
+            <mat-paginator [pageSize]="pageSize " [length]="length " [pageSizeOptions]="pageSizeOptions " (page)="onPage($event) "></mat-paginator>
         </div>
         <!-- table-responsive-x -->
     </ng-container>

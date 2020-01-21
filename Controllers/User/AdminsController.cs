@@ -33,7 +33,7 @@ namespace WebAPI.Controllers
             _appSettings = appSettings.Value;
         }
 
-        [Authorize(Roles = "SuperAdmin")]
+        [Authorize(Roles = "SuperAdmin,Admin")]
         [HttpGet("GetAdmins")]
         [EnableQuery]
         //Get : /api/Admin
@@ -49,7 +49,7 @@ namespace WebAPI.Controllers
 
         [HttpPost]
         [Route("Register")]
-        [Authorize(Roles = "SuperAdmin")]
+        [Authorize(Roles = "SuperAdmin,Admin")]
         //POST : /api/Admin/Register
         public async Task<Object> Register(RegisterUserModel model)
         {
@@ -104,7 +104,7 @@ namespace WebAPI.Controllers
         }
 
         //Get : /api/Admin/id
-        [Authorize(Roles = "SuperAdmin")]
+        [Authorize(Roles = "SuperAdmin,Admin")]
         [HttpGet("GetRole/{id}")]
         public async Task<IActionResult> getAdminRole(string id)
         {

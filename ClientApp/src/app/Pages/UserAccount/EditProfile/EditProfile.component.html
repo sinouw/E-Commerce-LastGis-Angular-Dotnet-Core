@@ -12,12 +12,12 @@
                         <input matInput placeholder="Full Name" formControlName="FullName">
                         <mat-error *ngIf="info.get('FullName').hasError('required') && info.get('FullName').touched">This field should not be empty.</mat-error>
                     </mat-form-field>
-                    <div class="mb-3">
+                    <!-- <div class="mb-3">
                         <mat-radio-group formControlName="Gender">
                             <mat-radio-button class="mr-2" value="Male">Male</mat-radio-button>
                             <mat-radio-button value="Female">Female</mat-radio-button>
                         </mat-radio-group>
-                    </div>
+                    </div> -->
                     <mat-form-field class="w-100 mb-3">
                         <input matInput placeholder="Mobile No." formControlName="PhoneNumber">
                         <mat-error *ngIf="info.get('PhoneNumber').hasError('required') && info.get('PhoneNumber').touched">This field should not be empty.</mat-error>

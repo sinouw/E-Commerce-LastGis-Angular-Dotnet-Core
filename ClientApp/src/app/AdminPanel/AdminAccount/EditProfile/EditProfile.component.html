@@ -5,19 +5,19 @@
             <form [formGroup]="info">
                 <div class="example-container">
                     <mat-form-field class="w-100 mb-3">
-                        <input matInput placeholder="Nom d'utilisateur" formControlName="UserName">
+                        <input matInput placeholder="Nom d'utilisateur" formControlName="UserName" [readonly]=true>
                         <mat-error *ngIf="info.get('UserName').hasError('required') && info.get('UserName').touched">Ce champ ne doit pas être vide.</mat-error>
                     </mat-form-field>
                     <mat-form-field class="w-100 mb-3">
                         <input matInput placeholder="Nom Complet" formControlName="FullName">
                         <mat-error *ngIf="info.get('FullName').hasError('required') && info.get('FullName').touched">Ce champ ne doit pas être vide.</mat-error>
                     </mat-form-field>
-                    <div class="mb-3">
+                    <!-- <div class="mb-3">
                         <mat-radio-group formControlName="Gender">
                             <mat-radio-button class="mr-2" value="Male">Homme</mat-radio-button>
                             <mat-radio-button value="Female">Femme</mat-radio-button>
                         </mat-radio-group>
-                    </div>
+                    </div> -->
                     <mat-form-field class="w-100 mb-3">
                         <input matInput placeholder="Telephone" formControlName="PhoneNumber">
                         <mat-error *ngIf="info.get('PhoneNumber').hasError('required') && info.get('PhoneNumber').touched">Ce champ ne doit pas être vide.</mat-error>

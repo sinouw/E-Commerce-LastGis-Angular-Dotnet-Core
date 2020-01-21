@@ -11,7 +11,7 @@
             </select>
             <mat-error *ngIf="addNewSousCategorieForm.controls['CategorieId'].touched && !addNewSousCategorieForm.controls['CategorieId'].valid">
                 <mat-error *ngIf="addNewSousCategorieForm.controls['CategorieId'].hasError('required')" class="required alert-error">
-                    You must Select a categorie.
+                    Vous devez sélectionner une catégorie.
                 </mat-error>
             </mat-error>
         </mat-form-field>
@@ -21,7 +21,7 @@
             <input matInput type="text" formControlName="NsousCategorie" class="form-control" placeholder="Nom Sous Categorie" autocomplete="off">
             <mat-error *ngIf="addNewSousCategorieForm.controls['NsousCategorie'].touched && !addNewSousCategorieForm.controls['NsousCategorie'].valid">
                 <mat-error *ngIf="addNewSousCategorieForm.controls['NsousCategorie'].hasError('required')" class="required alert-error">
-                    Il faut ajouter un nom de categorie.
+                    Il faut ajouter un nom de sous categorie.
                 </mat-error>
             </mat-error>
         </mat-form-field>

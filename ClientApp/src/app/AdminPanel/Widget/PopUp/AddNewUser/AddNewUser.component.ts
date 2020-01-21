@@ -26,7 +26,7 @@ export class AddNewUserComponent implements OnInit {
 		this.addNewUserForm = this.formBuilder.group({
 			UserName     : ['', [Validators.required]],
             FullName     : ['', [Validators.required]],
-            Gender       : ['',[Validators.required]],
+            // Gender       : ['',[Validators.required]],
             PhoneNumber  : ['', [Validators.required]],
 			Email        : ['', [Validators.required, Validators.pattern(this.emailPattern)]],
 			Password: ['', [Validators.required, Validators.minLength(4)]],
@@ -65,7 +65,7 @@ export class AddNewUserComponent implements OnInit {
 		this.registerBody = {
 			UserName : this.addNewUserForm.value.UserName,
 			FullName : this.addNewUserForm.value.FullName,
-			Gender : this.addNewUserForm.value.Gender,
+			// Gender : this.addNewUserForm.value.Gender,
 			PhoneNumber : this.addNewUserForm.value.PhoneNumber,
 			Email : this.addNewUserForm.value.Email,
 			Password : this.addNewUserForm.value.Password,

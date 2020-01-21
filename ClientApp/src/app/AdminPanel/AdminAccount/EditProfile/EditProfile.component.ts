@@ -45,7 +45,7 @@ export class EditProfileComponent implements OnInit {
         this.info = this.formGroup.group({
             UserName: ['', [Validators.required]],
             FullName: ['', [Validators.required]],
-            Gender: ['', [Validators.required]],
+            // Gender: ['', [Validators.required]],
             PhoneNumber: ['', [Validators.required]],
             Email: ['', [Validators.required, Validators.pattern(this.emailPattern)]]
         });
@@ -58,7 +58,7 @@ export class EditProfileComponent implements OnInit {
                 this.info = this.formGroup.group({
                     UserName: [this.userDetails.UserName, [Validators.required]],
                     FullName: [this.userDetails.FullName, [Validators.required]],
-                    Gender: [this.userDetails.Gender, [Validators.required]],
+                    // Gender: [this.userDetails.Gender, [Validators.required]],
                     PhoneNumber: [this.userDetails.PhoneNumber, [Validators.required]],
                     Email: [this.userDetails.Email, [Validators.required, Validators.pattern(this.emailPattern)]]
                 });

@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {AdminPanelServiceService} from '../../Service/AdminPanelService.service';
-import {MatTableDataSource} from '@angular/material';
+import {MatTableDataSource, MatPaginator} from '@angular/material';
 import {AccountService} from '../../Service/account.service';
 import {HttpClient} from '@angular/common/http';
 import { BaseUrl } from 'src/app/models/baseurl.data';
@@ -17,9 +17,16 @@ export class CollaborationComponent implements OnInit {
     popUpDeleteUserResponse: any;
     popUpNewUserResponse: any;
     collaborationData: any [];
-
+    public pageNumber: number = 0;
+    length = 100;
+    pageSize = 6;
+    pageSizeOptions: number[] = [6, 12 , 18, 24,30];
+    
     // displayedColumns : string[] = ['image', 'name', 'email', 'access', 'action'];
     displayedColumns: string[] = ['FullName', 'Email', 'PhoneNumber', 'Role', 'action'];
+
+    @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
+
 
     dataSource = new MatTableDataSource<any>(this.collaborationData);
 
@@ -42,6 +49,8 @@ export class CollaborationComponent implements OnInit {
         this.collaborationData = this.Users;
         setTimeout(() => {
             this.dataSource = new MatTableDataSource<any>(this.collaborationData);
+            this.dataSource.paginator = this.paginator;
+
         }, 2000);
         
     }
@@ -69,13 +78,14 @@ export class CollaborationComponent implements OnInit {
             this.DeleteUser(username);
             // this.getUsersInfo()
             this.dataSource = new MatTableDataSource(this.dataSource.data);
+            this.dataSource.paginator = this.paginator;
         }
     }
 
     DeleteUser(username){
         this.http.delete(BaseUrl+'/Admin/Delete/'+username).subscribe(
           res=>{
-            this.GetUsers()
+            this.GetUsers();
           },err=>{
             console.log(err);
             
@@ -88,11 +98,9 @@ export class CollaborationComponent implements OnInit {
     addNewUserDialog() {
         this.service.addNewUserDialog().subscribe(res => {
                 this.popUpNewUserResponse = res;
-                // this.getUsersInfo()
             },
             err => console.log(err),
             () => this.getAddUserPopupResponse(this.popUpNewUserResponse));
-
     }
 
     getAddUserPopupResponse(response: any) {
@@ -106,6 +114,8 @@ export class CollaborationComponent implements OnInit {
             };
             this.collaborationData.push(addUser);
             this.dataSource = new MatTableDataSource<any>(this.collaborationData);
+            this.dataSource.paginator = this.paginator;
+
         }
     }
 

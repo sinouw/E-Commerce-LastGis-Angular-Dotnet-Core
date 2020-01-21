@@ -13,7 +13,8 @@ import {
     MatFormFieldModule,
     MatSelectModule,
     MatTableModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatPaginatorModule
 } from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
@@ -41,6 +42,8 @@ import {AdminAccountRoutes} from './AdminAccount.routing';
         MatCardModule,
         MatInputModule,
         MatDatepickerModule,
+        MatPaginatorModule,
+
         MatFormFieldModule,
         MatRadioModule,
         MatSelectModule,

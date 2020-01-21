@@ -1,31 +1,31 @@
 <form [formGroup]="addNewUserForm" class="popup-card-width add-new-user">
     <div>
-        <h2 mat-dialog-title>Add New User</h2>
+        <h2 mat-dialog-title>Ajouter Utilisateur</h2>
     </div>
     <mat-dialog-content class="mb-4">
         <div>
             <div>
                 <mat-form-field class="w-100">
-                    <input matInput type="text" formControlName="UserName" class="form-control" placeholder="UserName" autocomplete="off">
+                    <input matInput type="text" formControlName="UserName" class="form-control" placeholder="Nom d'utilisateur" autocomplete="off">
                     <mat-error *ngIf="addNewUserForm.controls['UserName'].touched && !addNewUserForm.controls['UserName'].valid">
                         <mat-error *ngIf="addNewUserForm.controls['UserName'].hasError('required')" class="required alert-error">
-                            You must include a UserName.
+                            Vous devez inclure un nom d'utilisateur.
                         </mat-error>
                     </mat-error>
                 </mat-form-field>
                 <mat-form-field class="w-100">
-                    <input matInput type="text" formControlName="FullName" class="form-control" placeholder="Full Name" autocomplete="off">
+                    <input matInput type="text" formControlName="FullName" class="form-control" placeholder="Nom complet" autocomplete="off">
                     <mat-error *ngIf="addNewUserForm.controls['FullName'].touched && !addNewUserForm.controls['FullName'].valid">
                         <mat-error *ngIf="addNewUserForm.controls['FullName'].hasError('required')" class="required alert-error">
-                            You must include a Name.
+                            Vous devez inclure un nom.
                         </mat-error>
                     </mat-error>
                 </mat-form-field>
                 <mat-form-field class="w-100">
-                    <input matInput type="text" formControlName="PhoneNumber" class="form-control" placeholder="Phone Number" autocomplete="off" maxlength="12">
+                    <input matInput type="text" formControlName="PhoneNumber" class="form-control" placeholder="Numero de télephone" autocomplete="off" maxlength="12">
                     <mat-error *ngIf="addNewUserForm.controls['PhoneNumber'].touched && !addNewUserForm.controls['PhoneNumber'].valid">
                         <mat-error *ngIf="addNewUserForm.controls['PhoneNumber'].hasError('required')" class="required alert-error">
-                            You must include a Name.
+                            Vous devez inclure un numero de télephone.
                         </mat-error>
                     </mat-error>
                 </mat-form-field>
@@ -33,10 +33,10 @@
                     <input matInput type="text" formControlName="Email" class="form-control" placeholder="Email" autocomplete="off">
                     <mat-error *ngIf="addNewUserForm.controls['Email'].touched && !addNewUserForm.controls['Email'].valid">
                         <mat-error *ngIf="addNewUserForm.controls['Email'].hasError('required')" class="required alert-error">
-                            You must include a E-mail Address.
+                            Vous devez inclure une adresse e-mail.
                         </mat-error>
                         <mat-error *ngIf="addNewUserForm.controls['Email'].hasError('pattern')">
-                            E-mail must be valid
+                            L'email doit être valide
                         </mat-error>
                     </mat-error>
                 </mat-form-field>
@@ -46,18 +46,18 @@
                 <!-- -------------------------------------------------------------------------------------------- -->
                 <!-- <div formGroupName="Passwords"> -->
                 <mat-form-field class="w-100">
-                    <input matInput type="password" formControlName="Password" class="form-control" placeholder="Password" autocomplete="off">
+                    <input matInput type="password" formControlName="Password" class="form-control" placeholder="Mot de passe" autocomplete="off">
                     <mat-error *ngIf="addNewUserForm.controls['Password'].touched && !addNewUserForm.controls['Password'].valid">
                         <mat-error *ngIf="addNewUserForm.controls['Password'].hasError('required')" class="required alert-error">
-                            You must include a Password.
+                            Vous devez inclure un mot de passe.
                         </mat-error>
                     </mat-error>
                 </mat-form-field>
                 <mat-form-field class="w-100">
-                    <input matInput type="password" formControlName="ConfirmPassword" class="form-control" placeholder="ConfirmPassword" autocomplete="off">
+                    <input matInput type="password" formControlName="ConfirmPassword" class="form-control" placeholder="Confirmez le mot de passe" autocomplete="off">
                     <mat-error *ngIf="addNewUserForm.controls['ConfirmPassword'].touched && !addNewUserForm.controls['ConfirmPassword'].valid">
                         <mat-error *ngIf="addNewUserForm.controls['ConfirmPassword'].hasError('required')" class="required alert-error">
-                            You must include a ConfirmPassword.
+                            Vous devez inclure un mot de passe de confirmation.
                         </mat-error>
                     </mat-error>
                 </mat-form-field>
@@ -67,25 +67,25 @@
                 <!-- -------------------------------------------------------------------------------------------- -->
                 <!-- -------------------------------------------------------------------------------------------- -->
                 <!-- -------------------------------------------------------------------------------------------- -->
-                <mat-form-field class="w-100">
-                    <select matNativeControl formControlName="Gender" placeholder="Gender">
-					  <option value="Admin">Male</option>
-							<option value="Female">Female</option>
+                <!-- <mat-form-field class="w-100">
+                    <select matNativeControl formControlName="Gender" placeholder="sexe">
+					  <option value="Admin">Mâle</option>
+							<option value="Female">Femme</option>
 						</select>
                     <mat-error *ngIf="addNewUserForm.controls['Gender'].touched && !addNewUserForm.controls['Gender'].valid">
                         <mat-error *ngIf="addNewUserForm.controls['Gender'].hasError('required')" class="required alert-error">
-                            You must Select a Gender.
+                            Vous devez sélectionner un sexe.
                         </mat-error>
                     </mat-error>
-                </mat-form-field>
+                </mat-form-field> -->
                 <mat-form-field class="w-100">
-                    <select matNativeControl formControlName="accessType" placeholder="Access Type">
+                    <select matNativeControl formControlName="accessType" placeholder="Type d'accès">
                   <option value="SuperAdmin">SuperAdmin</option>
 						<option value="Admin">Admin</option>
 					</select>
                     <mat-error *ngIf="addNewUserForm.controls['accessType'].touched && !addNewUserForm.controls['accessType'].valid">
                         <mat-error *ngIf="addNewUserForm.controls['accessType'].hasError('required')" class="required alert-error">
-                            You must Select a Access Type.
+                            Vous devez sélectionner un type d'accès.
                         </mat-error>
                     </mat-error>
                 </mat-form-field>
@@ -93,8 +93,8 @@
         </div>
     </mat-dialog-content>
     <mat-dialog-actions class="m-0">
-        <button type="button" mat-raised-button (click)="dialogRef.close()" color="primary">CLOSE</button>
-        <button (click)="onFormSubmit()" type="submit" [disabled]="!addNewUserForm.valid" mat-raised-button color="warn">SUBMIT</button>
+        <button type="button" mat-raised-button (click)="dialogRef.close()" color="primary">Fermer</button>
+        <button (click)="onFormSubmit()" type="submit" [disabled]="!addNewUserForm.valid" mat-raised-button color="warn">Valider</button>
     </mat-dialog-actions>
 </form>
 <!-- add-new-user -->

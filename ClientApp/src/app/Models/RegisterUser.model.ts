@@ -1,7 +1,7 @@
 export class RegisterBody {
     UserName : string
     FullName : string
-    Gender : string
+    // Gender : string
     PhoneNumber : string
     Email : string
     Password : string

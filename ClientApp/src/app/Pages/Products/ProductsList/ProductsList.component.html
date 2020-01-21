@@ -103,20 +103,23 @@
 
             <ng-container *ngIf="productsGrid && productsGrid.length >= 0 && length!=0; else elseBlock">
                 <div fxLayoutAlign="" fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="33" fxFlex.lg="33" fxFlex.gt-lg="33" fxFlex.gt-md="33" fxFlex.gt-sm="33" fxFlex.gt-xs="33" *ngFor="let product of cardsObs | async; let i=index;">
-                    <mat-card [style.minHeight]="'80%'" [style.minWidth]="'80%'" class="product-card" style="margin: 10px">
-                        <a><img mat-card-image style="object-fit: cover;width: 100%;height: 75%;" (click)="productPage(product.IdProd,product.Marque)" mat-card-image [src]="product?.FrontImg" alt="Photo of a Shiba Inu"></a>
+                    <mat-card class="product-card" style="margin: 10px">
+                        <a><img mat-card-image [style.maxHeight]="'80%'" [style.maxWidth]="'80%'" style="object-fit: cover;height: 70%;" (click)="productPage(product.IdProd,product.Marque)" mat-card-image [src]="product?.FrontImg" alt="Photo of a Shiba Inu"></a>
                         <mat-card-content class="product-content relative ">
                             <h5>
-                                <a class="title-link ">
+                                <a class="title-link" style="text-align: center">
                                →  {{product.NomProduit || null}}</a>
                             </h5>
                             <mat-divider></mat-divider>
-                            <h6 style="margin-top: 15px ">
-                                <p class="category-wrap mb-2 "> → {{product?.Marque || null}}</p>
+                            <h6 style="margin-top: 15px;">
+                                <a class="category-wrap mb-2 "> → {{product?.Marque || null}}</a>
                             </h6>
+                            <mat-divider></mat-divider>
                             <div class="product-price ">
                                 <div>
-                                    <h5 class="accent-color "> {{product?.Prix | currency :'TND'}}</h5>
+                                    <h5 class="accent-color">
+                                        → {{product?.Prix | currency :'TND'}}
+                                    </h5>
                                 </div>
                             </div>
                             <div class="m-icon ">
