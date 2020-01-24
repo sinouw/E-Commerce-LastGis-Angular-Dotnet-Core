@@ -102,7 +102,7 @@
 
                                 <span class="font-medium"> Ajouter la Marque </span>:
                                 <div class="product-detail-price">
-                                    <h5 class="primary-color add-text"><input matInput formControlName="Marque" placeholder="Marque" autocomplete="off"></h5>
+                                    <h5 class="primary-color add-text"><input id="brands-list" matInput formControlName="Marque" placeholder="Marque" autocomplete="off"></h5>
                                 </div>
 
                                 <div class="no-style mb-4">
@@ -124,7 +124,7 @@
                                 <div>
                                     <span class="font-medium"> Ajouter le nom du Sous Categorie </span>:
                                     <p class="add-text">
-                                        <mat-select matNativeControl formControlName="IdScat" placeholder="Sous categorie List">
+                                        <mat-select matNativeControl formControlName="IdScat" placeholder="Sous categorie List" [(ngModel)]="sousCateg" (ngModelChange)="onsouscategchange()">
                                             <mat-option *ngFor="let souscategorie of souscategories" [value]="souscategorie.IdScat">{{ souscategorie.NsousCategorie }}</mat-option>
 
                                         </mat-select>
@@ -145,8 +145,8 @@
                                             <th>Ajouter</th>
                                         </tr>
                                         <tr>
-                                            <td><input matInput formControlName="key" placeholder="ajouter une cle"></td>
-                                            <td><input matInput formControlName="value" placeholder="ajouter une valeur"></td>
+                                            <td><input list="keys-list" matInput formControlName="key" autocomplete="off" [(ngModel)]="keyInput" (ngModelChange)="onchangekey()" placeholder="ajouter une cle"></td>
+                                            <td><input list="values-list" [readonly]="keyInput==''" matInput formControlName="value" autocomplete="off" placeholder="ajouter une valeur"></td>
                                             <td> <button mat-icon-button color="primary" [disabled]="caracForm.invalid"><mat-icon>add</mat-icon></button></td>
 
                                         </tr>
@@ -158,10 +158,16 @@
 
                                 <!-- ************************************************************************* -->
                                 <!-- ************************************************************************* -->
-                                <!-- ************************************************************************* -->
-                                <!-- ************************************************************************* -->
-                                <!-- ************************************************************************* -->
-                                <!-- ************************************************************************* -->
+
+                                <datalist id="keys-list" *ngIf="keysList.length!=0">
+                                    <option *ngFor="let key of keysList" [value]="key">{{key}}</option>
+                                  </datalist>
+                                <datalist id="values-list" *ngIf="valuesList.length!=0">
+                                    <option *ngFor="let value of valuesList" [value]="value">{{value}}</option>
+                                  </datalist>
+                                <datalist id="brands-list" *ngIf="brands.length!=0">
+                                        <option *ngFor="let brand of brands" [value]="brand">{{brand}}</option>
+                                      </datalist>
                                 <!-- ************************************************************************* -->
 
 

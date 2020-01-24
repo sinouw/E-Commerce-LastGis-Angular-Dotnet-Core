@@ -50,6 +50,13 @@ export class EditProductComponent implements OnInit {
     displayedProductColumns : string [] = ['key','value','action' ];  
 
 
+    keysList: any=[];
+    valuesList: any=[];
+    brands: any=[];
+    sousCateg:any = ""; 
+    keyInput:any = ""; 
+
+
     constructor(
                 public formBuilder: FormBuilder,
                 private route: ActivatedRoute,
@@ -104,10 +111,58 @@ export class EditProductComponent implements OnInit {
 
     }
 
-    ngOnInit() {
-            
-        
+    onsouscategchange(){
+        this.keysList.length=0
+         console.log(this.sousCateg);
+         if (this.sousCateg!="") {
+             this.http.get(BaseUrl+'/Caracteristiques/bysouscaterie?sousCategorie='+this.sousCateg)
+             .subscribe((res:any)=>{
+ 
+                 console.log(res);
+                 this.caracs = res
+                 res.forEach(carac => {
+                     this.keysList.push(carac.Key)
+                 });
+                 console.log(this.keysList);
+                 
+             },
+             err=>{
+                 console.log(err);
+             })         
+         }
+         
+     }
+ 
+ 
+     onchangekey(){
+         console.log(this.keyInput);
+ 
+         if(this.keyInput!=""){
+             this.valuesList=[]
+             this.caracs.forEach(carac => {
+                 if(carac.Key==this.keyInput){
+                     this.valuesList=carac.Value
+                 }
+             });
+         }
+         
+     }
+ 
+    getBrands(){
+     this.http.get(BaseUrl+'/Produits/brandsbysouscateg')
+     .subscribe((res:any)=>{
+         console.log(res);
+         this.brands = res    
+     },
+     err=>{
+         console.log(err);
+     })         
+    }
+  
 
+    ngOnInit() {
+        this.onchangekey()
+        this.getBrands()
     }
 
 
