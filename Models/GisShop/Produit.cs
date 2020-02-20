@@ -24,6 +24,7 @@ namespace WebAPI.Models.ZahraShop
         public string Description { get; set; }
         public double Prix { get; set; }
         public bool Disponible { get; set; } = true;
+        public bool Command { get; set; } = false;
         public double Remise { get; set; } = 0;
         public string Couleur { get; set; } = "";
         public string Marque { get; set; }

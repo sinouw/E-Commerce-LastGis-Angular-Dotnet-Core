@@ -48,23 +48,23 @@
                                         <!-- <a class="primary-color font-medium" href="javascript:void(0)" routerLink="/products">Retour vers produits</a> -->
                                         <button mat-stroked-button color="primary" href="javascript:void(0)" routerLink="/products">Retour vers produits</button>
 
-                                        <br/>
-                                        <br/>
-                                        <br/>
+                                        <br />
+                                        <br />
+                                        <br />
                                         <!-- <span class="font-medium"> Nom du produit  </span>: -->
                                         <div class="box-info-product" style="font-size:20px">
                                             Nom Produit : <strong style="font-size:20px">
                                                 {{Product?.NomProduit}}
-                                        </strong>
+                                            </strong>
                                         </div>
 
                                         <div class="box-info-product" style="font-size:20px">
 
                                             Marque :
-                                            <span style="border-bottom: 4px;"> 
-                                            
+                                            <span style="border-bottom: 4px;">
+
                                                 {{Product?.Marque}}
-                                            
+
                                             </span>
                                         </div>
 
@@ -73,30 +73,43 @@
                                             <div class="box-info-product" style="font-size:20px;">
 
                                                 Disponibilté :
-                                                <strong style="color: #47BF20;"> 
-                                                            En stock
-                                                    
-                                                    </strong>
+                                                <strong style="color: #47BF20;">
+                                                    En stock
+
+                                                </strong>
                                             </div>
                                         </div>
                                         <ng-template #nonDispoBloc>
                                             <div class="box-info-product" style="font-size:20px;">
 
                                                 Disponibilté :
-                                                <strong style="color: rgb(189, 0, 0);"> 
-                                                                     Stock épuisé
-                                                            
-                                                            </strong>
+                                                <strong style="color: rgb(189, 0, 0);">
+                                                    Stock épuisé
+
+                                                </strong>
                                             </div>
                                         </ng-template>
+
+                                        <div *ngIf="!Product.Disponible">
+                                            <div *ngIf="Product.Command">
+                                                <div class="box-info-product" style="font-size:20px;">
+
+                                                    Commande :
+                                                    <strong>
+                                                        48H
+                                                    </strong>
+                                                </div>
+                                            </div>
+                                        </div>
+
 
 
                                         <div class="box-info-product" style="font-size:20px;">
 
                                             Prix :
-                                            <strong style="font-size:30px;color: #06047b;border-bottom: 4px double;"> 
-                                                        {{Product?.Prix}} DT
-                                            
+                                            <strong style="font-size:30px;color: #06047b;border-bottom: 4px double;">
+                                                {{Product?.Prix}} DT
+
                                             </strong>
                                         </div>
 
@@ -104,18 +117,22 @@
                                 </div>
                                 <div style="font-size:20px">
                                     Description :
-                                    <br/>
+                                    <br />
                                     <h5>{{Product?.Description}}</h5>
 
                                 </div>
                                 <table class="w-100 table-scroll-wrap" mat-table [dataSource]="caracteristiquesList" matSort>
                                     <ng-container matColumnDef="key">
-                                        <th class="text-nowrap px-3" mat-header-cell *matHeaderCellDef mat-sort-header>Caracteristique </th>
-                                        <td class="text-nowrap product-name" mat-cell *matCellDef="let element"><span>{{element?.key}}</span></td>
+                                        <th class="text-nowrap px-3" mat-header-cell *matHeaderCellDef mat-sort-header>
+                                            Caracteristique </th>
+                                        <td class="text-nowrap product-name" mat-cell *matCellDef="let element">
+                                            <span>{{element?.key}}</span></td>
                                     </ng-container>
                                     <ng-container matColumnDef="value">
-                                        <th class="text-nowrap px-3" mat-header-cell *matHeaderCellDef mat-sort-header>Description</th>
-                                        <td class="text-nowrap product-name" mat-cell *matCellDef="let element"><span>{{element?.value}}</span></td>
+                                        <th class="text-nowrap px-3" mat-header-cell *matHeaderCellDef mat-sort-header>
+                                            Description</th>
+                                        <td class="text-nowrap product-name" mat-cell *matCellDef="let element">
+                                            <span>{{element?.value}}</span></td>
                                     </ng-container>
 
                                     <tr mat-header-row *matHeaderRowDef="displayedProductColumns"></tr>
@@ -123,7 +140,7 @@
                                 </table>
 
                                 <div class="block-title text-center gap">
-                                    <h2>You Might Also Like</h2>
+                                    <h2>Produit Similaire</h2>
                                 </div>
                                 <!-- <embryo-ProductGrid [currency]="embryoService?.currency" [products]="productsList" gridLength="4" (addToCart)="addToCart($event)" (addToWishList)="addToWishList($event)"></embryo-ProductGrid> -->
 
@@ -145,7 +162,8 @@
                                                 </div>
                                                 <!--product-price-->
                                                 <div class="m-icon">
-                                                    <button mat-fab (click)="productPage(product?.IdProd,product?.Marque)"><i class="material-icons">remove_red_eye</i></button>
+                                                    <button mat-fab (click)="productPage(product?.IdProd,product?.Marque)"><i
+                                                            class="material-icons">remove_red_eye</i></button>
                                                 </div>
                                                 <!-- m-icon -->
                                             </mat-card-content>
@@ -160,7 +178,8 @@
 
                                 <div class="text-center mt-4">
                                     <!-- <button mat-raised-button [routerLink]="['/products', Product.NsousCategorie]">Show All</button> -->
-                                    <button mat-raised-button [routerLink]="['/products',Product.NsousCategorie]">Show All</button>
+                                    <button mat-raised-button [routerLink]="['/products',Product.NsousCategorie]">Show
+                                        All</button>
                                 </div>
                             </div>
                         </div>

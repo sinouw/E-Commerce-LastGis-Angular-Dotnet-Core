@@ -28,6 +28,7 @@ export class AddProductComponent implements OnInit {
     caracteristiques : Caracteristique[]=[];
     caracteristiquesList
     displayedProductColumns : string [] = ['key','value','action' ];  
+    dispoList : string [] = ['Oui','Non' ];  
     caracForm :FormGroup ;
     sousCateg:any = ""; 
     keyInput:any = ""; 
@@ -70,6 +71,7 @@ export class AddProductComponent implements OnInit {
             Prix: ['', [Validators.required]],
             Disponible: ['', [Validators.required]],
             Description: ['', [Validators.required]],
+            Command: ['', [Validators.required]],
             IdScat: ['', [Validators.required]],
             Marque: ['', [Validators.required]],
         });
@@ -167,6 +169,7 @@ export class AddProductComponent implements OnInit {
             Prix: [],
             Disponible: [],
             Description: [],
+            Command: [],
             IdScat: [],
             Marque: [],
         });

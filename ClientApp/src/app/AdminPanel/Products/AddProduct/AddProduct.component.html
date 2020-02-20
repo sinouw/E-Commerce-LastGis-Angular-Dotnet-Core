@@ -104,12 +104,22 @@
 
                                         <mat-select class="ml-2" matNativeControl formControlName="Disponible" placeholder="Disponibilité" type="text" autocomplete="off">
 
-                                            <mat-option value="true">Yes</mat-option>
-                                            <mat-option value="false">No</mat-option>
+                                            <mat-option value="true">Oui</mat-option>
+                                            <mat-option value="false">Non</mat-option>
                                         </mat-select>
                                     </div>
                                     <div *ngIf="form.get('Disponible').hasError('required') && form.get('Disponible').touched">Ce champ ne doit pas être vide.</div>
 
+                                </div>
+                                <div class="no-style mb-4">
+                                    <span class="font-medium"> Ajouter Par Commande </span>:
+                                    <div class="add-text" fxLayout="row wrap" fxLayoutAlign="start start">
+                                        <mat-select class="ml-2" matNativeControl formControlName="Command" placeholder="Par Commande" type="text" autocomplete="off">
+                                            <mat-option value="true">Oui</mat-option>
+                                            <mat-option value="false">Non</mat-option>
+                                        </mat-select>
+                                    </div>
+                                    <div *ngIf="form.get('Disponible').hasError('required') && form.get('Disponible').touched">Ce champ ne doit pas être vide.</div>
                                 </div>
 
                                 <div class="short-des">

@@ -49,7 +49,7 @@ namespace WebAPI.Controllers
 
         [HttpPost]
         [Route("Register")]
-        [Authorize(Roles = "SuperAdmin,Admin")]
+        //[Authorize(Roles = "SuperAdmin,Admin")]
         //POST : /api/Admin/Register
         public async Task<Object> Register(RegisterUserModel model)
         {

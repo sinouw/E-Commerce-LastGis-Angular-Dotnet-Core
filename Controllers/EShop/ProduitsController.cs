@@ -548,6 +548,7 @@ namespace WebAPI.Controllers.EShop
                 s.Description,
                 s.Prix,
                 s.Disponible,
+                s.Command,
                 s.Remise,
                 s.Couleur,
                 s.Marque,
