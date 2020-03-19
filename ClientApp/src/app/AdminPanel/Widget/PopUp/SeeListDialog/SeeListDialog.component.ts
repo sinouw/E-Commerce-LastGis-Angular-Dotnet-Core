@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {PerfectScrollbarConfigInterface, PerfectScrollbarComponent, PerfectScrollbarDirective} from 'ngx-perfect-scrollbar';
-import {MatDialog, MatDialogRef} from '@angular/material';
+import {PerfectScrollbarConfigInterface} from 'ngx-perfect-scrollbar';
+import {MatDialogRef} from '@angular/material';
 
 @Component({
     selector: 'app-see-list-dialog',

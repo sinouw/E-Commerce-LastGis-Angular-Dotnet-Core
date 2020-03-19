@@ -6,9 +6,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { MenuItems } from '../../../Core/menu/menu-items/menu-items';
 import { AdminGenericService } from 'src/app/AdminPanel/Service/AdminGeneric.service';
 import { BaseUrl } from 'src/app/models/baseurl.data';
-import { HomeMenu } from 'src/app/Models/MenuHome.model';
-import { SousCateg } from 'src/app/Models/souscategorie.model';
-import { stringify } from 'querystring';
 
 export interface Menu {
   state: string;

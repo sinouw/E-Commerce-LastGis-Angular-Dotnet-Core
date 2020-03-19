@@ -38,7 +38,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ToastaModule} from 'ngx-toasta';
 
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
-import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { AdminPanelRoutes } from './admin-panel-routing';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -48,8 +47,9 @@ import { ErrorInterceptor } from '../helpers/error.interceptor';
 import { JwtInterceptor } from '../helpers/jwt.interceptor';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
-  suppressScrollX: true
-};
+	suppressScrollX: true
+  };
+
 
 /********** Custom option for ngx-translate ******/
 export function createTranslateLoader(http: HttpClient) {

@@ -73,7 +73,6 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { AdminPanelModule } from './AdminPanel/admin-panel.module';
-import { AccountService } from './AdminPanel/Service/account.service';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -156,15 +155,15 @@ export function createTranslateLoader(http: HttpClient) {
       SlickCarouselModule,
       PerfectScrollbarModule,
       DeviceDetectorModule.forRoot(),
-      AdminPanelModule
+      AdminPanelModule,
   ],
    providers: [
-      MenuItems,
-      EmbryoService,
       {
          provide: [PERFECT_SCROLLBAR_CONFIG],
          useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG,
-      }
+      },
+      MenuItems,
+      EmbryoService,
    ],
    exports : [
       RouterModule,
